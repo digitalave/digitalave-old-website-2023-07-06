@@ -81,6 +81,10 @@ layout: default
           <a href="mailto:{{ author.author-email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
           {% else %}
           {% endif %}
+          {% if author.author-medium %}
+          <a href="{{ author.author-medium }}" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+          {% else %}
+          {% endif %}
         </div>
       </div>
       {% else %}
@@ -111,6 +115,10 @@ layout: default
           {% endif %}
           {% if site.youtube %}
           <a href="{{ site.youtube }}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          {% else %}
+          {% endif %}
+          {% if site.medium %}
+          <a href="{{ site.medium }}" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
           {% else %}
           {% endif %}
           {% if site.author-email %}
