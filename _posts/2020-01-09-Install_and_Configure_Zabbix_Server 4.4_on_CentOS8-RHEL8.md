@@ -3,8 +3,6 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install & Configure Zabbix 4.4 on CentOS8 / RHEL8'
 img: Zabbix4.4/zabbix44.jpg
-wazuh/wazuh.png
-
 tags: [Zabbix, Server Monitoring, Log Monitoring]
 category: Spring
 comments: true
