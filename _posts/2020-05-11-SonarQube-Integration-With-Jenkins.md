@@ -43,9 +43,9 @@ Log in to SonarQube Server and go-to "**My Account**" section on your profile. A
 
 **Login > Profile > My Account > Security > Generate Token**
 
-<img src="{{site.baseurl}}\images\Sonar-Jenkins\1.png" width="auto" width="100%">
-<img src="{{site.baseurl}}\images\Sonar-Jenkins\1.png" width="auto" width="100%">
-<img src="{{site.baseurl}}\images\Sonar-Jenkins\1.png">
+<img src="{{site.baseurl}}/images/Sonar-Jenkins/1.png" width="auto" width="100%">
+<img src="{{site.baseurl}}/images/Sonar-Jenkins/1.png" width="auto" width="100%">
+<img src="{{site.baseurl}}/images/Sonar-Jenkins/1.png">
 You need to copy & save this code immediately. This code won't be able to see again. It shows only once.
 
 <img src="{{site.baseurl}}\images\Sonar-Jenkins\2.png" width="auto" width="100%">
