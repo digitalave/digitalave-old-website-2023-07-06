@@ -43,13 +43,13 @@ Log in to SonarQube Server and go-to "**My Account**" section on your profile. A
 
 **Login > Profile > My Account > Security > Generate Token**
 
-<img src="/images/pages/Sonar-Jenkins/1.png" width="auto" width="100%">
+<img src="/images/pages/Sonar-Jenkins/1.png"
 <img src="{{site.baseurl}}/Sonar-Jenkins/1.jpg">
 ![]({{site.baseurl}}images/pages/Sonar-Jenkins/1.png)
 ![]({{site.baseurl}}/images/pages/Sonar-Jenkins/1.png)
 You need to copy & save this code immediately. This code won't be able to see again. It shows only once.
 
-<img src="\images\Sonar-Jenkins\2.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\2.png"
 
 `Jenkins-Auth-Token : 7a09705df7d034b99459b5127303a8315f5bdf6d`
 
@@ -67,8 +67,8 @@ Let's move on to your Jenkins server and install following plugins.
 
 **Manage Jenkins > Manage Plugins > Available [TAB] > Search For SonarQube > Install Plugins**
 
-<img src="\images\Sonar-Jenkins\3.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\4.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\3.png"
+<img src="\images\Sonar-Jenkins\4.png"
 
 Restart once plugins installed on Jenkins server.
 
@@ -84,7 +84,7 @@ Description : Provide a descriptive name
 
 Click OK to add new credentials.
 
-<img src="\images\Sonar-Jenkins\5.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\5.png"
 
 ### STEP 04: Add SonarQube Server on Jenkins
 
@@ -104,7 +104,7 @@ Server Authentication Token : Select credentials that we added previously as the
 
 Apply & Save.
 
-<img src="\images\Sonar-Jenkins\6.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\6.png"
 
 ### STEP 05: Add Sonar-Scanner For Jenkins 
 
@@ -121,7 +121,7 @@ Install Automatically : Enabled
 
 Version : Select a version
 
-<img src="\images\Sonar-Jenkins\7.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\7.png"
 
 Finally Save & Apply changes.
 
@@ -131,11 +131,11 @@ Create a new freestyle project and do the following configurations.
 
 Go-to **Jenkins > New Item > Enter Project Name > Select Freestyle Project > OK**
 
-<img src="\images\Sonar-Jenkins\8.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\8.png"
 
 Fill-out details on general section
 
-<img src="\images\Sonar-Jenkins\9.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\9.png"
 
 Here I have used GitLab for my source code management task. 
 In here you can provide your own Github/GitLab repository URL and SSH Key for GitLab, as show in my "GitLab integration with Jenkins" tutorial.
@@ -144,9 +144,9 @@ Refer this article to know how to use SSH key authention with Gitlab.
 
 REF: <a href="https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html" target="_blank">https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html</a>
 
-<img src="\images\Sonar-Jenkins\10.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\10.png"
 
-<img src="\images\Sonar-Jenkins\11.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\11.png"
 
 
 Alternatively, You also can directly enter your GitLab username and password in Jenkins > Credentials > System > Global Credentials > Add Credentials > Select "Username Password" from  the drop down menu as the option for "Kind"
@@ -180,25 +180,25 @@ sonar.analysis.mode=publish
 sonar.buildbreaker.skip=true
 ```
 
-<img src="\images\Sonar-Jenkins\12.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\12.png"
 
 Save & Apply changes you made.
 Now, Rest of the configuration has been completed. Now, Head Over to  your project home on Jenkins and run "**Build Now**" button.
 
-<img src="\images\Sonar-Jenkins\13.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\13.png"
 
 Now, Go to console output will show you long list and you'll "**EXECUTION SUCCESS**" status. 
 
-<img src="\images\Sonar-Jenkins\15.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\16.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\15.png"
+<img src="\images\Sonar-Jenkins\16.png"
 
 Great, Now head over to your SonarQube server. And you'll see the analysis report for your newly built project.
-<img src="\images\Sonar-Jenkins\17.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\18.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\19.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\20.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\21.png" width="auto" width="100%">
-<img src="\images\Sonar-Jenkins\22.png" width="auto" width="100%">
+<img src="\images\Sonar-Jenkins\17.png"
+<img src="\images\Sonar-Jenkins\18.png"
+<img src="\images\Sonar-Jenkins\19.png"
+<img src="\images\Sonar-Jenkins\20.png"
+<img src="\images\Sonar-Jenkins\21.png"
+<img src="\images\Sonar-Jenkins\22.png"
 
 
 Troubleshooting Tips: 
