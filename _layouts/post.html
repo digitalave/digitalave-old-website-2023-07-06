@@ -73,6 +73,10 @@ layout: default
           <a href="{{ author.author-pinterest }}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
           {% else %}
           {% endif %}
+          {% if author.author-youtube %}
+          <a href="{{ author.author-youtube }}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          {% else %}
+          {% endif %}
           {% if author.author-email %}
           <a href="mailto:{{ author.author-email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
           {% else %}
@@ -103,6 +107,10 @@ layout: default
           {% endif %}
           {% if site.pinterest %}
           <a href="{{ site.pinterest }}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+          {% else %}
+          {% endif %}
+          {% if site.youtube %}
+          <a href="{{ site.youtube }}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
           {% else %}
           {% endif %}
           {% if site.author-email %}

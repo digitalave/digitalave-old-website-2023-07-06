@@ -32,11 +32,20 @@
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
         </li>
-        {% else %}{% endif %}
+        {% else %}
+        {% endif %}
         {% if site.pinterest %}
         <li>
           <a href="{{ site.pinterest }}" target="_blank">
             <i class="fa fa-pinterest" aria-hidden="true"></i>
+          </a>
+        </li>
+        {% else %}
+        {% endif %}
+        {% if site.youtube %}
+        <li>
+          <a href="{{ site.youtube }}" target="_blank">
+            <i class="fa fa-youtube" aria-hidden="true"></i>
           </a>
         </li>
         {% else %}
