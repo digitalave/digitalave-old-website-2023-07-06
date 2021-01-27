@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Integrate GitLab With Jenkins'
-img: GitLab_Jenkins\gitlab-jenkins.jpg
+img: GitLab_Jenkins/gitlab-jenkins.jpg
 tags: [Jenkins, GitLab, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
 category: Spring
 comments: true
