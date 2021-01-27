@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7'
-image: /images/graylog_ins/graylog.png
+img: /images/graylog_ins/graylog.png
 tags: [Graylog, Logs, Log Monitoring]
 category: Spring
 comments: true

@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install & Configure ELK Stack 6.8 On CentOS7'
-image: /images/elk-stack/ELK.png
+img: /images/elk-stack/ELK.png
 tags: [pfSense, Firewall, Captive Portal, WIFI]
 category: Spring
 comments: true

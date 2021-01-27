@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Lession 02 : Docker Basics - Where Am I Start Learn Docker ?'
-image: /images/Docker-Installation/docker_N.jpg
+img: /images/Docker-Installation/docker_N.jpg
 tags: [Docker, Containers,MicroServices, CentOS 8,RHEL 8]
 category: Spring
 comments: true
@@ -210,7 +210,7 @@ docker image ls
 
 <2.png>
 
-4. Pull Docker Image: 
+4. Pull Docker img: 
 
 Pull an image or a repository from a registry (Docker Hub).
 

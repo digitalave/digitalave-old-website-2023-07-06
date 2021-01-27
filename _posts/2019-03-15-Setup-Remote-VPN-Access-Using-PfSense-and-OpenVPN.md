@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Setup Remote VPN Access Using PfSense and OpenVPN'
-image: /images/pf-vpn/pf-openvpn_N.jpg
+img: /images/pf-vpn/pf-openvpn_N.jpg
 tags: [pfSense, Firewall, OpenVPN, VPN]
 category: Spring
 comments: true

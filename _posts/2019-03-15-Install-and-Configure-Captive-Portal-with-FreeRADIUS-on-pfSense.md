@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install and Configure Captive Portal with FreeRADIUS on pfSense'
-image: /images/pfsense_captive_portal/captive_portal_N.jpg
+img: /images/pfsense_captive_portal/captive_portal_N.jpg
 tags: [pfSense, Firewall, Captive Portal, WIFI]
 category: pfsense
 comments: true
