@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Setup Intrusion Detection Using Snort on PfSense'
-img: /images/Snort-pfsense/snort-pfSense.jpg
+img: Snort-pfsense/snort-pfSense.jpg
 tags: [SquidGuard, Firewall, pfBlockerNG, pfsense]
 category: Spring
 comments: true

@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Configure Local DHCP Server & DNS Resolver on pfSense'
-img: /images/pfsense-dns-dhcp/pf-DNS&DHCP.png
+img: pfsense-dns-dhcp/pf-DNS&DHCP.png
 tags: [pfsense, DNS, DHCP, Firewall]
 category: Spring
 comments: true

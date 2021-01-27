@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Install PfSense 2.4.4 on Virtual Box'
-img: /images/pf-install/pfSense-Installation_N.jpg
+img: pf-install/pfSense-Installation_N.jpg
 tags: [pfSense, Firewall, Captive Portal,Virtual Box]
 category: pfsense
 comments: true
