@@ -1027,6 +1027,6 @@ Added.
 ```bash
 root@DA-PC:~# systemctl restart wazuh-agent.service
 ```
-<img src="/images/wazuh/1.png" width="100%">
-<img src="/images/wazuh/2.png" width="100%">
-<img src="/images/wazuh/3.png" width="100%">
+<img src="wazuh/1.png" width="100%">
+<img src="wazuh/2.png" width="100%">
+<img src="wazuh/3.png" width="100%">

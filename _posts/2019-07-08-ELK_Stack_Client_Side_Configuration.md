@@ -8,7 +8,7 @@ category: Spring
 comments: true
 ---
 
-<img src="/images/elk-auditbeat/audit1.png" width="100%">
+<img src="elk-auditbeat/audit1.png" width="100%">
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/rWqUyGP_NwE' frameborder='0' allowfullscreen></iframe></div>
 
@@ -171,6 +171,6 @@ REF: <a href="https://www.elastic.co/downloads/beats/filebeat" target="_blank">h
 **Note: You also can define any compatible auditd rules according to your requirement. You have to include audit rules under the " audit_rules: |" section of auditbeat.yml file or "/etc/auditbeat/audit.rules.d/" directory.**
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

@@ -8,7 +8,7 @@ category: Spring
 comments: true
 ---
 
-<img src="/images/zombie_process/Zombie_N.jpg" width="100%">
+<img src="zombie_process/Zombie_N.jpg" width="100%">
 
 ### How To Kill Zombie Processes on Linux
 

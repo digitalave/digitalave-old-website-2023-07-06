@@ -96,7 +96,7 @@ cd /nagios/nagioscore-nagios-4.4.5/
 ./configure
 ```
 
-<img src="/images/nagios-install-centos7/1.png" width="100%">
+<img src="nagios-install-centos7/1.png" width="100%">
 
 ##### C. Compile the Main Program & CGIs.
 
@@ -104,7 +104,7 @@ cd /nagios/nagioscore-nagios-4.4.5/
 make all
 ```
 
-<img src="/images/nagios-install-centos7/2.png" width="100%">
+<img src="nagios-install-centos7/2.png" width="100%">
 
 ##### D. Create Nagios User & Group.
 
@@ -280,10 +280,10 @@ systemctl enable nrpe.service
 systemctl restart nrpe.service
 ```
 
-<img src="/images/nagios-install-centos7/3.png" width="100%">
+<img src="nagios-install-centos7/3.png" width="100%">
 
-<img src="/images/nagios-install-centos7/4.png" width="100%">
+<img src="nagios-install-centos7/4.png" width="100%">
 
-<img src="/images/nagios-install-centos7/5.png" width="100%">
+<img src="nagios-install-centos7/5.png" width="100%">
 
-<img src="/images/nagios-install-centos7/6.png" width="100%">
+<img src="nagios-install-centos7/6.png" width="100%">

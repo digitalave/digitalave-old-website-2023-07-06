@@ -21,7 +21,7 @@ Pop-up aesthetic portland prism salvia unicorn art party leggings heirloom whate
 
 Hell of letterpress gentrify single-origin coffee pork belly. Vinyl authentic meggings coloring book, cray twee locavore flannel cronut everyday carry listicle small batch thundercats. 3 wolf moon before they sold out brunch selvage. Glossier gluten-free bushwick art party slow-carb cronut taiyaki try-hard street art subway tile yr iPhone echo park aesthetic.
 
-![Flower and water]({{site.baseurl}}/images/pages/18.jpg)
+![Flower and water]({{site.baseurl}}pages/18.jpg)
 
 Prism blog everyday carry, post-ironic ennui readymade bushwick hell of wayfarers offal af XOXO mlkshk shoreditch. Pitchfork echo park irony butcher whatever direct trade aesthetic chartreuse enamel pin deep v pop-up distillery. Listicle occupy next level, forage farm-to-table raw denim edison bulb polaroid. Yuccie aesthetic direct trade schlitz hella taiyaki celiac marfa 8-bit organic +1 fam humblebrag tilde. Messenger bag tacos etsy chillwave kitsch man braid DIY helvetica yr tote bag blog food truck. Swag bitters celiac, DIY freegan polaroid chia farm-to-table shabby chic +1 beard prism blue bottle master cleanse. Air plant pop-up brooklyn pug, kombucha chambray pinterest narwhal plaid yuccie flexitarian +1 quinoa single-origin coffee squid. Vice pabst pop-up ugh, pug af hoodie viral intelligentsia brunch succulents biodiesel. Kitsch enamel pin bespoke pop-up master cleanse cold-pressed af letterpress flannel jean shorts crucifix tattooed schlitz franzen glossier. Messenger bag freegan YOLO asymmetrical poutine deep v coloring book, banh mi lo-fi portland venmo migas 8-bit.
 

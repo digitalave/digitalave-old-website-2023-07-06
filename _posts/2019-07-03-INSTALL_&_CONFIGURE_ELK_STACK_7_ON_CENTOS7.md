@@ -9,7 +9,7 @@ comments: true
 ---
 
 # INSTALL & CONFIGURE ELK STACK 6.8 ON CENTOS7
-<img src="/images/elk-stack/ELK.png" width="100%">
+<img src="elk-stack/ELK.png" width="100%">
 
 ## INTRODUCTION
 
@@ -25,9 +25,9 @@ comments: true
 
 **Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of 
 
-<img src="/images/elk-stack/image002.png" width="100%">
+<img src="elk-stack/image002.png" width="100%">
 
-<img src="/images/elk-stack/image003.png" width="100%">
+<img src="elk-stack/image003.png" width="100%">
 
 Software Versions I have used in this tutorial.
 
@@ -186,7 +186,7 @@ network.host: 192.168.10.10
 http.port: 9200
 ```
 
-<img src="/images/elk-stack68/elastic1.PNG" width="100%">
+<img src="elk-stack68/elastic1.PNG" width="100%">
 
 `vim /etc/elasticsearch/jvm.options`
 
@@ -303,7 +303,7 @@ http.host: "192.168.10.10"
 path.logs: /var/log/logstash
 ```
 
-<img src="/images/elk-stack68/logstash1.PNG" width="100%">
+<img src="elk-stack68/logstash1.PNG" width="100%">
 
 #### JVM configuration
 
@@ -420,7 +420,7 @@ server.name: "elk"
 elasticsearch.hosts: ["http://192.168.10.10:9200"]
 ```
 
-<img src="/images/elk-stack68/kibana1.PNG" width="100%">
+<img src="elk-stack68/kibana1.PNG" width="100%">
 
 #### FIREWALL CONFIGURATION
 Allow traffic through the TCP port 5044 in the firewall.
@@ -496,7 +496,7 @@ server {
    }
 ```
 
-<img src="/images/elk-stack68/nginx_kibana.PNG" width="100%">
+<img src="elk-stack68/nginx_kibana.PNG" width="100%">
 
 #### Check Nginx Configuration
 
@@ -544,18 +544,18 @@ OR
 (If nginx/apache proxy redirect with VHOST)
 `http://YOURIP.com:80`
 
-<img src="/images/elk-stack68/1_N.jpg" width="100%">
+<img src="elk-stack68/1_N.jpg" width="100%">
 
 Navigate To
 
 `Managemnt >> Kibana >> Create Index Pattern`
 
-<img src="/images/elk-stack68/6_N.jpg" width="100%">
+<img src="elk-stack68/6_N.jpg" width="100%">
 Now Navigate To 
 
 `Discover >> (Now You Search For Logs By Available Fields)`
 
-<img src="/images/elk-stack68/3_N.jpg" width="100%">
+<img src="elk-stack68/3_N.jpg" width="100%">
 
 ### Bottom Line: 
 
@@ -573,11 +573,11 @@ Now Navigate To
 
 **Video Tutorial on YouTube Will Be Available Soon.**
 
-<img src="/images/elk-stack68/5_N.jpg" width="100%">
+<img src="elk-stack68/5_N.jpg" width="100%">
 
 
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

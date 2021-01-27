@@ -12,7 +12,7 @@ comments: true
 
 # Install & Configure ELK Stack On CentOS7
 
-<img src="/images/zombie_process/Zombie_N_N.jpg" width="100%">
+<img src="zombie_process/Zombie_N_N.jpg" width="100%">
 
 ### How To Kill Zombie Processes on Linux
 
@@ -85,6 +85,6 @@ OR
 pkill --signal --SIGCHLD rsync
 ```
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

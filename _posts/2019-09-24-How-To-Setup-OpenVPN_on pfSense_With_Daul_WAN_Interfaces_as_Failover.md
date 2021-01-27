@@ -35,7 +35,7 @@ Now head over to "**VPN**" tab and select "**OpenVPN**" from  the drop  down.
 
 Click & open  "**Wizard**"
 
-<img src="/images/dual-wan-pf-vpn/2.png" width="100%">
+<img src="dual-wan-pf-vpn/2.png" width="100%">
 
 1. Select "**Local User Access**" as the Authentication Backed Type.
 
@@ -43,13 +43,13 @@ Click next & move onto "**Create CA Certificate**" section.
 
 Create New CA Certificate with **Descriptive Certificate Name**, **Country Code**, **State of Province**, **City** and **Organization**.
 
-<img src="/images/dual-wan-pf-vpn/3.png" width="100%">
+<img src="dual-wan-pf-vpn/3.png" width="100%">
 
 Then Move onto next step.
 
 2. Now, We have to create a new server certificate same as we done earlier.
 
-<img src="/images/dual-wan-pf-vpn/4.png" width="100%">
+<img src="dual-wan-pf-vpn/4.png" width="100%">
 
 Move to next step  after that.
 
@@ -61,7 +61,7 @@ For now, I'm going  to select WAN1 interface.
 
 * You may no need modify rest of the other fields. 
 
-<img src="/images/dual-wan-pf-vpn/5.png" width="100%">
+<img src="dual-wan-pf-vpn/5.png" width="100%">
 
 But, At this time I'm going  to  change "**Encryption algorithem**"
 
@@ -79,9 +79,9 @@ This network should be the network that you wants  to access via OpenVPN.
 
 * As the final step, You need to  "**Configure Firewall**" to allow connection through the tunnel  network.
 
-<img src="/images/dual-wan-pf-vpn/6.png" width="100%">
+<img src="dual-wan-pf-vpn/6.png" width="100%">
 
-<img src="/images/dual-wan-pf-vpn/7.png" width="100%">
+<img src="dual-wan-pf-vpn/7.png" width="100%">
 And click finish button.
 
 OK, OpenVPN Server configuration has been completed so far.
@@ -147,6 +147,6 @@ Specially keep in mind, If one link goes down, it will take nearly 60 seconds to
 **Thanks you & see you on next tutorial.**
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

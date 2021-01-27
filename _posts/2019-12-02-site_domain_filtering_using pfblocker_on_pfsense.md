@@ -30,11 +30,11 @@ Because, Squid can't do the man in the middle. most sites moved into SSL encrypt
 **pfSense should be the default DNS server which pointed into client's hosts.**
 
 
-<img src="/images/pfBlocker-pfsense/1.png" width="100%">
+<img src="pfBlocker-pfsense/1.png" width="100%">
 
 * Create Two Firewall Rules For DNS 
 
-<img src="/images/pfBlocker-pfsense/2.png" width="100%">
+<img src="pfBlocker-pfsense/2.png" width="100%">
 
 
 ### STEP 01: Install pfBlockerNG Package
@@ -44,11 +44,11 @@ Once logged in to the main pfSense page, click on the "System" drop down and the
 
 Now head over to System > Package Manager > Available Packages
 
-<img src="/images/pfBlocker-pfsense/3.png" width="100%">
+<img src="pfBlocker-pfsense/3.png" width="100%">
 
 Once the ‘Available Packages’ page loads, type ‘pfblocker’ into the ‘Search term’ box and click the ‘Search’. The first item that is returned should be pfBlockerNG. Locate the ‘Install’ button to the right of the pfBlockerNG description and click the ‘+’ to install the package.
 
-<img src="/images/pfBlocker-pfsense/4.png" width="100%">
+<img src="pfBlocker-pfsense/4.png" width="100%">
 
 The page will reload, then continue the installation by clicking "Confirm".
 
@@ -62,7 +62,7 @@ In Packages section, the pfBlockerNG will be appear
 
 Click on + Install and then on Confirm buttons to launch installation
 
-<img src="/images/pfBlocker-pfsense/5.png" width="100%">
+<img src="pfBlocker-pfsense/5.png" width="100%">
 
 Once installation is completed, pfBlockerNG appears in System > Package Manager > Installed Packages
 
@@ -73,9 +73,9 @@ Before that we need to reconfigure our pfsense DNS resolver according to our req
 
 Now, Head over to  "Services" and select "DNS Resolver" from  the drop down menu.
 
-<img src="/images/DNS-pfsense/1.png" width="100%">
+<img src="DNS-pfsense/1.png" width="100%">
 
-<img src="/images/DNS-pfsense/2.png" width="100%">
+<img src="DNS-pfsense/2.png" width="100%">
 
 * Enable DNS Resolver
 
@@ -95,11 +95,11 @@ Head over to  general tab do the following changes.
 
 Let's move to Firewall > pfBlockerNG > General
 
-<img src="/images/pfBlocker-pfsense/6.png" width="100%">
+<img src="pfBlocker-pfsense/6.png" width="100%">
 
 In General Settings section, fill the following fields:
 
-<img src="/images/pfBlocker-pfsense/7.png" width="100%">
+<img src="pfBlocker-pfsense/7.png" width="100%">
 
 * Enable pfBlockerNG: Checked
 * Keep Settings: Checked
@@ -112,7 +112,7 @@ In Interface/Rules Configuration section, fill the following fields:
 * Inbound Firewall Rules: Select WAN interfaces and Block
 * Outbound Firewall Rules: Select LAN interfaces and Reject
 
-<img src="/images/pfBlocker-pfsense/8.png" width="100%">
+<img src="pfBlocker-pfsense/8.png" width="100%">
 
 Rest of the other settings leave as it is...
 
@@ -124,8 +124,8 @@ Now move t0 DNSBL tab and do the following changes.
 
 To configure DNSBL, go to Firewall > pfBlockerNG > DNSBL > DNSBL
 
-<img src="/images/pfBlocker-pfsense/9.png" width="100%">
-<img src="/images/pfBlocker-pfsense/10.png" width="100%">
+<img src="pfBlocker-pfsense/9.png" width="100%">
+<img src="pfBlocker-pfsense/10.png" width="100%">
 
 
 In DNSBL section, fill the following fields:
@@ -138,7 +138,7 @@ In DNSBL section, fill the following fields:
 * DNSBL Listening Interface: Select LAN or another internal interface to listen on
 * DNSBL Firewall Rule: Checked if you have multiple LAN interfaces
 
-<img src="/images/pfBlocker-pfsense/11.png" width="100%">
+<img src="pfBlocker-pfsense/11.png" width="100%">
 
 In DNSBL IP Firewall Rule Settings section, fill the following fields:
 
@@ -151,7 +151,7 @@ In DNSBL IP Firewall Rule Settings section, fill the following fields:
 
 * In Custom Domain Whitelist :
 
-<img src="/images/pfBlocker-pfsense/12.png" width="100%">
+<img src="pfBlocker-pfsense/12.png" width="100%">
 
 To begin, enter the following white-list domains and modify as you like.
 
@@ -215,15 +215,15 @@ Go to  this URL and add preferred lists.
 * List Action – Set to Unbound
 * Update Frequency – How often the list should be updated
 
-<img src="/images/pfBlocker-pfsense/13.png" width="100%">
+<img src="pfBlocker-pfsense/13.png" width="100%">
 
 
-<img src="/images/pfBlocker-pfsense/14.png" width="100%">
+<img src="pfBlocker-pfsense/14.png" width="100%">
 
 You also can define custom black list domains.
 Now, save.
 
-<img src="/images/pfBlocker-pfsense/15.png" width="100%">
+<img src="pfBlocker-pfsense/15.png" width="100%">
 
 Next, Head over to the "Update" tab. 
 
@@ -231,19 +231,19 @@ Select "update" tick box and and hit the run button.
 
 Now, It will  starts to update blacklist index.
 
-<img src="/images/pfBlocker-pfsense/16.png" width="100%">
+<img src="pfBlocker-pfsense/16.png" width="100%">
 
 Now, Head over to "Status" tab and select "Services" from the drop  down menu.
 
-<img src="/images/pfBlocker-pfsense/17.png" width="100%">
+<img src="pfBlocker-pfsense/17.png" width="100%">
 
 Now, restart both dnsbl & unbound services.
 
 ### STEP 05: Test Effectiveness by Browsing on Client Side.
 
-<img src="/images/pfBlocker-pfsense/18.png" width="100%">
+<img src="pfBlocker-pfsense/18.png" width="100%">
 
-<img src="/images/pfBlocker-pfsense/19.png" width="100%">
+<img src="pfBlocker-pfsense/19.png" width="100%">
 
 **Reference : ** 
 =================================================================

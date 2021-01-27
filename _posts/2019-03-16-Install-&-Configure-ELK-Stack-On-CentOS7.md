@@ -12,7 +12,7 @@ comments: true
 
 # Install & Configure ELK Stack On CentOS7
 
-<img src="/images/elk-stack/ELK.png" width="100%">
+<img src="elk-stack/ELK.png" width="100%">
 
 
 “ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators. ELK stack collect logs from clients using Beats protocol.
@@ -31,9 +31,9 @@ comments: true
 
 ### ELK Stack Architecture
 
-<img src="/images/elk-stack/image002.png" width="100%">
+<img src="elk-stack/image002.png" width="100%">
 
-<img src="/images/elk-stack/image003.png" width="100%">
+<img src="elk-stack/image003.png" width="100%">
 
 Software Versions I have used in this tutorial.
 
@@ -55,7 +55,7 @@ Java is required for the Elastic stack deployment. Elasticsearch requires Java 8
 
 
 
-<img src="/images/elk-stack/image004_N.jpg" width="100%">
+<img src="elk-stack/image004_N.jpg" width="100%">
 
 #### Set Default JAVA Version
 
@@ -64,7 +64,7 @@ Java is required for the Elastic stack deployment. Elasticsearch requires Java 8
 ```
 
 
-<img src="/images/elk-stack/image005_N.jpg" width="100%">
+<img src="elk-stack/image005_N.jpg" width="100%">
 
 #### Set JAVAC and JAR Paths
 
@@ -78,7 +78,7 @@ Java is required for the Elastic stack deployment. Elasticsearch requires Java 8
 [root@elk-stack /]# java -version
 ```
 
-<img src="/images/elk-stack/image006_N.jpg" width="100%">
+<img src="elk-stack/image006_N.jpg" width="100%">
 
 #### Set JAVA Environment Variables
 
@@ -99,7 +99,7 @@ JRE_HOME=/usr/java/jdk1.8.0_171-amd64/jre/
 PATH=$PATH:/usr/java/jdk1.8.0_171-amd64/bin/:/usr/java/jdk1.8.0_171-amd64/jre/bin/
 ```
 
-<img src="/images/elk-stack/image007_N.jpg" width="100%">
+<img src="elk-stack/image007_N.jpg" width="100%">
 
 ## STEP 2 – INSTALL AND CONFIGURE ELASTICSEARCH
 
@@ -123,7 +123,7 @@ In this step, I will install and configure Elasticsearch version 6.3.1
 [root@elk-stack /]# rpm -ivh elasticsearch-6.3.1.rpm
 ```
 
-<img src="/images/elk-stack/image008_N.jpg" width="100%">
+<img src="elk-stack/image008_N.jpg" width="100%">
 
 #### D. Firewall Configuration
 Allow traffic through the TCP port 9200 in the firewall.
@@ -166,17 +166,17 @@ Check Elasticsearch port “9200” state as “LISTEN”
 [root@elk-stack /]# netstat -plntu
 ```
 
-<img src="/images/elk-stack/image009_N.jpg" width="100%">
+<img src="elk-stack/image009_N.jpg" width="100%">
 
 ```bash
 [root@elk-stack /]# curl -XGET '192.168.100.10:9200/?pretty'
 ```
 
-<img src="/images/elk-stack/image010_N.jpg" width="100%">
+<img src="elk-stack/image010_N.jpg" width="100%">
 
 Output from the external web browser
 
-<img src="/images/elk-stack/image011_N.jpg" width="100%">
+<img src="elk-stack/image011_N.jpg" width="100%">
 
 
 #### STEP 3 – INSTALL AND CONFIGURE LOGSTASH
@@ -201,7 +201,7 @@ A. Import Public GPG Key to the ELK-Stack Server
 [root@elk-stack /]# rpm -ivh logstash-6.3.1.rpm
 ```
 
-<img src="/images/elk-stack/image012_N.jpg" width="100%">
+<img src="elk-stack/image012_N.jpg" width="100%">
 
 
 #### D. Firewall Configuration
@@ -231,7 +231,7 @@ Generate the certificate file with the openssl command.
 [root@elk-stack /]# openssl req -config /etc/pki/tls/openssl.cnf -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout /etc/pki/tls/private/logstash-forwarder.key -out /etc/pki/tls/certs/logstash-forwarder.crt
 ```
 
-<img src="/images/elk-stack/image013_N.jpg" width="100%">
+<img src="elk-stack/image013_N.jpg" width="100%">
 
 
 
@@ -296,7 +296,7 @@ stdout {
 }
 ```
 
-<img src="/images/elk-stack/image014_N.jpg" width="100%">
+<img src="elk-stack/image014_N.jpg" width="100%">
 
 
 #### G. Enable & Start Logstash Service
@@ -321,7 +321,7 @@ stdout {
 [root@elk-stack /]# rpm -ivh kibana-6.3.1-x86_64.rpm
 ```
 
-<img src="/images/elk-stack/image015_N.jpg" width="100%">
+<img src="elk-stack/image015_N.jpg" width="100%">
 
 
 #### C. Firewall Configuration
@@ -371,7 +371,7 @@ elasticsearch.url: “http://localhost:9200”
 [root@elk-stack /]# htpasswd -c /etc/nginx/htpasswd.users admin
 ```
 
-<img src="/images/elk-stack/image016_N.jpg" width="100%">
+<img src="elk-stack/image016_N.jpg" width="100%">
 
 #### D. Configure Nginx
 Edit the Nginx configuration file and remove the ‘server { }’ block, so we can add a new virtual host configuration.
@@ -380,7 +380,7 @@ Edit the Nginx configuration file and remove the ‘server { }’ block, so we c
 [root@elk-stack /]# vim /etc/nginx/nginx.conf
 ```
 
-<img src="/images/elk-stack/image017_N.jpg" width="100%">
+<img src="elk-stack/image017_N.jpg" width="100%">
 
 Create new virtual host configuration file named “kibana.conf” under the conf.d directory.
 
@@ -408,11 +408,11 @@ server {
    }
 ```
 
-<img src="/images/elk-stack/image018_N.jpg" width="100%">
+<img src="elk-stack/image018_N.jpg" width="100%">
 
 Check Nginx Configuration
 
-<img src="/images/elk-stack/image019_N.jpg" width="100%">
+<img src="elk-stack/image019_N.jpg" width="100%">
 
 #### E. Enable & Start Nginx Service
 
@@ -458,7 +458,7 @@ Allow traffic through the TCP port 80 in the firewall.
 [root@cl1 /]# rpm -ivh filebeat-6.3.1-x86_64.rpm
 ```
 
-<img src="/images/elk-stack/image020_N.jpg" width="100%">
+<img src="elk-stack/image020_N.jpg" width="100%">
 
 
 **Configure File Beat**
@@ -529,10 +529,10 @@ output.logstash:
 ## STEP 7 – Using Elastic Stack
 Login to Kibana dashboard using the browser with password that you used at Nginx configuration.
 
-<img src="/images/elk-stack/image021.png" width="100%">
+<img src="elk-stack/image021.png" width="100%">
 
 
-<img src="/images/elk-stack/image022_N.jpg" width="100%">
+<img src="elk-stack/image022_N.jpg" width="100%">
 
 Now ELK Initial Steps are completed. We'll discuss regarding Log Monitoring in a next tutorial.
 
@@ -547,9 +547,9 @@ Now ELK Initial Steps are completed. We'll discuss regarding Log Monitoring in a
 
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
 
 
 

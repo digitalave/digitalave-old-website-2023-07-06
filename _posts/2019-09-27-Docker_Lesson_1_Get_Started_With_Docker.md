@@ -46,7 +46,7 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 
 **Docker is available in three Editions:**
 
-<img src="/images/Docker-Installation/1_N.jpg" width="100%">
+<img src="Docker-Installation/1_N.jpg" width="100%">
 
 1. Docker Engine - Community Edition (CE):
 
@@ -76,7 +76,7 @@ A Single Container Includes:
 
 <u>Supported Platforms</u>
 
-<img src="/images/Docker-Installation/2_N.jpg" width="100%">
+<img src="Docker-Installation/2_N.jpg" width="100%">
 
 
 ##### Install Docker Engine - Community For CentOS 7 / RHEL 7
@@ -288,6 +288,6 @@ Hope this helps for those who are looking for a starting point to learn Docker. 
 You can keep in touch  with the future tutorials by  Subscribing me on Youtube.
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

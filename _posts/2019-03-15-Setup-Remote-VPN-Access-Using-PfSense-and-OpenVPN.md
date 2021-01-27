@@ -19,13 +19,13 @@ In this guide I assume you already have a functional pfSense firewall running.
 
 A. Create a Virtual Machine for Pfsense
 
-<img src="/images/pf-vpn/image001_N.jpg" width="100%">
+<img src="pf-vpn/image001_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image002_N.jpg" width="100%">
+<img src="pf-vpn/image002_N.jpg" width="100%">
 
 Select OpenVPN Authentication Backed Type
 
-<img src="/images/pf-vpn/image003_N.jpg" width="100%">
+<img src="pf-vpn/image003_N.jpg" width="100%">
 
 In this tutorial I have used “Local User Access” as the authenticated backed type.
 
@@ -35,13 +35,13 @@ Create a Certificate Authority to generate certificates for the OpenVPN server.
 
 Fill out the following fields to create a new CA.
 
-<img src="/images/pf-vpn/image004_N.jpg" width="100%">
+<img src="pf-vpn/image004_N.jpg" width="100%">
 
 ## STEP 3:- Create Server Certificate
 
 Create a Server Certificate from the CA for OpenVPN.
 
-<img src="/images/pf-vpn/image005_N.jpg" width="100%">
+<img src="pf-vpn/image005_N.jpg" width="100%">
 
 ## STEP 4:- OpenVPN Genaral Settings Configuration
 
@@ -55,13 +55,13 @@ LocalPort: 1194
 
 Description: VPN
 
-<img src="/images/pf-vpn/image006_N.jpg" width="100%">
+<img src="pf-vpn/image006_N.jpg" width="100%">
 
 Cryptographic Settings Configuration
 
 This section can be left default or change it upon your security needs.
 
-<img src="/images/pf-vpn/image007.png" width="100%">
+<img src="pf-vpn/image007.png" width="100%">
 
 ## STEP 5:- OpenVPN Tunnel Configuration
 
@@ -81,7 +81,7 @@ Enter the network address of that client will connect to local network. Network 
 
 Rest of the settings can be change according to your requirement.
 
-<img src="/images/pf-vpn/image008.png" width="100%">
+<img src="pf-vpn/image008.png" width="100%">
 
 ## STEP 6:- OpenVPN Client Settings
 
@@ -91,9 +91,9 @@ If you are also using pfSense as your local DNS server, you would enter them her
 
 Optionally DNS, NTP server can be provided to the VPN clients from here.
 
-<img src="/images/pf-vpn/image009.png" width="100%">
+<img src="pf-vpn/image009.png" width="100%">
 
-<img src="/images/pf-vpn/image010.png" width="100%">
+<img src="pf-vpn/image010.png" width="100%">
 
 ## STEP 7:- Firewall Rule creation for OpnVPN
 
@@ -101,51 +101,51 @@ Traffic from client to server: - If this section enabled, OpenVPN wizard will au
 
 Traffic from clients through VPN:- If this connection enabled, OpenVPN wizard will automatically generate firewall rules which allow traffic from clients connected to the VPN to anywhere on the local network.
 
-<img src="/images/pf-vpn/image011.png" width="100%">
+<img src="pf-vpn/image011.png" width="100%">
 
 Finally finish the wizard.
 
-<img src="/images/pf-vpn/image012.png" width="100%">
+<img src="pf-vpn/image012.png" width="100%">
 
 ## STEP 8:- Create VPN Users with Certificates
 
 If you selected the “local user access” option during the VPN wizard then users can be added through the pfSense user manger.
 
-<img src="/images/pf-vpn/image013_N.jpg" width="100%">
+<img src="pf-vpn/image013_N.jpg" width="100%">
 
 Create new user.
 
-<img src="/images/pf-vpn/image014.png" width="100%">
+<img src="pf-vpn/image014.png" width="100%">
 
-<img src="/images/pf-vpn/image015.png" width="100%">
+<img src="pf-vpn/image015.png" width="100%">
 
-<img src="/images/pf-vpn/image016.png" width="100%">
+<img src="pf-vpn/image016.png" width="100%">
 
 ## STEP 9:- Install OpnVPN Client Export Package
 
 Install OpenVPN Client Export package using Pfsense package manager.
 
-<img src="/images/pf-vpn/image017_N.jpg" width="100%">
+<img src="pf-vpn/image017_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image018.png" width="100%">
+<img src="pf-vpn/image018.png" width="100%">
 
-<img src="/images/pf-vpn/image019_N.jpg" width="100%">
+<img src="pf-vpn/image019_N.jpg" width="100%">
 
 After the installation there will be a new tab named with “Client Export” in OpenVPN menu.
 
-<img src="/images/pf-vpn/image020.png" width="100%">
+<img src="pf-vpn/image020.png" width="100%">
 
 Modify “Hostname Resolution” field. By default this is set to the IP address of the interface running OpenVPN.
 
-<img src="/images/pf-vpn/image021.png" width="100%">
+<img src="pf-vpn/image021.png" width="100%">
 
-<img src="/images/pf-vpn/image022.png" width="100%">
+<img src="pf-vpn/image022.png" width="100%">
 
 After any changes made, click the “Save as default” button to store the settings.
 
 ## STEP 10:- Download the OpenVPN Client Packages.
 
-<img src="/images/pf-vpn/image023.png" width="100%">
+<img src="pf-vpn/image023.png" width="100%">
 
 Download and install OpenVPN client application.
 
@@ -156,11 +156,11 @@ Download and install OpenVPN client application.
 
 Install downloaded OpenVPN profile.
 
-<img src="/images/pf-vpn/image024_N.jpg" width="100%">
+<img src="pf-vpn/image024_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image025_N.jpg" width="100%">
+<img src="pf-vpn/image025_N.jpg" width="100%">
 
-<img src="/images/pf-vpn/image026_N.jpg" width="100%">
+<img src="pf-vpn/image026_N.jpg" width="100%">
 
 **Little Request:**
 
@@ -170,6 +170,6 @@ Install downloaded OpenVPN profile.
 <a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber" target="_blank">https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber</a>
 
 
-[<img src="/images/Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
+[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
 
-[![Foo](/images/Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
+[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
