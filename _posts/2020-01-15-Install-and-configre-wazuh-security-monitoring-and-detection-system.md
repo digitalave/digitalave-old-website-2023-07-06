@@ -1,7 +1,7 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Install Wazuh on CentOS/RHEL - Automatic Log Data Analysis, Intrusion Detection, Security Analytics, File Integrity Monitoring,Vulnerability Detection'
+title: 'Install Wazuh on CentOS/RHEL (Intrusion Detection}'
 img: wazuh/wazuh.png
 tags: [Wazuh,Automatic Log Data Analysis, Intrusion Detection, Security Analytics, File Integrity Monitoring,Vulnerability Detection, Configuration Assessment, Incident Response, Regulatory Compliance, Cloud Security Monitoring, Containers Security]
 category: Spring
