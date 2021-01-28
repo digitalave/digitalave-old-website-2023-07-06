@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-image: images/dimuthu-about.jpg
+image: dimuthu-about.jpg
 ---
 
 Hey there ! My name is Dimuthu. 👋🤓
