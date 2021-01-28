@@ -196,7 +196,7 @@ Then, Open the web browser and hit server's IP address with "info.php". The you 
 
 `http://<your_server_ip_address>/info.php`
 
-<img src="Zabbix4.4/zabbix-1.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-1.png" width="100%">
 
 ### STEP 04: Install and Configure MariaDB
 
@@ -326,7 +326,7 @@ Then, Install Zabbix Server.
 
 yum install zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf
 ```
-<img src="Zabbix4.4/zabbix-2.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-2.png" width="100%">
 
 Finally, Import Zabbix server database schema.
 
@@ -452,14 +452,14 @@ Default Zabbix Username: **Admin**
 Default Zabbix Password: **zabbix**
 
 Then, follow the instruction as seen on installation wizard.
-<img src="Zabbix4.4/zabbix-3.png" width="100%">
-<img src="Zabbix4.4/zabbix-4.png" width="100%">
-<img src="Zabbix4.4/zabbix-5.png" width="100%">
-<img src="Zabbix4.4/zabbix-6.png" width="100%">
-<img src="Zabbix4.4/zabbix-7.png" width="100%">
-<img src="Zabbix4.4/zabbix-8.png" width="100%">
-<img src="Zabbix4.4/zabbix-9.png" width="100%">
-<img src="Zabbix4.4/zabbix-10.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-3.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-4.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-5.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-6.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-7.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-8.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-9.png" width="100%">
+<img src="/images/Zabbix4.4/zabbix-10.png" width="100%">
 
 
 
