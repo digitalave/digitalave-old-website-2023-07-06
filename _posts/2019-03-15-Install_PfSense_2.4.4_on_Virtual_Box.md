@@ -21,12 +21,12 @@ Download most recent stable release from https://www.pfsense.org/download/
 
 ## STEP 2: - Install Pfsense on Virtual box
 A. Create a Virtual Machine for Pfsense
-<img src="pf-install/PF1.gif" width="100%">
+<img src="\images\pf-install\PF1.gif" width="100%">
 
 
 Follow The Guideline as seen on GIF image.
 
-<img src="pf-install/PF2.gif" width="100%">
+<img src="\images\pf-install\PF2.gif" width="100%">
 Here we have assigned two interfaces with one Bridge Interface (em0) and one Internal Interface Named (em1) LAN2.
 Assigned IP as follows…
 
@@ -35,13 +35,13 @@ Em1 – LAN Interface – 192.168.100.1/24
 
 DHCP Range – 192.168.100.100 – 192.168.100.200
 
-<img src="pf-install/PF3.gif" width="100%">
+<img src="\images\pf-install\PF3.gif" width="100%">
 ## STEP 2: - Logging in to Web Interface
 Pfsense default username and password is “admin” and “Pfsense”
 
 Complete Pfsense initial setup wizard.
 
-<img src="pf-install/PF4.gif" width="100%">
+<img src="\images\pf-install\PF4.gif" width="100%">
 
 
 **Little Request:**
