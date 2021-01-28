@@ -14,11 +14,10 @@ I create blog posts and open source packages mainly about DevOps and System Engi
 
 #### Find me on...
 [![YouTube]({{site.baseurl}}/images/pages/soical-icons/youtube.png)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ) 
-![]({{site.baseurl}}/images/pages/soical-icons/youtube.png)
-![]({{site.baseurl}}/images/pages/soical-icons/facebook.png)
-![]({{site.baseurl}}/images/pages/soical-icons/linkedin.png)
-![]({{site.baseurl}}/images/pages/soical-icons/instagram.png)
-![]({{site.baseurl}}/images/pages/soical-icons/twitter.png)
+[![LinkedIN]({{site.baseurl}}/images/pages/soical-icons/linkedin.png)](https://www.linkedin.com/in/dimuthu-daundasekara-2b002271) 
+[![Medium]({{site.baseurl}}/images/pages/soical-icons/medium.png)](https://medium.com/@dimuit86) 
+[![Twitter]({{site.baseurl}}/images/pages/soical-icons/twitter.png)](https://twitter.com/dimuit86) 
+[![Instagram]({{site.baseurl}}/images/pages/soical-icons/instagram.png)](https://www.instagram.com/dimuit86) 
 
 *Thank You for reading!*
 
