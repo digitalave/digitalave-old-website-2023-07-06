@@ -49,7 +49,7 @@ OS = CentOS 7 / RHEL 7
 ```bash
 [root@zabbix ~]# yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
-<img src="zabbix/image001.png" width="100%">
+<img src="\images\zabbix\image001.png" width="100%">
 
 **2. Update an Operating System**
 
@@ -100,13 +100,13 @@ HTTP will start to listen on port 80
 ```bash
 [root@zabbix ~]# netstat -tulpen | grep httpd
 ```
-<img src="zabbix/image002.png" width="100%">
+<img src="\images\zabbix\image002.png" width="100%">
 
 Access webpage through a web browser
 
 `http://your_server_ip_address/`
 
-<img src="zabbix/image003.png" width="100%">
+<img src="\images\zabbix\image003.png" width="100%">
 
 ## STEP 03: Install and Configure PHP
 
@@ -118,7 +118,7 @@ PHP used to gather matrices from MariaDB/Mysql database and process to display d
 sudo yum -y install php php-pear php-cgi php-common php-mbstring php-snmp php-gd php-xml php-mysql php-gettext php-bcmath
 ```
 
-<img src="zabbix/image007.png" width="100%">
+<img src="\images\zabbix\image007.png" width="100%">
 
 **Configure PHP:**
 
@@ -138,7 +138,7 @@ date.timezone = Asia/Colombo
 <?php phpinfo(); ?>
 ```
 
-<img src="zabbix/image008.png" width="100%">
+<img src="\images\zabbix\image008.png" width="100%">
 
 ```bash
 [root@zabbix ~]# systemctl restart httpd.service
@@ -176,7 +176,7 @@ Run Following Commands optinally...
 sudo yum -y install MariaDB-server MariaDB-client
 ```
 
-<img src="zabbix/image004.png" width="100%">
+<img src="\images\zabbix\image004.png" width="100%">
 
 
 **Start and enable Mariadb/MySQL service on reboot.**
@@ -255,9 +255,9 @@ MariaDB [(none)]> QUIT;
 ```
 
 
-<img src="zabbix/image005.png" width="100%">
+<img src="\images\zabbix\image005.png" width="100%">
 
-<img src="zabbix/image006.png" width="100%">
+<img src="\images\zabbix\image006.png" width="100%">
 
 ## STEP 06: INSTALL ZABBIX 4.0 
 
@@ -272,7 +272,7 @@ MariaDB [(none)]> QUIT;
 rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 ```
 
-<img src="zabbix/image009.png" width="100%">
+<img src="\images\zabbix\image009.png" width="100%">
 
 **Install Zabbix Server** 
 
@@ -280,7 +280,7 @@ rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.e
 yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get zabbix-sender zabbix-java-gateway -y
 ```
 
-<img src="zabbix/image010.png" width="100%">
+<img src="\images\zabbix\image010.png" width="100%">
 
 
 **Import Zabbix Server Databas Schema**
@@ -289,7 +289,7 @@ yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get zabbix-
 [root@zabbix ~]# zcat /usr/share/doc/zabbix-server-mysql-4.0.5/create.sql.gz | mysql -uzabbixuser -p zabbixdb
 ```
 
-<img src="zabbix/image011.png" width="100%">
+<img src="\images\zabbix\image011.png" width="100%">
 
 This may take while to import the database schema. Please wait....
 
@@ -360,7 +360,7 @@ Some PHP settings have to be configured.
         php_value date.timezone Asia/Colombo
 ```
 
-<img src="zabbix/image012.png" width="100%">
+<img src="\images\zabbix\image012.png" width="100%">
 
 **Allow MariaDB/MySQL service through firewall.**
 
@@ -375,7 +375,7 @@ Some PHP settings have to be configured.
 
 Access Zabbix URL using web browser. And follow the instruction as seen on installation wizard.
 
-<img src="zabbix/image013.png" width="100%">
+<img src="\images\zabbix\image013.png" width="100%">
 
 
 `http://zabbix_server_IP/zabbix/setup.php`
@@ -385,19 +385,19 @@ Access Zabbix URL using web browser. And follow the instruction as seen on insta
 > Default Zabbix Password: zabbix
 
 
-<img src="zabbix/image014.png" width="100%">
+<img src="\images\zabbix\image014.png" width="100%">
 
-<img src="zabbix/image015.png" width="100%">
+<img src="\images\zabbix\image015.png" width="100%">
 
 Provide the database name and username.
 
-<img src="zabbix/image016.png" width="100%">
+<img src="\images\zabbix\image016.png" width="100%">
 
-<img src="zabbix/image017.png" width="100%">
+<img src="\images\zabbix\image017.png" width="100%">
 
-<img src="zabbix/image018.png" width="100%">
+<img src="\images\zabbix\image018.png" width="100%">
 
-<img src="zabbix/image019.png" width="100%">
+<img src="\images\zabbix\image019.png" width="100%">
 
 
 

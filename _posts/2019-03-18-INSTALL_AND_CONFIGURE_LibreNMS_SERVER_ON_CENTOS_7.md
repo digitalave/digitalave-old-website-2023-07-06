@@ -8,7 +8,7 @@ category: Testing
 comments: true
 ---
 
-<img src="librenms/LibreNMS.png" width="100%">
+<img src="\images\librenms\LibreNMS.png" width="100%">
 
 
 ## INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7
@@ -58,7 +58,7 @@ Configure EPEL Repository.
 [root@LibreNMS ~]# rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
 ```
 
-<img src="librenms/image001.png" width="100%">
+<img src="\images\librenms\image001.png" width="100%">
 
 
 
@@ -69,7 +69,7 @@ Configure Webtatic Repository.
 ```
 
 
-<img src="librenms/image002.png" width="100%">
+<img src="\images\librenms\image002.png" width="100%">
 
 Install some packages including ImageMagic, rrdtool, git, snmp, nmap, fping and more.
 
@@ -87,7 +87,7 @@ Install some packages including ImageMagic, rrdtool, git, snmp, nmap, fping and 
 ```
 
 
-<img src="librenms/image003.png" width="100%">
+<img src="\images\librenms\image003.png" width="100%">
 
 ### STEP 3:- Install and Configure PHP-FPM
 
@@ -110,7 +110,7 @@ Update the PEAR (PHP Extension and Application Repository) repository.
 ```
 
 
-<img src="librenms/image004.png" width="100%">
+<img src="\images\librenms\image004.png" width="100%">
 
 Set default timezone in the php.ini file. un-comment and edit look like below.
 
@@ -161,7 +161,7 @@ Now, PHP-FPM should running under the sock file.
 ```
 
 
-<img src="librenms/image005.png" width="100%">
+<img src="\images\librenms\image005.png" width="100%">
 
 ### STEP 3:- Install and Configure MariaDB
 
@@ -174,7 +174,7 @@ Now, PHP-FPM should running under the sock file.
 ```
 
 
-<img src="librenms/image006.png" width="100%">
+<img src="\images\librenms\image006.png" width="100%">
 
 > Set root password? [Y/n] Y
 > 
@@ -202,7 +202,7 @@ MariaDB [(none)]> quit;
 
 
 
-<img src="librenms/image007.png" width="100%">
+<img src="\images\librenms\image007.png" width="100%">
 
 Edit /etc/my.cnf file and add new configuration.
 
@@ -216,7 +216,7 @@ Paste below additional configuration under the ‘[mysqld]’ section.
 
 
 
-<img src="librenms/image008.png" width="100%">
+<img src="\images\librenms\image008.png" width="100%">
 
 ```bash
 [root@LibreNMS ~]# systemctl restart mariadb.service
@@ -251,10 +251,10 @@ Create new directories for LibreNMS logs and rrd files.
 ```
 
 
-<img src="librenms/image009.png" width="100%">
+<img src="\images\librenms\image009.png" width="100%">
 
 
-<img src="librenms/image010.png" width="100%">
+<img src="\images\librenms\image010.png" width="100%">
 
 
 Change ownership of all files and directories under ‘/opt/librenms’ to the ‘librenms’ user and group.
@@ -265,7 +265,7 @@ Change ownership of all files and directories under ‘/opt/librenms’ to the �
 ```
 
 
-<img src="librenms/image011.png" width="100%">
+<img src="\images\librenms\image011.png" width="100%">
 
 
 
@@ -443,7 +443,7 @@ Create Log Rotation Task
 A.
 
 
-<img src="librenms/image012.png" width="100%">
+<img src="\images\librenms\image012.png" width="100%">
 
 
 ```bash
@@ -454,7 +454,7 @@ A.
 B.
 
 
-<img src="librenms/image013.png" width="100%">
+<img src="\images\librenms\image013.png" width="100%">
 
 
 ```bash
@@ -468,7 +468,7 @@ usermod -a -G librenms nginx
 
 C.
 
-<img src="librenms/image014.png" width="100%">
+<img src="\images\librenms\image014.png" width="100%">
 
 
 ```bash
@@ -501,7 +501,7 @@ http://<IP_OR_FQDN>/install.php
 **Check PHP Module Availability.**
 
 
-<img src="librenms/image015.png" width="100%">
+<img src="\images\librenms\image015.png" width="100%">
 
 
 **Database Configuration.**
@@ -513,27 +513,27 @@ DB Name: librenms
 DB Password: The Password given for the librenms database
 
 
-<img src="librenms/image016.png" width="100%">
+<img src="\images\librenms\image016.png" width="100%">
 
 
 **Import MySQL Databse.**
 Wait untill importing completed. Make sure NO-ERRORS.
 
 
-<img src="librenms/image017.png" width="100%">
+<img src="\images\librenms\image017.png" width="100%">
 
 
 **Create LibreNMS Web Admin Login User.**
 
 
-<img src="librenms/image018.png" width="100%">
+<img src="\images\librenms\image018.png" width="100%">
 
 **Generate Config File.**
 
-<img src="librenms/image019.png" width="100%">
+<img src="\images\librenms\image019.png" width="100%">
 
 
-<img src="librenms/image020.png" width="100%">
+<img src="\images\librenms\image020.png" width="100%">
 
 
 If this error occurred, you have to manually create config.php file under /opt/librenms/ directory.
@@ -552,10 +552,10 @@ Change ownership of config.php file to librenms user and group.
 ```
 
 
-<img src="librenms/image021.png" width="100%">
+<img src="\images\librenms\image021.png" width="100%">
 
 
-<img src="librenms/image022.png" width="100%">
+<img src="\images\librenms\image022.png" width="100%">
 
 
 ### Post Installation Setup:-
@@ -573,7 +573,7 @@ $config[‘fping’] = “/usr/sbin/fping”;
 ```
 
 
-<img src="librenms/image013.png" width="100%">
+<img src="\images\librenms\image013.png" width="100%">
 
 
 **Little Request:**
