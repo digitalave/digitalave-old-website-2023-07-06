@@ -11,6 +11,14 @@ I create blog posts and open source packages mainly about DevOps and System Engi
 
 ***
 
+#### Find me on...
+
+![]({{site.baseurl}}/images/pages/soical-icons/youtube.png)
+![]({{site.baseurl}}/images/pages/soical-icons/facebook.png)
+![]({{site.baseurl}}/images/pages/soical-icons/linkedin.png)
+![]({{site.baseurl}}/images/pages/soical-icons/instagram.png)
+![]({{site.baseurl}}/images/pages/soical-icons/twitter.png)
+
 *Thank You for reading!*
 
 
