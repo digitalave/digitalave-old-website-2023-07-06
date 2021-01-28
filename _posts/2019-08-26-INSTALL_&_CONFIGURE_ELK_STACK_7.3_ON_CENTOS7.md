@@ -364,7 +364,7 @@ sudo journalctl -f
 sudo journalctl --unit elasticsearch
 ```
 
-<img src="elk-stack68/logstash1.PNG" width="100%">
+<img src="\images\elk-stack68\logstash1.PNG" width="100%">
 
 #### E: JVM configuration
 
@@ -463,7 +463,7 @@ server.name: "elk"
 elasticsearch.hosts: ["http://127.0.0.1:9200"]
 ```
 
-<img src="elk-stack68/kibana1.PNG" width="100%">
+<img src="\images\elk-stack68\kibana1.PNG" width="100%">
 
 #### E: FIREWALL CONFIGURATION
 Allow traffic through the TCP port 5044 in the firewall.
@@ -545,7 +545,7 @@ server {
    }
 ```
 
-<img src="elk-stack68/nginx_kibana.PNG" width="100%">
+<img src="\images\elk-stack68\nginx_kibana.PNG" width="100%">
 
 #### E: Check Nginx Configuration
 
