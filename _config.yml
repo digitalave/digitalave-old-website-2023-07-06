@@ -1,5 +1,5 @@
 # Site settings
-title: Digital Avenue IT Solutions
+title: Digital Avenue IT
 description: A Comprihensive DevOps Guide
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "linuxtute.github.io" # the base hostname & protocol for your site, e.g. http://example.com
