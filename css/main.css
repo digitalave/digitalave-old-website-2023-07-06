@@ -1327,8 +1327,9 @@ table tr:hover {
 } */
 
 .post-header-info {
-  max-width: 960px;
-  padding: 0 15px;
+  width: 740px;
+  max-width: 100%;
+  margin: 80px auto;
   text-align: center;
 }
 
