@@ -17,7 +17,8 @@ author-email: digitalavenuelk@gmail.com
 author-twitter: https://twitter.com/DigitalAvenue2
 author-facebook: https://www.facebook.com/digitalavenuelk
 author-instagram: https://www.instagram.com/dimuit86/
-author-youtube: 
+author-youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
+author-medium: https://medium.com/@dimuit86
 #author-pinterest: https://pinterest.com/
 
 # Other Authors - here you can add Other authors. For example Natali_Braxton
@@ -30,8 +31,8 @@ authors:
     author-twitter: https://twitter.com/dimuit86
     author-facebook: https://twitter.com/
     author-instagram: https://www.instagram.com/dimuit86/
-    author-youtube: 
-    author-medium: 
+    author-youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
+    author-medium: https://medium.com/@dimuit86
     #author-pinterest: https://pinterest.com/
 
 # Social Media Links (Links are located in hero and footer)
@@ -42,6 +43,7 @@ instagram: https://www.instagram.com/dimuit86/
 #pinterest: https://pinterest.com/
 youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
 medium: https://medium.com/@dimuit86
+
 # Contact Form Settings
 contact-subtitle: Pok pok listicle meggings, gluten-free deep v you probably haven't heard of them taxidermy iPhone gentrify seitan. Kogi cornhole enamel. # Title for the subscription form.
 
@@ -49,7 +51,7 @@ contact-subtitle: Pok pok listicle meggings, gluten-free deep v you probably hav
 google-analytics: # Add your identifier. For example UA-99631805-1.
 
 # Newsletter
-mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+mailchimp: https://github.us7.list-manage.com/subscribe?u=456a82ed7f789305670542cec&id=5ff5852b27 # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
 # Comment Section (Disqus)
 disqus-identifier: https-digitalave-github-io # Add your shortname for Disqus Comment. For example mr-brown
