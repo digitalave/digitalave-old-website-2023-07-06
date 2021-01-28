@@ -13,7 +13,7 @@ I create blog posts and open source packages mainly about DevOps and System Engi
 ***
 
 #### Find me on...
-
+[![YouTube]({{site.baseurl}}/images/pages/soical-icons/youtube.png)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ) 
 ![]({{site.baseurl}}/images/pages/soical-icons/youtube.png)
 ![]({{site.baseurl}}/images/pages/soical-icons/facebook.png)
 ![]({{site.baseurl}}/images/pages/soical-icons/linkedin.png)
