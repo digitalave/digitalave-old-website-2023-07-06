@@ -1320,9 +1320,16 @@ table tr:hover {
   padding-top: 35%;
 }
 
-.post-header-info {
+/* .post-header-info {
   max-width: 960px;
   padding: 0 15px;
+  text-align: center;
+} */
+
+.post-header-info {
+  width: 740px;
+  max-width: 100%;
+  margin: 80px auto;
   text-align: center;
 }
 
