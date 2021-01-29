@@ -288,6 +288,4 @@ Hope this helps for those who are looking for a starting point to learn Docker. 
 You can keep in touch  with the future tutorials by  Subscribing me on Youtube.
 
 
-[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
-
 [![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)

@@ -15,7 +15,7 @@ categories:
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/hqjE4KySvWU' frameborder='0' allowfullscreen></iframe></div>
 
-<img src="\images\pfsense_captive_portal\captive_Portal_N.jpg" width="100%">
+<img src="/images/pages/pfsense_captive_portal/captive_Portal_N.jpg" width="100%">
 
 
 ### How to install & Configure Captive Portal with FreeRadius with Pfsense Firewall
@@ -45,19 +45,19 @@ In this tutorial I’m using FreeRADIUS2 as an authentication server.
 Navigate to  **System > Package Manager, Available Packages**  tab
 
 
-<img src="\images\pfsense_captive_portal\image002.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image002.png" width="100%">
 [![](https://digitalave.github.iopfsense_captive_portal/image002.png)](https://digitalave.github.iopfsense_captive_portal/image002.png)
 
-Click  <img src="\images\pfsense_captive_portal\image002.png" width="100%"> at the end of the row for  **FreeRADIUS3**
+Click  <img src="/images/pages/pfsense_captive_portal/image002.png" width="100%"> at the end of the row for  **FreeRADIUS3**
 
 Confirm the installation
 
 **System > Package Manager > Available Packages**
 
 [Search Item] = freeradius3  
-<img src="\images\pfsense_captive_portal\image003.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image003.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image004.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image004.png" width="100%">
 
 #### STEP 2:- Create Server certificate
 
@@ -74,24 +74,24 @@ Create a Server Certificate
 Navigate to  **System > FreeRadius, EAP**  Tab > “Certificates for TLS” section  
 Provide CA and server certificate that we have generated at previous step.
 
-<img src="\images\pfsense_captive_portal\image005.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image005.png" width="100%">
 
 Save the changes.
 
 Add a new interface on which the RADIUS server should listen on.
 
 **Navigate to System > Services > FreeRADIUS, Interfaces**  tab  
-Click <img src="\images\pfsense_captive_portal\image001.png" width="100%">button  
+Click <img src="/images/pages/pfsense_captive_portal/image001.png" width="100%">button  
 In this case I’m using my LAN interface (192.168.100.1) for RADIUS server to listening on.
 
-<img src="\images\pfsense_captive_portal\image006.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image006.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image007.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image007.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image008.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image008.png" width="100%">
 Save and exit.
 
-<img src="\images\pfsense_captive_portal\image009.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image009.png" width="100%">
 
 #### Configure the NAS:
 
@@ -108,45 +108,45 @@ In this step I give my Pfsense box’s IP address because I will use the Pfsense
 
 Reset of the settings can be leave default.
 
-<img src="\images\pfsense_captive_portal\image010.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image010.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image011.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image011.png" width="100%">
 
 #### STEP 4:- Configure Captive Portal
 
 Navigate to  **Services > Captive Portal**
 
-Click “<img src="\images\pfsense_captive_portal\image001.png" width="100%">“ button to add new zone.
+Click “<img src="/images/pages/pfsense_captive_portal/image001.png" width="100%">“ button to add new zone.
 
-<img src="\images\pfsense_captive_portal\image012.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image012.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image013.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image013.png" width="100%">
 
 ##### NOTE:
 
-<img src="\images\pfsense_captive_portal\image014.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image014.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image015.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image015.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image016.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image016.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image017.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image017.png" width="100%">
 
-<img src="\images\pfsense_captive_portal\image018.png" width="100%"> 
+<img src="/images/pages/pfsense_captive_portal/image018.png" width="100%"> 
 
-<img src="\images\pfsense_captive_portal\image019.png" width="100%"> 
+<img src="/images/pages/pfsense_captive_portal/image019.png" width="100%"> 
 
-<img src="\images\pfsense_captive_portal\image020.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image020.png" width="100%">
 
 #### STEP 04:- Create FreeRadius Users
 
 Navigate to  **Services > FreeRadius, Users**  tab.  
-<img src="\images\pfsense_captive_portal\image021.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image021.png" width="100%">
 
 All the other settings can be change upon to your requirements.
 
 #### STEP 05:- Login to Captive Portal User Account  
-<img src="\images\pfsense_captive_portal\image022.png" width="100%">
+<img src="/images/pages/pfsense_captive_portal/image022.png" width="100%">
 
 
 **Little Request:**
