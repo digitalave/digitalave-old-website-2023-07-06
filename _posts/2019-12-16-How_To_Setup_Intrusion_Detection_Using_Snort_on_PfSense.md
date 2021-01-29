@@ -31,18 +31,18 @@ Headover to...
 
 **System > Package Manager > Available Packages**
 
-<img src="\images\Snort-pfsense\snort_1_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_1_N.jpg" width="100%">
 
 Search for a package named "**snort**"
 
-<img src="\images\Snort-pfsense\snort_2_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_2_N.jpg" width="100%">
 
 Hit the **Install** button & then **confirm** the installation to proceed. 
 
 It grabs required repos from pfsense repositories.
 
-<img src="\images\Snort-pfsense\snort_3_N.jpg" width="100%">
-<img src="\images\Snort-pfsense\snort_4_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_3_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_4_N.jpg" width="100%">
 
 ### STEP 02: Configure Snort Global Settings
 
@@ -54,7 +54,7 @@ Enable Snort VRT
 
 * **Snort VRT** : **Enabled**
 
-<img src="\images\Snort-pfsense\snort_5_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_5_N.jpg" width="100%">
 
 Either you can sign up as a free user or paid user. 
 After you singed up,  you will get a "snort OinkMaster Code"
@@ -66,11 +66,11 @@ Now I'm going to sign up for a free account.
 
 REF: <a href="https://www.snort.org/" target="_blank">https://www.snort.org/</a>
 
-<img src="\images\Snort-pfsense\snort_6.1_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_6.1_N.jpg" width="100%">
 
-<img src="\images\Snort-pfsense\snort_6.2_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_6.2_N.jpg" width="100%">
 
-<img src="\images\Snort-pfsense\snort_6.3_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_6.3_N.jpg" width="100%">
 
 They have thousands of pre defined rule sets. These, rules are the source for the Snort System.
 
@@ -94,7 +94,7 @@ OpenAppID detector rules enables application detection and filtering facility to
 OpenAppID has an ability to look at the application layer. Which is Layer 7. 
 Which can look at the applications which running in the system.
 
-<img src="\images\Snort-pfsense\snort_7_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_7_N.jpg" width="100%">
 
 ##### Rules Update Settings
 
@@ -113,7 +113,7 @@ Then, Either you need to unblock that device manually or 30mins after it will ub
 
 Now, Hit the "**Save**" button.
 
-<img src="\images\Snort-pfsense\snort_8_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_8_N.jpg" width="100%">
 
 ### STEP 03: Update Snort Rule Databases
 
@@ -124,9 +124,9 @@ Now head over to Update tab and hit the "**Update Rules**" button to download th
 It will download all required rules automatically.
 Initially this take a little logner time. wait untill it completed.
 
-<img src="\images\Snort-pfsense\snort_9.1_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_9.1_N.jpg" width="100%">
 
-<img src="\images\Snort-pfsense\snort_9.2_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_9.2_N.jpg" width="100%">
 
 ### STEP 04: Add Snort To an Interface
 
@@ -139,7 +139,7 @@ Services > Snort > Interfaces
 
 **Snort Interfaces > Add New Interface**
 
-<img src="\images\Snort-pfsense\snort_10_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_10_N.jpg" width="100%">
 
 * **Enable Interface**
 * **Always selecet WAN Interface**
@@ -148,11 +148,11 @@ Services > Snort > Interfaces
 * **Block Offenders : Enabled**
 * **Search Optimize: Enable search optimization**
 
-<img src="\images\Snort-pfsense\snort_11_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_11_N.jpg" width="100%">
 
 And finally hit save
 
-<img src="\images\Snort-pfsense\snort_12_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_12_N.jpg" width="100%">
 
 ### STEP 05: Select Which Types of Rules Will Protect The Network
 
@@ -165,7 +165,7 @@ Head over to  "**Interfaces**" and Select an configured interface, hit the **edi
 * **User IPS Policy : Enabled**
 * **IPS Policy Selection : Security**
 
-<img src="\images\Snort-pfsense\snort_13.1_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_13.1_N.jpg" width="100%">
 
 If you are not familiar with the Snort,  I recommend you to use "**Connectivity**" option as a starting point.
 
@@ -175,7 +175,7 @@ And also you can enable and select other rule sets such as GPL Community Rules, 
 
 Select the rule-sets what ever you need. At this point, I'm going to enable the all ET Rules for the demostration purpose. 
 
-<img src="\images\Snort-pfsense\snort_13.2_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_13.2_N.jpg" width="100%">
 
 Ignore rest of other settings below.
 
@@ -194,7 +194,7 @@ Enable "Performance Stats" option if you want to have logging in depth details.
 
 * **Auto Rule Disable : Enabled**
 
-<img src="\images\Snort-pfsense\snort_14_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_14_N.jpg" width="100%">
 
 Move down further and go to...
 
@@ -202,12 +202,12 @@ Move down further and go to...
 
 * **Application ID Detection: Enabled**
 
-<img src="\images\Snort-pfsense\snort_15_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_15_N.jpg" width="100%">
 
 Enable "Application ID Detection". 
 And double check both check-boxes to enable detectors and rules download for "Source fire OpenAppID Detection" section in the Global Settings.
 
-<img src="\images\Snort-pfsense\snort_16_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_16_N.jpg" width="100%">
 
 Better,  If rest of settings leave as it is...
 
@@ -244,7 +244,7 @@ Also you can use "**Alerts**" tab to view alerts generated by the Snort.
 
 **Service > Snort > Alerts**
 
-<img src="\images\Snort-pfsense\snort_17_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_17_N.jpg" width="100%">
 
 ### STEP 10: Managing blocked hosts
 
@@ -258,7 +258,7 @@ Also you can see what events has been blocked by Snort.
 
 In here you can see most of activities going on now.
 
-<img src="\images\Snort-pfsense\snort_18_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_18_N.jpg" width="100%">
 
 ### STEP 11: Managing Pass lists
 Now, Let's move to the...
@@ -271,7 +271,7 @@ tab.
 
 In here you can add or define "**Firewall Aliases**" to bypass the Snort.
 
-<img src="\images\Snort-pfsense\snort_19_N.jpg" width="100%">
+<img src="/images/pages/Snort-pfsense/snort_19_N.jpg" width="100%">
 
 **Bottom Line:**
 

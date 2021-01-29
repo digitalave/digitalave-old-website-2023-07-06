@@ -8,7 +8,7 @@ category: Spring
 comments: true
 ---
 
-<img src="\images\graylog_ins\graylog.png" width="100%">
+<img src="/images/pages/graylog_ins/graylog.png" width="100%">
 
 # INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7
 
@@ -31,19 +31,19 @@ Install Oracle Java / OpenJDK
 [root@graylog /]# rpm -Uvh jdk-8u161-linux-x64.rpm
 ```
 
-<img src="\images\graylog_ins\image001.png" width="100%">
+<img src="/images/pages/graylog_ins/image001.png" width="100%">
 
-<img src="\images\graylog_ins\image002.png" width="100%">
+<img src="/images/pages/graylog_ins/image002.png" width="100%">
 
 ## Install Elasticsearch: -
 
 Elasticsearch is an open source tool. Which provides distributed search, indexing and analytics using RESTful web interface. Elasticsearch stores all the log sent by Graylog server inputs and displays the messages.
 
-<img src="\images\graylog_ins\image004.png" width="100%">
+<img src="/images/pages/graylog_ins/image004.png" width="100%">
 
 Download and install public singing key.
 
-<img src="\images\graylog_ins\image006.png" width="100%">
+<img src="/images/pages/graylog_ins/image006.png" width="100%">
 
 ```bash
 [root@graylog /]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -58,7 +58,7 @@ autorefresh=1
 type=rpm-md
 ```
 
-<img src="\images\graylog_ins\image008.png" width="100%">
+<img src="/images/pages/graylog_ins/image008.png" width="100%">
 
 
 
@@ -120,7 +120,7 @@ Elasticsearch now starts to listen on port 9200 for HTTP requests. Use this comm
 
 [root@graylog /]# curl -X GET 'http://192.168.100.10:9200'
 
-<img src="\images\graylog_ins\image010.png" width="100%">
+<img src="/images/pages/graylog_ins/image010.png" width="100%">
 
 To check the Elasticsearch server’s health. Status should be as “green” to work properly.
 
@@ -128,7 +128,7 @@ To check the Elasticsearch server’s health. Status should be as “green” to
 [root@graylog ~]# curl -XGET 'http://192.168.100.10:9200/_cluster/health?pretty=true'
 ```
 
-<img src="\images\graylog_ins\image011.png" width="100%">
+<img src="/images/pages/graylog_ins/image011.png" width="100%">
 
 Install MongoDB: -
 
@@ -144,7 +144,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc
 ```
 
-<img src="\images\graylog_ins\image013.png" width="100%">
+<img src="/images/pages/graylog_ins/image013.png" width="100%">
 
 
 ```bash
@@ -179,29 +179,29 @@ Graylog-server accepts and process the log messages receiving from various input
 [root@graylog /]# rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-2.4-repository_latest.rpm
 [root@graylog /]# yum install graylog-server
 ```
-<img src="\images\graylog_ins\image015.png" width="100%">
+<img src="/images/pages/graylog_ins/image015.png" width="100%">
 
-<img src="\images\graylog_ins\image017.png" width="100%">
+<img src="/images/pages/graylog_ins/image017.png" width="100%">
 
-<img src="\images\graylog_ins\image019.png" width="100%">
+<img src="/images/pages/graylog_ins/image019.png" width="100%">
 
-<img src="\images\graylog_ins\image021.png" width="100%">
+<img src="/images/pages/graylog_ins/image021.png" width="100%">
 
-<img src="\images\graylog_ins\image023.png" width="100%">
+<img src="/images/pages/graylog_ins/image023.png" width="100%">
 
-<img src="\images\graylog_ins\image025.png" width="100%">
+<img src="/images/pages/graylog_ins/image025.png" width="100%">
 
-<img src="\images\graylog_ins\image027.png" width="100%">
+<img src="/images/pages/graylog_ins/image027.png" width="100%">
 
-<img src="\images\graylog_ins\image029.png" width="100%">
+<img src="/images/pages/graylog_ins/image029.png" width="100%">
 
-<img src="\images\graylog_ins\image031.png" width="100%">
+<img src="/images/pages/graylog_ins/image031.png" width="100%">
 
-<img src="\images\graylog_ins\image033.png" width="100%">
+<img src="/images/pages/graylog_ins/image033.png" width="100%">
 
-<img src="\images\graylog_ins\image035.png" width="100%">
+<img src="/images/pages/graylog_ins/image035.png" width="100%">
 
-<img src="\images\graylog_ins\image037.png" width="100%">
+<img src="/images/pages/graylog_ins/image037.png" width="100%">
 
 **Little Request:**
 

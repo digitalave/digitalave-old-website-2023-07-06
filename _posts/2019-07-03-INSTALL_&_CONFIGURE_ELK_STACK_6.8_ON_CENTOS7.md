@@ -9,7 +9,7 @@ comments: true
 ---
 
 # INSTALL & CONFIGURE ELK STACK 6.8 ON CENTOS7
-<img src="\images\elk-stack\ELK.png" width="100%">
+<img src="/images/pages/elk-stack/ELK.png" width="100%">
 
 ## INTRODUCTION
 
@@ -25,9 +25,9 @@ comments: true
 
 **Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from numerous machines to Logstash of 
 
-<img src="\images\elk-stack\image002.png" width="100%">
+<img src="/images/pages/elk-stack/image002.png" width="100%">
 
-<img src="\images\elk-stack\image003.png" width="100%">
+<img src="/images/pages/elk-stack/image003.png" width="100%">
 
 Software Versions I have used in this tutorial.
 
