@@ -134,7 +134,7 @@ Now, Head-over to terminal again, and find out the Administrator password using 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-<img src="\images\jenkins-ubuntu\1.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/1.png" width="100%">
 
 Copy the password from terminal and paste it in the required field
 
@@ -142,21 +142,21 @@ Copy the password from terminal and paste it in the required field
 
 On the next screen at the initial setup wizard will ask for install suggested plugins or you want to select specific plugins. Click on the Install suggested plugins box, and the installation process will start immediately.
 
-<img src="\images\jenkins-ubuntu\2.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/2.png" width="100%">
 
-<img src="\images\jenkins-ubuntu\3.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/3.png" width="100%">
 
 Once the plugins are installed, you will be prompted to set up the first admin user. Fill out all required information and click Save and Continue.
 
-<img src="\images\jenkins-ubuntu\4.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/4.png" width="100%">
 
-<img src="\images\jenkins-ubuntu\5.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/5.png" width="100%">
 
 Click on the Start using Jenkins button and you will be redirected to the Jenkins dashboard logged in as the admin user you have created in one of the previous steps.
 
-<img src="\images\jenkins-ubuntu\6.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/6.png" width="100%">
 
-<img src="\images\jenkins-ubuntu\7.png" width="100%">
+<img src="/images/pages/jenkins-ubuntu/7.png" width="100%">
 
 Now you've successfully installed Jenkins on your Ubuntu system.
 

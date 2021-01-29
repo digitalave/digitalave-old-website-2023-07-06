@@ -61,9 +61,9 @@ Go to Manage Plugin section, then search and install following plugins on your J
 
 **Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install & Restart** 
 
-<img src="\images\GitLab_Jenkins\1.png" width="auto" width="50%">
-<img src="\images\GitLab_Jenkins\2.png" width="auto" width="100%">
-<img src="\images\GitLab_Jenkins\3.png" width="auto" width="100%">
+<img src="/images/pages/GitLab_Jenkins/1.png" width="auto" width="50%">
+<img src="/images/pages/GitLab_Jenkins/2.png" width="auto" width="100%">
+<img src="/images/pages/GitLab_Jenkins/3.png" width="auto" width="100%">
 
 
 ### STEP 02: Create a New GitLab User / Promote Existing GitLab User 
@@ -78,7 +78,7 @@ Now, Let's head-over to GitLAB account and move to your profile setting section.
 
 **User Settings > Access Tokens** 
 
-<img src="\images\GitLab_Jenkins\4.png" width="auto" width="100%">
+<img src="/images/pages/GitLab_Jenkins/4.png" width="auto" width="100%">
 
 Create a new Personal Access Token for Jenkins authentication.
 
@@ -86,8 +86,8 @@ Create a new Personal Access Token for Jenkins authentication.
 
 **Scope : API** - Which Grant access to GitLab resources such a Projects, Groups and Registries.
 
-<img src="\images\GitLab_Jenkins\5.png" width="100%">
-<img src="\images\GitLab_Jenkins\6.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/5.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/6.png" width="100%">
 
 Save the deployed token somewhere safe. Once you leave or refresh the page, you won’t be able to access it again.
 
@@ -102,13 +102,13 @@ Again, Head-over to Jenkins server and Then, We need to add an authentication to
 
 **Jenkins > Credentials > System > Global Credentials > Add Credentials**
 
-<img src="\images\GitLab_Jenkins\7.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/7.png" width="100%">
 
 Scroll down little and click on "**Global Credentials**" under Domain column and "**Add Credentials**"
 
-<img src="\images\GitLab_Jenkins\8.png" width="100%">
-<img src="\images\GitLab_Jenkins\9.png" width="100%">
-<img src="\images\GitLab_Jenkins\10.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/8.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/9.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/10.png" width="100%">
 
 Select following options for the "**Global Credentials**" section.
 
@@ -134,7 +134,7 @@ Then, Configure following entries...
 
 **Credentials : Select previously added credentials from the drop-down menu.**
 
-<img src="\images\GitLab_Jenkins\11.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/11.png" width="100%">
 
 Finally, Check whether connection is successful by pressing "**Test Connection**" button.
 If connection successful. Then move to next step.
@@ -174,9 +174,9 @@ Go to GitLAB and deploy a new ssh key. Go to your GitLab profile "**Setting**" a
 
 Paste code that we copied content from "id_rsa.pub" file.
 
-<img src="\images\GitLab_Jenkins\13.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/13.png" width="100%">
 
-<img src="\images\GitLab_Jenkins\14.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/14.png" width="100%">
 
 Now, Public key has been added on GitLab server.
 
@@ -209,11 +209,11 @@ And also remember that you already attached the corresponding public key to your
 
 Add copied public key content into "Key" section.
 
-<img src="\images\GitLab_Jenkins\17.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/17.png" width="100%">
 
 #### 2. Using Plain Credentials - Username:Password 
 
-<img src="\images\GitLab_Jenkins\29.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/29.png" width="100%">
 
 ### STEP 07: Push Local Project To GitLab - Optional Step
 
@@ -256,9 +256,9 @@ Now, It's time to create a new project and do further configuration.
 
 Give a name to the project and continue.
 
-<img src="\images\GitLab_Jenkins\15.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/15.png" width="100%">
 
-<img src="\images\GitLab_Jenkins\16.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/16.png" width="100%">
 
 Now, Head-over to  "**source code management**" section and select "**Git**"
 
@@ -270,22 +270,22 @@ Attach new credentials to the SSH URL for the GitLab repository.
 
 Optional : You also can use plain username and password that we have added at the method (2).
 
-<img src="\images\GitLab_Jenkins\30.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/30.png" width="100%">
 
 
-<img src="\images\GitLab_Jenkins\18.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/18.png" width="100%">
 
 On the same configuration page, find the "**Build Triggers**" section and check the option to "**Build when a change is pushed to GitLab**".
 
-<img src="\images\GitLab_Jenkins\19.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/19.png" width="100%">
 
 Finally Apply & Save Changes 
 
 Now, GitLab integration with Jenkins has been completed. Now, We can check the connectivity, using build button and checking console logs.
 
-<img src="\images\GitLab_Jenkins\20.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/20.png" width="100%">
 
-<img src="\images\GitLab_Jenkins\21.png" width="100%">
+<img src="/images/pages/GitLab_Jenkins/21.png" width="100%">
 
 Voilà, It's working. 
 

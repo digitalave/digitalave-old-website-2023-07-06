@@ -12,7 +12,7 @@ comments: true
 
 ## How to Install and Configure SonarQube 8 on Ubuntu 18.04 LTS / Debian
 
-<img src="\images\SonarQube-Ubuntu\sonarqube.jpg" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/sonarqube.jpg" width="100%">
 
 ### Introduction:
 SonarQube is an open-source tool which can used for analyze quality of the source code. It can detect your code bugs, vulnerabilities, security black holes and code smells.
@@ -537,8 +537,8 @@ Provide the default administrator account username and password as admin / admin
 > http://172.25.10.10/ OR http://YOUR-SERVER-IP
 
 
-<img src="\images\SonarQube-Ubuntu\1.png" width="100%">
-<img src="\images\SonarQube-Ubuntu\2.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/1.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/2.png" width="100%">
 
 
 ##### Torubleshooting TIPS #####
@@ -597,7 +597,7 @@ In the next tutorial, I will show you how to integrate and analyze your project 
 
 If you need further clarification, Please ask on YouTube video comment section.
 
-<img src="\images\SonarQube-Ubuntu\3.png" width="100%">
-<img src="\images\SonarQube-Ubuntu\4.png" width="100%">
-<img src="\images\SonarQube-Ubuntu\5.png" width="100%">
-<img src="\images\SonarQube-Ubuntu\6.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/3.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/4.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/5.png" width="100%">
+<img src="/images/pages/SonarQube-Ubuntu/6.png" width="100%">
