@@ -43,8 +43,8 @@ Log in to SonarQube Server and go-to "**My Account**" section on your profile. A
 
 **Login > Profile > My Account > Security > Generate Token**
 
-<img src="Sonar-Jenkins/1.png" width="auto" width="100%">
-<img src="images\pages\Sonar-Jenkins\1.png" alt="hi" class="inline"/>
+<img src="images/pages/Sonar-Jenkins/1.png" width="auto" width="100%">
+<img src="images/pages/Sonar-Jenkins/1.png" alt="hi" class="inline"/>
 ![]({{site.baseurl}}images/pages/Sonar-Jenkins/1.png)
 
 
