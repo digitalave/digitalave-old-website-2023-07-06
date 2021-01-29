@@ -20,6 +20,17 @@ layout: default
       {{ content }}
     </div>
 
+        <!-- Get Your Channel ID Here https://www.youtube.com/account_advanced-->
+        <div id="ytbutton">
+          <script src="https://apis.google.com/js/platform.js"></script>
+          <div class="g-ytsubscribe" data-channelid="UCovlVsoRVItner26ZJPBjmQ" data-layout="full" data-count="default"></div>
+        </div>
+        <style>
+            #ytbutton {
+          padding: 1px 50px;
+        </style>
+        /* Get Your Channel ID Here https://www.youtube.com/account_advanced */
+
     <footer class="post-footer">
       <ul class="post-footer-list">
         <li class="post-footer-item">
@@ -45,18 +56,7 @@ layout: default
       {% endif %}
     </footer>
 
-    {% assign author = site.authors[page.author] %}
-        <!-- Get Your Channel ID Here https://www.youtube.com/account_advanced-->
-        <div id="ytbutton">
-          <script src="https://apis.google.com/js/platform.js"></script>
-          <div class="g-ytsubscribe" data-channelid="UCovlVsoRVItner26ZJPBjmQ" data-layout="full" data-count="default"></div>
-      </div>
-      <style>
-          #ytbutton {
-        padding: 1px 50px;
-      </style>
-      /* Get Your Channel ID Here https://www.youtube.com/account_advanced */
-      
+    {% assign author = site.authors[page.author] %} 
     <div class="post-author">
       {% if author %}
       <div class="post-author-image">
