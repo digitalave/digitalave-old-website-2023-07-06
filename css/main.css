@@ -355,6 +355,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
 body.body-post {
   background-color: #f5fafc;
 }
