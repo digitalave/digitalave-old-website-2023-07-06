@@ -1,6 +1,15 @@
 $(function() {
   'use strict';
 
+
+  // Dark Mode
+ /* --- Dark Mode Goes Here-- */
+  $(".theme-switch").on("click", () => {
+   $("body").toggleClass("light-theme");
+  });
+  /* --- Dark Mode Ends Here-- */
+
+
   // Nav Menu
   $(".nav-toggle").click(function() {
 
