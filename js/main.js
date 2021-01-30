@@ -109,11 +109,13 @@ $(function() {
     });
   }
 
-});
-
-  // Dark Mode
+    // Dark Mode
   /* --- Dark Mode Goes Here-- */
   $(".theme-switch").on("click", () => {
     $("body").toggleClass("light-theme");
   });
   /* --- Dark Mode Ends Here-- */
+
+
+});
+
