@@ -1,15 +1,6 @@
 $(function() {
   'use strict';
 
-
-  // Dark Mode
- /* --- Dark Mode Goes Here-- */
-  $(".theme-switch").on("click", () => {
-   $("body").toggleClass("light-theme");
-  });
-  /* --- Dark Mode Ends Here-- */
-
-
   // Nav Menu
   $(".nav-toggle").click(function() {
 
@@ -23,6 +14,14 @@ $(function() {
     $(".overlay").toggleClass("show");
 
   });
+
+  // Dark Mode
+  /* --- Dark Mode Goes Here-- */
+  $(".theme-switch").on("click", () => {
+    $("body").toggleClass("light-theme");
+  });
+  /* --- Dark Mode Ends Here-- */
+
 
   $(".overlay, .search-toggle").click(function() {
     $(".full-page-container, .navigation-wrap").removeClass("open");
