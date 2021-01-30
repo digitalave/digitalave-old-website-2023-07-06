@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: dark
 title: Dark
 image: digitalavenue/header_banner.gif
 ---
