@@ -108,5 +108,7 @@ $(function() {
       $(_this).removeClass("is-loading");
     });
   }
-
+  $(".theme-switch").on("click", () => {
+    $("body").toggleClass("light-theme");
+  });
 });
