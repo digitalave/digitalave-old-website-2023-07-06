@@ -349,10 +349,13 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  display: flex;
+  transition: 0.5s background ease;
 }
 
 body.body-post {
@@ -1187,6 +1190,9 @@ table tr:hover {
 
 .post-body {
   padding: 40px 30px;
+  background: var(--background);
+  display: flex;
+  transition: 0.5s background ease;
 }
 
 .post-body h2 {
