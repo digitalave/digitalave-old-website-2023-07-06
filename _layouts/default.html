@@ -3,6 +3,13 @@
 
   {% include head.html %}
   
+
+  <div class="theme-switch">
+    <div class="switch"></div>
+  </div>
+
+
+
   {% if page.url == '/' %}
     {% assign class = 'body-post' %}
   <body class="{{ class }}">
@@ -22,10 +29,6 @@
       {% include scroll-top.html %}
       {% include footer.html %}
     </div> <!-- /.full-page-container -->
-
-    <!-- <div class="theme-switch">
-      <div class="switch"></div>
-    </div> -->
 
     {% include javascripts.html %}
   </body>
