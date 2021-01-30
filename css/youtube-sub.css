@@ -1,5 +1,5 @@
 
-.youtube-sub{
+.btn1{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,7 +17,7 @@
           }
   
   
-          .youtube-sub:hover{
+          .btn1:hover{
             color: #fa0000;
             background-color: white;
             vertical-align: middle;
