@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
+
 .btn1{
     position: absolute;
     top: 50%;
@@ -34,15 +31,4 @@
   fa:hover{
     color:#fa0000;
   }
-</style>
-</head>
-<body>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="css/youtube-sub.css" ... >
-<a href="http://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><div class="btn1">
-  <i class="fa fa-youtube-play fa-5x">&nbsp; Subscribe on YouTube </i>
-</div> </a>
-
-</body>
-</html>
+  
