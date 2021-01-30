@@ -347,15 +347,15 @@ html {
 }
 
 body {
-  /* font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
   background-color: #ffffff;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -moz-osx-font-smoothing: grayscale;
 
-  background: var(--background);
+  /* background: var(--background);
   display: flex;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -366,7 +366,7 @@ body {
   transition: 0.5s background ease;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 
 }
 
