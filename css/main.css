@@ -347,13 +347,27 @@ html {
 }
 
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  /* font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
   background-color: #ffffff;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+
+  background: var(--background);
+  display: flex;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  transition: 0.5s background ease;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 body.body-post {
@@ -2192,3 +2206,46 @@ table tr:hover {
     font-size: 13px;
   }
 }
+
+ /* Modified */
+
+.theme-switch {
+  --background: #FFF;
+  --text: #000;
+  color: var(--text);
+  width: 70px;
+  height: 30px;
+  background: var(--highlight);
+  border-radius: 50px;
+  position: relative;
+
+  }
+  .switch {
+    background: white;
+    width: 24px;
+    height: 24px;
+    background: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+  }
+
+
+.light-theme {
+  --background: #FFF;
+  --text: #000;
+  background: var(--background);
+  }
+  .theme-switch {
+    background: var(--text);
+  
+  }
+    .switch {
+      transform: translateX(37px);
+  }
+  
+  a {
+    color: var(--text); 
+  }
