@@ -2226,12 +2226,12 @@ body {
   transition: 0.5s background ease;
 }
 
-.container {
+/* .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
+} */
 
 .theme-switch {
   --background: #FFF;
