@@ -346,7 +346,7 @@ html {
   line-height: 1.6;
 }
 
-body {
+/* body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
@@ -368,7 +368,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 
-}
+} */
 
 body.body-post {
   background-color: #f5fafc;
@@ -2216,7 +2216,7 @@ table tr:hover {
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
-/* body {
+body {
   background: var(--background);
   display: flex;
   align-items: center;
@@ -2224,7 +2224,7 @@ table tr:hover {
   height: 100vh;
   overflow: hidden;
   transition: 0.5s background ease;
-} */
+}
 
 .container {
   display: flex;
