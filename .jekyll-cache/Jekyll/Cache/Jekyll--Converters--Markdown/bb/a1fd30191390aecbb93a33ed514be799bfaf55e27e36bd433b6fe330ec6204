@@ -1,0 +1,90 @@
+I"y<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/J50FFKkkpD0" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h3 id="configure-dhcp-server--dns-resolver-on-pfsense">CONFIGURE DHCP SERVER &amp; DNS RESOLVER ON PFSENSE</h3>
+
+<p>Welcome to digital avenue. Hi Guys today I’m goning to demonstrate how to install anbd configure dhcp server and dns reslover on pfsense 2.4.</p>
+
+<h4 id="step-01-genaral-configuration">STEP 01: GENARAL CONFIGURATION</h4>
+
+<p>Systemc &gt; Genaral Setup</p>
+
+<p>Goto “System” tab and select “Genaral Setup” from the drop down menu.</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_01.png" width="100%" /></p>
+
+<p>Change following fields as seen below.</p>
+
+<p>Hostname : Define a meaningfull hostname for pfSense.</p>
+
+<p>Domain Name : Define your domain name which pfsense router used.</p>
+
+<p>DNS Server : Define public authoritative DNS servers for user pfSense itself.</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_02.png" width="100%" /></p>
+
+<h4 id="step-02-setup-dhcp-server">STEP 02: SETUP DHCP SERVER</h4>
+
+<p>Goto  Services tab and select DHCP Server from  the drop down menu.</p>
+
+<p>Services &gt; DHCP Server</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_2.png" width="100%" /></p>
+
+<p>Select the interface which you want to DHCP server runing on.</p>
+
+<p>Fill the relevent fields with “Subnet”, “Subnet Mask”, “Range”, “DNS Servers”, “Gateway” and “Domain Name”</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_3.png" width="100%" /></p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_4.png" width="100%" /></p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_5.png" width="100%" /></p>
+
+<p>Change all other options according to your requirement.</p>
+
+<h4 id="step-02-setup-dns-server">STEP 02: SETUP DNS SERVER</h4>
+
+<p>Unbound is integrated into pfSense. Unbound is use as the DNS server.</p>
+
+<p>Go to  “Services” tab and select “DNS Resolver” from the drop down menu.</p>
+
+<p>Services &gt; DNS Resolver</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_6.png" width="100%" /></p>
+
+<p>Enable DNS Resolver: Enable/Disable DNS Resolver</p>
+
+<p>Network Interfaces: Network interfaces which are listening from  DNS queries from  clients.</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_7.png" width="100%" /></p>
+
+<p>Outgoing Network Interfaces: Specific interfaces which are passing outbound DNS queries to higer level DNS server such as Google DNS. Most cases WAN interfaces used.</p>
+
+<p>Enable DNSSEC Support: DNSSEC provides added security to DNS queries which validate DNS queries.</p>
+
+<p>Enable Forwarding Mode: Unbound DNS queries forwarding to upstream DNS server which are defined under  System &gt; General</p>
+
+<p>Register DHCP leases in the DNS Resolver: DHCP static mappings can be registered in Unbound which enables the resolving of hostnames that have been assigned addresses by the DHCP server in pfSense</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_8.png" width="100%" /></p>
+
+<p>Host Overrides: Allows creation of custom DNS responses/records to create new entries that do not exist in DNS outside the firewall, or to override DNS responses for other hosts.</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_9.png" width="100%" /></p>
+
+<p>Domain Override: For domains that should be queried by a specific remote server.
+At this point I want to redirect all DNS quest for  .youtube.com and .facebook.com redirect to localhost/127.0.0.1 itself.</p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_10.png" width="100%" /></p>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_11.png" width="100%" /></p>
+
+<h4 id="step-02-verifing-dns-queries">STEP 02: Verifing DNS Queries.</h4>
+
+<p><img src="/images/pages/pfsense-dns-dhcp/Screenshot_12.png" width="100%" /></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" /></a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" alt="Foo" /></a></p>
+:ET

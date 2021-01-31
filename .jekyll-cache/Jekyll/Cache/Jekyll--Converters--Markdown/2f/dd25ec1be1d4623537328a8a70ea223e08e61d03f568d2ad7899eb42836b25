@@ -1,0 +1,254 @@
+I"�2<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/sHcWGKwRzEs/?&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h2 id="how-to-add-linux-host-to-nagios-monitoring-server-using-nrpe-plugin">How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin</h2>
+
+<p>In this video, I will show you how to add remote Linux client host and it’s services to Nagios Monitoring Server using NRPE agent.</p>
+
+<p>In my previous video, I demonstrated how to install Nagios server on Centos7. I hope you already have installed Nagios server.</p>
+
+<p>The NRPE is stands for Nagios Remote Plugin Executor. As its says by the name, NRPE allows Nagios server to discover client host resources and their services through the network.</p>
+
+<h3 id="remote-cleint-side-configuration">REMOTE CLEINT SIDE CONFIGURATION:</h3>
+
+<h5 id="a-install-prerequisites">A. Install Prerequisites</h5>
+<p>We need to install required libraries.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# yum <span class="nb">install</span> <span class="nt">-y</span> gcc glibc glibc-common openssl openssl-devel perl wget
+</code></pre></div></div>
+
+<h5 id="b-install-latest-epel-repository-and-update-the-system">B. Install Latest EPEL Repository And Update The System.</h5>
+<p>Install Latest EPEL YUM Repository</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+<span class="o">[</span>root@cl1 ~]# rpm <span class="nt">-Uvh</span> epel-release-latest-7.noarch.rpm
+
+<span class="o">[</span>root@cl1 ~]# yum <span class="nt">-y</span> update
+</code></pre></div></div>
+
+<h5 id="c-install-nrpe-v3-nagios-remote-plugin-executor">C. Install (NRPE v3) Nagios Remote Plugin Executor</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# yum <span class="nt">-y</span> <span class="nb">install </span>nrpe
+</code></pre></div></div>
+
+<h5 id="d-update-nrpe-configuration-file">D. Update NRPE Configuration File</h5>
+
+<p>Add the private IP address of the Nagios server</p>
+
+<p>**allowed_hosts=<Nagios_Server_IP>**</Nagios_Server_IP></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# vim /etc/nagios/nrpe.cfg
+<span class="nv">allowed_hosts</span><span class="o">=</span>127.0.0.1,172.25.10.50
+</code></pre></div></div>
+
+<h5 id="e-allow-nrpe-service-port-through-the-firewall">E. Allow NRPE service Port Through the Firewall</h5>
+
+<p>Allow TCP port 5666 through the firewall to be able to listening through the TCP port 5666</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# firewall-cmd <span class="nt">--permanent</span> <span class="nt">--add-port</span><span class="o">=</span>5666/tcp
+<span class="o">[</span>root@cl1 ~]# firewall-cmd <span class="nt">--reload</span>
+</code></pre></div></div>
+
+<h5 id="f-enable-nrpe-service-to-start-at-boot">F. Enable NRPE Service To Start at Boot</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@cl1 ~]# systemctl <span class="nb">enable </span>nrpe.service
+<span class="o">[</span>root@cl1 ~]# systemctl restart nrpe.service
+<span class="o">[</span>root@cl1 ~]# systemctl status <span class="nt">-l</span>  nrpe.service
+</code></pre></div></div>
+
+<h3 id="nagios-server-side-configuration">NAGIOS SERVER SIDE CONFIGURATION:</h3>
+
+<h5 id="a-create-config-a-directory">A. Create Config a Directory</h5>
+
+<p>Create a directory that will store the configuration files for each server that you will need to monitor.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# <span class="nb">sudo mkdir</span> /usr/local/nagios/etc/hosts
+</code></pre></div></div>
+<h5 id="b-create-host-definition-file">B. Create Host Definition File</h5>
+
+<p>Create a new configuration file for each of the remote hosts that we want to monitor.</p>
+
+<p>In this case I’m going to put all the host and service definitions into a single file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/hosts/cl1.cfg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Host configuration file</span>
+define host <span class="o">{</span>
+        use                          linux-server
+        host_name                    cl1
+        <span class="nb">alias                        </span>Ubuntu Host
+        address                      172.25.10.100
+        register                     1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             PING
+      check_command                   check_ping!100.0,20%!500.0,60%
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             PING
+      check_command                   check_ping!100.0,20%!500.0,60%
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             Check Users
+      check_command           check_local_users!20!50
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             Local Disk
+      check_command                   check_local_disk!20%!10%!/
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             Check SSH
+      check_command                   check_ssh
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             Total Process
+      check_command                   check_local_procs!250!400!RSZDT
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+
+define service <span class="o">{</span>
+      host_name                       cl1
+      service_description             DNS
+      check_command                   check_dns
+      max_check_attempts              2
+      check_interval                  2
+      retry_interval                  2
+      check_period                    24x7
+      check_freshness                 1
+      contact_groups                  admins
+      notification_interval           2
+      notification_period             24x7
+      notifications_enabled           1
+      register                        1
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h5 id="c-modify-nagios-main-config">C. Modify Nagios Main Config</h5>
+
+<p>Then, Add “cl1.cfg” config file path into Nagios main configuration file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/nagios.cfg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Definitions for monitoring the local (Linux) host</span>
+<span class="nv">cfg_file</span><span class="o">=</span>/usr/local/nagios/etc/hosts/cl1.cfg
+</code></pre></div></div>
+
+<h5 id="d-define-new-commands">D. Define New Commands</h5>
+
+<p>Edit the file commands.cfg and add the lines below.</p>
+
+<p>Add this command definition config into the bottom of the “commands.cfg” file.</p>
+
+<p>In this case, I’m going to add “check_dns” command into the “commands.cfg” as a new service check command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/objects/commands.cfg
+</code></pre></div></div>
+
+<p>Here, You can define your own commands that you want to  execute on the remote host.</p>
+
+<p>You can add and modify new command definitions by editing this section.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#'check_dns' command definition</span>
+define <span class="nb">command</span> <span class="o">{</span>
+        command_name    check_dns
+        command_line       <span class="nv">$USER1$/</span>check_dns <span class="nt">-H</span> <span class="nv">$HOSTADDRESS$ </span><span class="nt">-s</span> <span class="nv">$ARG1$ </span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#'check_dns' command definition</span>
+define <span class="nb">command</span> <span class="o">{</span>
+        command_name    check_dns
+        command_line    <span class="nv">$USER1$/</span>check_dns <span class="nt">-H</span> digitalave.github.io <span class="nt">-s</span> 8.8.8.8 <span class="nt">-t</span> 15 | <span class="nb">sed</span>  <span class="nt">-e</span> <span class="s2">"s/returns.*//g"</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h5 id="e-verify-nrpe-daemon">E. Verify NRPE Daemon</h5>
+
+<p>Finally verify the configuration that we made.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/nagios/libexec/check_nrpe <span class="nt">-H</span> &lt;remote_linux_ip_address&gt;
+</code></pre></div></div>
+
+<h5 id="f-verify-nagios-configs-and-check-for-error">F. Verify Nagios Configs and Check For Error</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# /usr/local/nagios/bin/nagios <span class="nt">-v</span> /usr/local/nagios/etc/nagios.cfg
+</code></pre></div></div>
+
+<p>Now restart Nagios server to reflect the configuration changes.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# systemctl restart nagios httpd
+</code></pre></div></div>
+
+<h5 id="g-log-into-nagios-web-console">G. Log Into Nagios Web Console</h5>
+
+:ET

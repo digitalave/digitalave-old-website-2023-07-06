@@ -1,0 +1,186 @@
+I"s&<p><img src="/images/pages/graylog_ins/graylog.png" width="100%" /></p>
+
+<h1 id="install-and-configure-graylog2-server-on-centos-7">INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7</h1>
+
+<p>Graylog is an open source log management tool. It can use for collect, index and analyze remote machine logs centrally.</p>
+
+<h2 id="components--">Components: -</h2>
+
+<p><strong>MongoDB - Stores the configuration and meta information.</strong></p>
+
+<p><strong>Elasticsearch - Store the log messages and offers searching facility which are coming from Graylog server. Elasticsearch does indexing of data.</strong></p>
+
+<p><strong>Graylog Server - Collect logs coming from various inputs and provide Web based interface to manage those logs.</strong></p>
+
+<h2 id="pre-requisites--">Pre-requisites: -</h2>
+
+<p>Elasticsearch is based on Java
+Install Oracle Java / OpenJDK</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# rpm <span class="nt">-Uvh</span> jdk-8u161-linux-x64.rpm
+</code></pre></div></div>
+
+<p><img src="/images/pages/graylog_ins/image001.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image002.png" width="100%" /></p>
+
+<h2 id="install-elasticsearch--">Install Elasticsearch: -</h2>
+
+<p>Elasticsearch is an open source tool. Which provides distributed search, indexing and analytics using RESTful web interface. Elasticsearch stores all the log sent by Graylog server inputs and displays the messages.</p>
+
+<p><img src="/images/pages/graylog_ins/image004.png" width="100%" /></p>
+
+<p>Download and install public singing key.</p>
+
+<p><img src="/images/pages/graylog_ins/image006.png" width="100%" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# rpm <span class="nt">--import</span> https://artifacts.elastic.co/GPG-KEY-elasticsearch
+<span class="o">[</span>root@graylog /]# vim /etc/yum.repos.d/elasitcsearch.repo
+<span class="o">[</span>elasticsearch-5.x]
+<span class="nv">name</span><span class="o">=</span>Elasticsearch repository <span class="k">for </span>5.x packages
+<span class="nv">baseurl</span><span class="o">=</span>https://artifacts.elastic.co/packages/5.x/yum
+<span class="nv">gpgcheck</span><span class="o">=</span>1
+<span class="nv">gpgkey</span><span class="o">=</span>https://artifacts.elastic.co/GPG-KEY-elasticsearch
+<span class="nv">enabled</span><span class="o">=</span>1
+<span class="nv">autorefresh</span><span class="o">=</span>1
+<span class="nb">type</span><span class="o">=</span>rpm-md
+</code></pre></div></div>
+
+<p><img src="/images/pages/graylog_ins/image008.png" width="100%" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# yum <span class="nb">install</span> <span class="nt">-y</span> elasticsearch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# systemctl <span class="nb">enable </span>elasticsearch
+<span class="o">[</span>root@graylog /]# systemctl start elasticsearch
+<span class="o">[</span>root@graylog /]# systemctl daemon-reload
+</code></pre></div></div>
+
+<h2 id="configure-elasticsearch--">Configure Elasticsearch: -</h2>
+
+<p>Elasticsearch configuration files can be found in /etc/elasticsearch/ directory.</p>
+
+<p><strong>logging.yml – manages the logging of elasticsearch</strong></p>
+
+<p><strong>elasticsearch.yml – main configuration file</strong></p>
+
+<p>Log files stores in /var/log/elasticsearch/</p>
+
+<p>By default</p>
+
+<p>Bind to all network interfaces 0.0.0.0
+HTTP traffic Listen on port 9200 – 9300
+Internal node to node communication on port 9300 – 9400</p>
+
+<p>Do the following changes to listen on specific IP.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# vim /etc/elasticsearch/elasticsearch.yml
+network.host: 192.168.100.10
+</code></pre></div></div>
+
+<p>The cluster.name is used to discover and auto-join other nodes. Use unique cluster name to avoid auto-join with other Elasticsearch server clusters.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cluster.name: graylog
+</code></pre></div></div>
+
+<p>Disable dynamic scripts to avoid remote execution</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script.inline: <span class="nb">false
+</span>script.indexed: <span class="nb">false
+</span>script.file: <span class="nb">false</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# systemctl restart  elasticsearch.service
+</code></pre></div></div>
+
+<p>Elasticsearch now starts to listen on port 9200 for HTTP requests. Use this command to check whether it is working.</p>
+
+<p>[root@graylog /]# curl -X GET ‘http://192.168.100.10:9200’</p>
+
+<p><img src="/images/pages/graylog_ins/image010.png" width="100%" /></p>
+
+<p>To check the Elasticsearch server’s health. Status should be as “green” to work properly.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog ~]# curl <span class="nt">-XGET</span> <span class="s1">'http://192.168.100.10:9200/_cluster/health?pretty=true'</span>
+</code></pre></div></div>
+
+<p><img src="/images/pages/graylog_ins/image011.png" width="100%" /></p>
+
+<p>Install MongoDB: -</p>
+
+<p>Create MongoDB yum repository.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# vi /etc/yum.repos.d/mongodb-org-3.2.repo
+<span class="o">[</span>mongodb-org-3.2]
+<span class="nv">name</span><span class="o">=</span>MongoDB Repository
+<span class="nv">baseurl</span><span class="o">=</span>https://repo.mongodb.org/yum/redhat/<span class="nv">$releasever</span>/mongodb-org/3.2/x86_64/
+<span class="nv">gpgcheck</span><span class="o">=</span>1
+<span class="nv">enabled</span><span class="o">=</span>1
+<span class="nv">gpgkey</span><span class="o">=</span>https://www.mongodb.org/static/pgp/server-3.2.asc
+</code></pre></div></div>
+
+<p><img src="/images/pages/graylog_ins/image013.png" width="100%" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@graylog ~]# yum <span class="nb">install</span> <span class="nt">-y</span> mongodb-org
+</code></pre></div></div>
+
+<p>`
+SELinux Configuration for MongoDB</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@graylog ~]# yum <span class="nt">-y</span> <span class="nb">install </span>policycoreutils-python
+</code></pre></div></div>
+
+<p>SELinux to allow MongoDB to Start.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog ~]# semanage port <span class="nt">-a</span> <span class="nt">-t</span> mongod_port_t <span class="nt">-p</span> tcp 27017
+</code></pre></div></div>
+
+<p>Enable and Start MongoDB Service</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# systemctl <span class="nb">enable </span>mongod.service
+<span class="o">[</span>root@graylog /]# systemctl start mongod.service
+</code></pre></div></div>
+
+<h2 id="install-graylog2--">Install Graylog2: -</h2>
+
+<p>Graylog-server accepts and process the log messages receiving from various inputs and display data through Graylog web interface</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@graylog /]# rpm <span class="nt">-Uvh</span> https://packages.graylog2.org/repo/packages/graylog-2.4-repository_latest.rpm
+<span class="o">[</span>root@graylog /]# yum <span class="nb">install </span>graylog-server
+</code></pre></div></div>
+<p><img src="/images/pages/graylog_ins/image015.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image017.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image019.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image021.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image023.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image025.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image027.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image029.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image031.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image033.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image035.png" width="100%" /></p>
+
+<p><img src="/images/pages/graylog_ins/image037.png" width="100%" /></p>
+
+<p><strong>Little Request:</strong></p>
+
+<blockquote>
+  <p>I appreciate you guys taking the time in reading my post. Please check out my YouTube channel and please subscribe for more as it’ll help me loads.</p>
+</blockquote>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber" target="_blank">https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber</a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" /></a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" alt="Foo" /></a></p>
+:ET

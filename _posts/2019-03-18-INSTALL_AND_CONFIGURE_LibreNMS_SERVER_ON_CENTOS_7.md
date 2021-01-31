@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7'
 img: images/librenms/LibreNMS.png
 tags: [LibreNMS, Server Monitoring]
-category: Testing
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 <img src="\images\librenms\LibreNMS.png" width="100%">

@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'Lession 02 : Docker Basics - Where Am I Start Learn Docker ?'
 img: Docker-Installation/docker_N.jpg
 tags: [Docker, Containers,MicroServices, CentOS 8,RHEL 8]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 In this tutorial I'm going to teach you the basics you should have known before dive into depth.

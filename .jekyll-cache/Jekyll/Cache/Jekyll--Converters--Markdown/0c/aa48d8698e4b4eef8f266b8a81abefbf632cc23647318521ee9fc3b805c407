@@ -1,0 +1,270 @@
+I"�2<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/-O4tiLzYJMI?&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h2 id="how-to-integrate-gitlab-with-jenkins">How To Integrate GitLab With Jenkins</h2>
+
+<p><strong>Before You Begin !</strong></p>
+
+<p>In this tutorial, I’m going to  demonstrate you, how to integrated GitLab with Jenkins Server. 
+I suppose, You’ve already installed Jenkins on your own. If you haven’t Jenkins server, Please refer my previous video/article. I’ll put the link in the description.</p>
+
+<p>REF: <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a></p>
+
+<p><a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">How To Install &amp; Configure Jenkins</a> : <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a></p>
+
+<p>If you don’t have GitLab account, Please create an account.</p>
+
+<p><strong>REF</strong>: <a href="https://gitlab.com/" target="_blank">https://gitlab.com/</a></p>
+
+<h3 id="prerequisites-">Prerequisites :</h3>
+
+<ul>
+  <li>
+    <p>Pre-Configured Jenkins Server</p>
+  </li>
+  <li>
+    <p>GitLab Account + Developer Role Permission</p>
+  </li>
+</ul>
+
+<h3 id="introduction-">Introduction :</h3>
+
+<p><strong>Jenkins</strong> is an open source software development platform enriched with continuous integration (CI) and many more DevOps automation capabilities.</p>
+
+<p>Organizations using Jenkins to build and deploy their applications and integrate with GitLab for all other capabilities which has.</p>
+
+<p><strong>GitLab - Jenkins integration allows you to build and deploy application on Jenkins and reflect the output on  the GitLab UI more convenience</strong></p>
+
+<p>GitLab &amp; Jenkins integration allows you to trigger a Jenkins build when a code is pushed to a repository, or when a merge request is created.</p>
+
+<h3 id="step-01-install-gitlab-plugins-on-jekins-server">STEP 01: Install GitLAB Plugins on Jekins Server</h3>
+
+<p>Go to Manage Plugin section, then search and install following plugins on your Jenkins server.</p>
+
+<p><code class="language-plaintext highlighter-rouge">"Git"</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">"GitLab Plugin"</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">"GitLab API Plugin"</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">"Credentials Plugin"</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">"GitLab Authentication Plugin"</code></p>
+
+<p><strong>Manage Jenkins &gt; Manage Plugins &gt; Available Plugin [Search] &gt; Install &amp; Restart</strong></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/1.png" width="50%" />
+<img src="/images/pages/GitLab_Jenkins/2.png" width="100%" />
+<img src="/images/pages/GitLab_Jenkins/3.png" width="100%" /></p>
+
+<h3 id="step-02-create-a-new-gitlab-user--promote-existing-gitlab-user">STEP 02: Create a New GitLab User / Promote Existing GitLab User</h3>
+
+<p>Create a new GitLAB user with “<strong>Developer</strong>” role permission and grant access to each repository/project you want to integrate with Jenkins</p>
+
+<p><strong>Note: User should have Developer Permission Role</strong></p>
+
+<h3 id="step-03-create-personal-access-token-on-gitlab">STEP 03: Create Personal Access Token on GitLab</h3>
+
+<p>Now, Let’s head-over to GitLAB account and move to your profile setting section.</p>
+
+<p><strong>User Settings &gt; Access Tokens</strong></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/4.png" width="100%" /></p>
+
+<p>Create a new Personal Access Token for Jenkins authentication.</p>
+
+<p><strong>Name : Provide Token Name</strong></p>
+
+<p><strong>Scope : API</strong> - Which Grant access to GitLab resources such a Projects, Groups and Registries.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/5.png" width="100%" />
+<img src="/images/pages/GitLab_Jenkins/6.png" width="100%" /></p>
+
+<p>Save the deployed token somewhere safe. Once you leave or refresh the page, you won’t be able to access it again.</p>
+
+<p><strong>NOTE: Once you’ve generated a Personal Access Token copy it and save in a separate file immediately.Because, Token only visible only once.</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">Jenkins-GitLAB_API-Access : i5Jfi8a5foEFoC9CkVzl</code></p>
+
+<h3 id="step-04-add-gitlab-personal-access-token-to-jenkins">STEP 04: Add GitLab Personal Access Token to Jenkins</h3>
+
+<p>Again, Head-over to Jenkins server and Then, We need to add an authentication token into Jenkins server.</p>
+
+<p><strong>Jenkins &gt; Credentials &gt; System &gt; Global Credentials &gt; Add Credentials</strong></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/7.png" width="100%" /></p>
+
+<p>Scroll down little and click on “<strong>Global Credentials</strong>” under Domain column and “<strong>Add Credentials</strong>”</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/8.png" width="100%" />
+<img src="/images/pages/GitLab_Jenkins/9.png" width="100%" />
+<img src="/images/pages/GitLab_Jenkins/10.png" width="100%" /></p>
+
+<p>Select following options for the “<strong>Global Credentials</strong>” section.</p>
+
+<p><strong>Kind : GitLab API Token</strong></p>
+
+<p><strong>API Token : Add Previously Generated Personal Access Token</strong></p>
+
+<p><strong>Description : Provide a Descriptive Name</strong></p>
+
+<h3 id="step-05-configure-gitlab-api-settings-on-jenkins-server">STEP 05: Configure GitLab API Settings on Jenkins Server</h3>
+
+<p>Let’s move on to “GitLab” configuration section in <strong>Manage Jenkins &gt; Configure System</strong>.</p>
+
+<p><strong>Manage Jenkins &gt; Configure System &gt; “GitLAB” Configuration Section.</strong></p>
+
+<p>Then, Configure following entries…</p>
+
+<p><strong>Enable authentication for ‘/project’ end-point : Enable</strong></p>
+
+<p><strong>Connection Name : Provide a Descriptive Name</strong></p>
+
+<p><strong>GitLab host URL : GitLab server URL</strong></p>
+
+<p><strong>Credentials : Select previously added credentials from the drop-down menu.</strong></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/11.png" width="100%" /></p>
+
+<p>Finally, Check whether connection is successful by pressing “<strong>Test Connection</strong>” button.
+If connection successful. Then move to next step.</p>
+
+<p>Now, Connection between Jenkins and GitLab is OK. GitLab API plugin used to access for Jenkins to get metadata from  GitLab.</p>
+
+<p>But, We need to have a SSH key authentication to commit changes from Jenkins to GitLab.</p>
+
+<h3 id="step-06-allow-gitlab-build-commit-push-pull-authentication-to-gitlab">STEP 06: Allow GitLab Build Commit Push Pull Authentication To GitLab</h3>
+
+<h4 id="two-methods-">Two Methods :</h4>
+
+<h4 id="1-using-ssh-public-private-key-pair">1. Using SSH public-Private Key Pair</h4>
+
+<h5 id="create-ssh-key-pair-on-jenkins-server">Create SSH Key Pair on Jenkins Server</h5>
+
+<p>Login to Jenkins host terminal console and switch  to “<strong>jenkins</strong>” user and move to Jenkins home directory. and generate a SSH-Key-Pair.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@SRV3:~# su - jenkins
+jenkins@SRV3:~<span class="nv">$ </span><span class="nb">cd</span> /var/lib/jenkins/
+jenkins@SRV3:~<span class="nv">$ </span>ssh-keygen 
+Generating public/private rsa key pair.
+jenkins@SRV3:~<span class="nv">$ </span><span class="nb">cd</span> /var/lib/jenkins/.ssh/
+jenkins@SRV3:~/.ssh<span class="nv">$ </span><span class="nb">ls
+</span>id_rsa	id_rsa.pub  known_hosts
+</code></pre></div></div>
+
+<p>Open “id_rsa.pub” file and copy content.</p>
+
+<h5 id="provide-public-key-to-gitlab">Provide Public Key To GitLab</h5>
+
+<p>Go to GitLAB and deploy a new ssh key. Go to your GitLab profile “<strong>Setting</strong>” and then go to “<strong>SSH Keys</strong>” section.</p>
+
+<p>Paste code that we copied content from “id_rsa.pub” file.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/13.png" width="100%" /></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/14.png" width="100%" /></p>
+
+<p>Now, Public key has been added on GitLab server.</p>
+
+<h5 id="provide-private-key-to-jenkins">Provide Private Key To Jenkins</h5>
+
+<p>Then, We need to add our private key into Jenkins server.</p>
+
+<p>Open “/var/lib/jenkins/.ssh/id_rsa” file and copy content from private key.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /var/lib/jenkins/.ssh/id_rsa
+</code></pre></div></div>
+
+<p>Go to <strong>Jenkins &gt; Credentials &gt; System &gt; Global Credentials &gt; Add Credentials</strong></p>
+
+<p>Click the “Add” button next to the “Credentials” field and select the “Jenkins” option.
+In the resulting dialog, select “SSH Username with private key” as the credential type, set the “Username” to git, and enter the content of the private key selected for use between GitLab and Jenkins.</p>
+
+<p><strong>Kind : SSH Username with private key</strong></p>
+
+<p><strong>Description : Provide descriptive name</strong></p>
+
+<p><strong>Username : git</strong></p>
+
+<p><strong>Private Key : Enter private key</strong></p>
+
+<p>And also remember that you already attached the corresponding public key to your GitLab profile in Step in previous step.</p>
+
+<p>Add copied public key content into “Key” section.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/17.png" width="100%" /></p>
+
+<h4 id="2-using-plain-credentials---usernamepassword">2. Using Plain Credentials - Username:Password</h4>
+
+<p><img src="/images/pages/GitLab_Jenkins/29.png" width="100%" /></p>
+
+<h3 id="step-07-push-local-project-to-gitlab---optional-step">STEP 07: Push Local Project To GitLab - Optional Step</h3>
+
+<p>Now, I’m going to push my local project in to GitLab repository.</p>
+
+<p>IMG31</p>
+
+<p>Open Your Command Prompts / Or Use Your Own Method</p>
+
+<pre><code class="language-dos">C:\Users\Dimuthu&gt;git config --global user.name "Dimuthu Daundasekara"
+
+C:\Users\Dimuthu&gt;git config --global user.email "dimuthu@gmail.com"
+
+C:\Users\Dimuthu&gt;cd C:\YoutubeDownloader-master\YoutubeDownloader
+
+C:\YoutubeDownloader-master\YoutubeDownloader&gt;git init
+
+C:\YoutubeDownloader-master\YoutubeDownloader&gt;git remote add origin git@gitlab.com:dimuit86/youtubedownloader.git
+
+C:\YoutubeDownloader&gt;git add .
+
+C:\YoutubeDownloader-master\YoutubeDownloader&gt;git commit -m "Initial commit"
+
+C:\YoutubeDownloader&gt;git config credential.helper store
+
+C:\YoutubeDownloader-master\YoutubeDownloader&gt;git push https://gitlab.com/dimuit86/youtubedownloader.git
+</code></pre>
+
+<h3 id="step-07-configure-jenkins-project">STEP 07: Configure Jenkins Project</h3>
+
+<h5 id="create-freestyle-project-on-jenkins">Create FreeStyle Project on Jenkins</h5>
+
+<p>Now, It’s time to create a new project and do further configuration.</p>
+
+<p><strong>Jenkins &gt; New Item &gt; FreeStyle Project</strong></p>
+
+<p>Give a name to the project and continue.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/15.png" width="100%" /></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/16.png" width="100%" /></p>
+
+<p>Now, Head-over to  “<strong>source code management</strong>” section and select “<strong>Git</strong>”</p>
+
+<p><strong>Repository URL : git@gitlab.com:dimuit86/shadowsocksx-ng-develop.git</strong></p>
+
+<p><strong>Credentials : Select added credentials from drop down menu</strong></p>
+
+<p>Attach new credentials to the SSH URL for the GitLab repository.</p>
+
+<p>Optional : You also can use plain username and password that we have added at the method (2).</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/30.png" width="100%" /></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/18.png" width="100%" /></p>
+
+<p>On the same configuration page, find the “<strong>Build Triggers</strong>” section and check the option to “<strong>Build when a change is pushed to GitLab</strong>”.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/19.png" width="100%" /></p>
+
+<p>Finally Apply &amp; Save Changes</p>
+
+<p>Now, GitLab integration with Jenkins has been completed. Now, We can check the connectivity, using build button and checking console logs.</p>
+
+<p><img src="/images/pages/GitLab_Jenkins/20.png" width="100%" /></p>
+
+<p><img src="/images/pages/GitLab_Jenkins/21.png" width="100%" /></p>
+
+<p>Voilà, It’s working.</p>
+
+:ET

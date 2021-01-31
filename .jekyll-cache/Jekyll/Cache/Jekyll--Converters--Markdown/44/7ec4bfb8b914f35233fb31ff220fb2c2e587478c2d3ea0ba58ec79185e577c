@@ -1,0 +1,355 @@
+I"%F<h2 id="how-to-install-zabbix-server-40-on-centos-7">How to Install Zabbix Server 4.0 on CentOS 7</h2>
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/2YnEIC11j6o" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h3 id="introduction">Introduction:</h3>
+
+<p>Zabbix is an open source monitoring solution which allows you to real-time monitor millions of matrices collected from thousands of servers, virtual machines and network devices.</p>
+
+<p>Zabbix able to collect matrices from any devices, systems and applications using Zabbix agent, SNMP protocol and IPMI agents.
+Which can monitor Services, Hardware, Virtual Machines, Databases and Applications.
+Zabbix provides web interface with widget-based dashboards, graphs, network maps, slide shows.</p>
+
+<p>Zabbix is a powerful open source monitoring solution used to monitor server applications, systems, Network devices, Hardware appliances, IoT devices.</p>
+
+<h3 id="zabbix-server--client-architecture">Zabbix Server &amp; Client Architecture</h3>
+
+<p>The server communicates with the native software agents which available for Linux, Windows operating systems.</p>
+
+<p>Zabbix can communicate without an agent via Simple Network Management Protocol (SNMP) or Intelligent Platform Management Interface (IPMI)</p>
+
+<h4 id="zabbix-server-depends-on-3-software-applications">Zabbix Server Depends on 3 Software Applications</h4>
+
+<ol>
+  <li>
+    <p>Apache Web Server</p>
+  </li>
+  <li>
+    <p>PHP with required extensions</p>
+  </li>
+  <li>
+    <p>MySQL/MariaDB Database Server</p>
+  </li>
+</ol>
+
+<p>Environment:</p>
+
+<p>Hostname = zabbix.digitalavenue.com
+IP Address = 192.168.100.150
+OS = CentOS 7 / RHEL 7</p>
+
+<h2 id="step-1-configure-prerequisites">STEP 1: Configure Prerequisites</h2>
+
+<p><strong>1. Install EPEL Release</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# yum <span class="nb">install </span>https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</code></pre></div></div>
+<p><img src="\images\zabbix\image001.png" width="100%" /></p>
+
+<p><strong>2. Update an Operating System</strong></p>
+
+<p><strong>3. Set Resolvable Hostname</strong></p>
+
+<p><strong>4. Set SELINUX to Permissive Mode</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix /]# vim /etc/selinux/config 
+<span class="nv">SELINUX</span><span class="o">=</span>permissive
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix /]# reboot
+</code></pre></div></div>
+
+<h2 id="step-02-install-apache-httpd-web-server">STEP 02: Install Apache HTTPD Web Server</h2>
+
+<p>Install “httpd” yum package</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# yum <span class="nt">-y</span> <span class="nb">install </span>httpd
+</code></pre></div></div>
+
+<p><strong>Start and enable apache service on reboot</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# systemctl <span class="nb">enable </span>httpd.service
+<span class="o">[</span>root@zabbix ~]# systemctl start httpd.service
+</code></pre></div></div>
+
+<p><strong>Allow apache service through firewall</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--permanent</span> <span class="nt">--add-service</span><span class="o">=</span>http
+<span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--permanent</span> <span class="nt">--add-service</span><span class="o">=</span>https
+<span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--reload</span>
+</code></pre></div></div>
+
+<p>Test apache web service is up and running
+HTTP will start to listen on port 80</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# netstat <span class="nt">-tulpen</span> | <span class="nb">grep </span>httpd
+</code></pre></div></div>
+<p><img src="\images\zabbix\image002.png" width="100%" /></p>
+
+<p>Access webpage through a web browser</p>
+
+<p><code class="language-plaintext highlighter-rouge">http://your_server_ip_address/</code></p>
+
+<p><img src="\images\zabbix\image003.png" width="100%" /></p>
+
+<h2 id="step-03-install-and-configure-php">STEP 03: Install and Configure PHP</h2>
+
+<p><strong>Install PHP Dependencies for Zabbix Server</strong></p>
+
+<p>PHP used to gather matrices from MariaDB/Mysql database and process to display dynamic content via apache web server.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>php php-pear php-cgi php-common php-mbstring php-snmp php-gd php-xml php-mysql php-gettext php-bcmath
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image007.png" width="100%" /></p>
+
+<p><strong>Configure PHP:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# vim /etc/php.ini 
+max_execution_time <span class="o">=</span> 600
+max_input_time <span class="o">=</span> 600
+memory_limit <span class="o">=</span> 1024M
+post_max_size <span class="o">=</span> 32M
+upload_max_filesize <span class="o">=</span> 32M
+date.timezone <span class="o">=</span> Asia/Colombo
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# vim /var/www/html/info.php
+&lt;?php phpinfo<span class="o">()</span><span class="p">;</span> ?&gt;
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image008.png" width="100%" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# systemctl restart httpd.service
+</code></pre></div></div>
+
+<p>Open web browser and access following web page. And you should see page like below.</p>
+
+<p><code class="language-plaintext highlighter-rouge">http://your_server_IP_adress/info.php</code></p>
+
+<h2 id="step-04-install-mariadb-database-server">STEP 04: Install MariaDB Database Server</h2>
+
+<p><strong>Add MariaDB YUM repository to CentOS 7 server</strong></p>
+
+<p>Genarete Repositery using this URL:</p>
+
+<p>https://downloads.mariadb.org/mariadb/repositories/#mirror=truenetwork&amp;distro=CentOS&amp;distro_release=centos7-amd64–centos7&amp;version=10.3</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MariaDB 10.3 CentOS repository list - created 2019-04-01 15:07 UTC</span>
+<span class="c"># http://downloads.mariadb.org/mariadb/repositories/</span>
+<span class="o">[</span>mariadb]
+name <span class="o">=</span> MariaDB
+baseurl <span class="o">=</span> http://yum.mariadb.org/10.3/centos7-amd64
+<span class="nv">gpgkey</span><span class="o">=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+<span class="nv">gpgcheck</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<p>Run Following Commands optinally…</p>
+
+<p><strong>Install MariaDB</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>MariaDB-server MariaDB-client
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image004.png" width="100%" /></p>
+
+<p><strong>Start and enable Mariadb/MySQL service on reboot.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# systemctl start mariadb.service
+<span class="o">[</span>root@zabbix ~]# systemctl <span class="nb">enable </span>mariadb.service
+</code></pre></div></div>
+
+<p><strong>Allow MariaDB/MySQL service through firewall.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--permanent</span> <span class="nt">--add-service</span><span class="o">=</span>mysql 
+<span class="o">[</span>root@zabbix ~]# firewall-cmd –reload
+</code></pre></div></div>
+
+<p><strong>MariaDB Initial configuration:</strong></p>
+
+<p>[root@zabbix ~]# mysql_secure_installation</p>
+
+<p>`Set root password? [Y/n] Y</p>
+
+<p>New password:</p>
+
+<p>Re-enter new password:</p>
+
+<p>Remove anonymous users? [Y/n] Y</p>
+
+<p>Disallow root login remotely? [Y/n] Y</p>
+
+<p>Reload privilege tables now? [Y/n] Y`</p>
+
+<p><strong>Log into MariaDB Server:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# mysql <span class="nt">-uroot</span> <span class="nt">-p</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MariaDB</span> <span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="k">select</span> <span class="k">version</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>+—————-+
+| version()      |
++—————-+
+| 10.4.3-MariaDB |</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# mysql <span class="nt">-V</span>
+mysql  Ver 15.1 Distrib 10.4.3-MariaDB, <span class="k">for </span>Linux <span class="o">(</span>x86_64<span class="o">)</span> using readline 5.1
+</code></pre></div></div>
+
+<h2 id="step-05-create-zabbixdb-database-and-zabbixuser-user">STEP 05: Create “zabbixdb” Database and “zabbixuser” User</h2>
+
+<p>Create a Zabbix user and Zabbix database for Zabbix Installation. In this case I have used “zabbixuser” as a user and “zabbixdb” as a database.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# mysql <span class="nt">-uroot</span> <span class="nt">-p</span>
+Enter password: 
+
+MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> CREATE DATABASE zabbixdb CHARACTER SET UTF8 COLLATE UTF8_BIN<span class="p">;</span>
+
+MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> GRANT ALL PRIVILEGES ON zabbixdb.<span class="k">*</span> to zabbixuser@<span class="s1">'localhost'</span> IDENTIFIED BY <span class="s1">'PASSWORD'</span><span class="p">;</span>
+
+MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> GRANT ALL PRIVILEGES ON zabbixdb.<span class="k">*</span> to zabbixuser@<span class="s1">'%'</span> IDENTIFIED BY <span class="s1">'PASSWORD'</span><span class="p">;</span>
+
+MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> FLUSH PRIVILEGES<span class="p">;</span>
+
+MariaDB <span class="o">[(</span>none<span class="o">)]&gt;</span> QUIT<span class="p">;</span>
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image005.png" width="100%" /></p>
+
+<p><img src="\images\zabbix\image006.png" width="100%" /></p>
+
+<h2 id="step-06-install-zabbix-40">STEP 06: INSTALL ZABBIX 4.0</h2>
+
+<p><strong>Import GPG-KEY</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">rpm --import http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">**</span>Install zabbix-release repository<span class="k">**</span>
+
+rpm <span class="nt">-ivh</span> https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image009.png" width="100%" /></p>
+
+<p><strong>Install Zabbix Server</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get zabbix-sender zabbix-java-gateway <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image010.png" width="100%" /></p>
+
+<p><strong>Import Zabbix Server Databas Schema</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# zcat /usr/share/doc/zabbix-server-mysql-4.0.5/create.sql.gz | mysql <span class="nt">-uzabbixuser</span> <span class="nt">-p</span> zabbixdb
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image011.png" width="100%" /></p>
+
+<p>This may take while to import the database schema. Please wait….</p>
+
+<h2 id="step-07-configure-zabbix-server">STEP 07: CONFIGURE ZABBIX SERVER</h2>
+
+<p><strong>Configure Zabbix Server Main Configuration File</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# vim /etc/zabbix/zabbix_server.conf 
+
+<span class="c">## DATABASE NAME </span>
+<span class="nv">DBName</span><span class="o">=</span>zabbixdb
+
+<span class="c">## DATABASE USERNAME</span>
+<span class="nv">DBUser</span><span class="o">=</span>zabbixuser
+
+<span class="c">## DATABASE PASSWORD</span>
+<span class="nv">DBPassword</span><span class="o">=</span>PASSWORD
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart httpd zabbix-server
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>zabbix-server
+</code></pre></div></div>
+
+<p><strong>SET ZABBIX SERVER NAME:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# vim /etc/httpd/conf/httpd.conf 
+
+ServerName zabbix.digitalavenue.com:80
+
+ServerAdmin zabbix@digitalavenue.com
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# systemctl restart httpd.service
+</code></pre></div></div>
+
+<p><strong>CONFIGURE ZABBIX FRONTEND:</strong></p>
+
+<p>Apache configuration file forZabbix server located in</p>
+
+<p><code class="language-plaintext highlighter-rouge">/etc/httpd/conf.d/zabbix.conf</code></p>
+
+<p>Some PHP settings have to be configured.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# vim /etc/httpd/conf.d/zabbix.conf 
+        php_value max_execution_time 600
+        php_value memory_limit 1024M
+        php_value post_max_size 32M
+        php_value upload_max_filesize 32M
+        php_value max_input_time 600
+        php_value max_input_vars 10000
+        php_value always_populate_raw_post_data <span class="nt">-1</span>
+        php_value date.timezone Asia/Colombo
+</code></pre></div></div>
+
+<p><img src="\images\zabbix\image012.png" width="100%" /></p>
+
+<p><strong>Allow MariaDB/MySQL service through firewall.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--permanent</span> <span class="nt">--add-port</span><span class="o">={</span>10050/tcp,10051/tcp<span class="o">}</span>
+<span class="o">[</span>root@zabbix ~]# firewall-cmd <span class="nt">--reload</span>
+<span class="o">[</span>root@zabbix ~]# systemctl restart httpd.service
+</code></pre></div></div>
+
+<p><strong>Now, Zabbix Server Installation completed. Move onto you web browser and access Zabbix frontend and follow the on display guidelines.</strong></p>
+
+<p>Access Zabbix URL using web browser. And follow the instruction as seen on installation wizard.</p>
+
+<p><img src="\images\zabbix\image013.png" width="100%" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">http://zabbix_server_IP/zabbix/setup.php</code></p>
+
+<blockquote>
+  <p>Default Zabbix Username: Admin</p>
+</blockquote>
+
+<blockquote>
+  <p>Default Zabbix Password: zabbix</p>
+</blockquote>
+
+<p><img src="\images\zabbix\image014.png" width="100%" /></p>
+
+<p><img src="\images\zabbix\image015.png" width="100%" /></p>
+
+<p>Provide the database name and username.</p>
+
+<p><img src="\images\zabbix\image016.png" width="100%" /></p>
+
+<p><img src="\images\zabbix\image017.png" width="100%" /></p>
+
+<p><img src="\images\zabbix\image018.png" width="100%" /></p>
+
+<p><img src="\images\zabbix\image019.png" width="100%" /></p>
+
+<p><strong>Little Request:</strong></p>
+
+<blockquote>
+  <p>I appreciate you guys taking the time in reading my post. Please check out my YouTube channel and please subscribe for more as it’ll help me loads.</p>
+</blockquote>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber" target="_blank">https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber</a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" /></a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" alt="Foo" /></a></p>
+:ET

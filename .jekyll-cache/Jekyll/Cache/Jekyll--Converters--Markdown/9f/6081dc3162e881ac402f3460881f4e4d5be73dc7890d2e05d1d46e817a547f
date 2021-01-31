@@ -1,0 +1,283 @@
+I"�(<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/Dqe7W_mtrH0?&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h3 id="internet-content-filtering--site-blocking-using-pfblockerng-on-pfsense">Internet Content Filtering / Site Blocking Using pfBlockerNG on pfSense</h3>
+
+<p>pfBlockerNG extent the capability of the pfsense firewall beyond the traditional state full firewall.</p>
+
+<p>pfBlockerNG provides ability to pfsense firewall to make allow/deny decisions based upon items such as Geo-location, IP address, Alexa rating and the domain name.</p>
+
+<p>In this guide,  I will  walk through the configuration of pfBlockerNG on pfsense as a domain and content filter.</p>
+
+<h3 id="web-site-filtering-using-pfblocker-using-pfsense">Web Site Filtering using pfBlocker using pfSense:</h3>
+
+<h4 id="filtering-content-with-dns">Filtering Content with DNS:</h4>
+
+<p>SquidGuard doesn’t work properly with mobile phone and IOT devices.
+Because, Squid can’t do the man in the middle. most sites moved into SSL encryption. because most of site using encrypted SSL encryption. That’s why Squid can’t do the man in the  middle and filter some websites.</p>
+
+<h3 id="requirements">Requirements:</h3>
+
+<p><strong>pfSense should be the default DNS server which pointed into client’s hosts.</strong></p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/1.png" width="100%" /></p>
+
+<ul>
+  <li>Create Two Firewall Rules For DNS</li>
+</ul>
+
+<p><img src="/images/pages/pfBlocker-pfsense/2.png" width="100%" /></p>
+
+<h3 id="step-01-install-pfblockerng-package">STEP 01: Install pfBlockerNG Package</h3>
+
+<p>First of all, you need to install the package on pfSense appliance.
+Once logged in to the main pfSense page, click on the “System” drop down and then select “Package Manager”.</p>
+
+<p>Now head over to System &gt; Package Manager &gt; Available Packages</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/3.png" width="100%" /></p>
+
+<p>Once the ‘Available Packages’ page loads, type ‘pfblocker’ into the ‘Search term’ box and click the ‘Search’. The first item that is returned should be pfBlockerNG. Locate the ‘Install’ button to the right of the pfBlockerNG description and click the ‘+’ to install the package.</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/4.png" width="100%" /></p>
+
+<p>The page will reload, then continue the installation by clicking “Confirm”.</p>
+
+<p>In Search section, fill the following fields:</p>
+
+<p>Search terms: Type pfBlockerNG</p>
+
+<p>Click on Search button</p>
+
+<p>In Packages section, the pfBlockerNG will be appear</p>
+
+<p>Click on + Install and then on Confirm buttons to launch installation</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/5.png" width="100%" /></p>
+
+<p>Once installation is completed, pfBlockerNG appears in System &gt; Package Manager &gt; Installed Packages</p>
+
+<p>Now, pfBlockerNG configuration can begin.
+Before that we need to reconfigure our pfsense DNS resolver according to our requirement which need to redirect DNS requests in order to filter out bad domains. This means clients on the LAN interface need to use the pfSense as the default and primary DNS resolver.</p>
+
+<h3 id="step-02-configure-dns-resolver">STEP 02: Configure DNS Resolver</h3>
+
+<p>Now, Head over to  “Services” and select “DNS Resolver” from  the drop down menu.</p>
+
+<p><img src="DNS-pfsense/1.png" width="100%" /></p>
+
+<p><img src="DNS-pfsense/2.png" width="100%" /></p>
+
+<ul>
+  <li>
+    <p>Enable DNS Resolver</p>
+  </li>
+  <li>
+    <p>Set the listning port 53</p>
+  </li>
+  <li>
+    <p>Ingress Network interface should be LAN &amp; localhost</p>
+  </li>
+  <li>
+    <p>Egress Outgoing Network Interface should be WAN interfaces</p>
+  </li>
+</ul>
+
+<p>Finally hit “Save” &amp; “Apply Changes”</p>
+
+<h3 id="step-03-configure-pfblockerng---general-settings">STEP 03: Configure pfBlockerNG - General Settings</h3>
+
+<p>Next step  is the configuration of pfBlocker specifically.</p>
+
+<p>Head over to  general tab do the following changes.</p>
+
+<p>Let’s move to Firewall &gt; pfBlockerNG &gt; General</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/6.png" width="100%" /></p>
+
+<p>In General Settings section, fill the following fields:</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/7.png" width="100%" /></p>
+
+<ul>
+  <li>Enable pfBlockerNG: Checked</li>
+  <li>Keep Settings: Checked</li>
+  <li>Cron Settings: Select Every hour, select 0 as minute, hour and Daily/Weekly</li>
+</ul>
+
+<p>Move down bit further…</p>
+
+<p>In Interface/Rules Configuration section, fill the following fields:</p>
+
+<ul>
+  <li>Inbound Firewall Rules: Select WAN interfaces and Block</li>
+  <li>Outbound Firewall Rules: Select LAN interfaces and Reject</li>
+</ul>
+
+<p><img src="/images/pages/pfBlocker-pfsense/8.png" width="100%" /></p>
+
+<p>Rest of the other settings leave as it is…</p>
+
+<p>and click save.</p>
+
+<h3 id="step-04-configure-dnsbl">STEP 04: Configure DNSBL</h3>
+
+<p>Now move t0 DNSBL tab and do the following changes.</p>
+
+<p>To configure DNSBL, go to Firewall &gt; pfBlockerNG &gt; DNSBL &gt; DNSBL</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/9.png" width="100%" />
+<img src="/images/pages/pfBlocker-pfsense/10.png" width="100%" /></p>
+
+<p>In DNSBL section, fill the following fields:</p>
+
+<ul>
+  <li>Enable DNSBL: Checked</li>
+  <li>Enable TLD: Not checked</li>
+  <li>DNSBL Virtual IP: Enter an IP address is not in your internal networks, something like 10.10.10.10</li>
+  <li>DNSBL Listening Port: Enter 8081</li>
+  <li>DNSBL SSL Listening Port: Enter 8443</li>
+  <li>DNSBL Listening Interface: Select LAN or another internal interface to listen on</li>
+  <li>DNSBL Firewall Rule: Checked if you have multiple LAN interfaces</li>
+</ul>
+
+<p><img src="/images/pages/pfBlocker-pfsense/11.png" width="100%" /></p>
+
+<p>In DNSBL IP Firewall Rule Settings section, fill the following fields:</p>
+
+<ul>
+  <li>List Action: Select Deny Both</li>
+  <li>
+    <p>Enable Logging: Select Enable</p>
+  </li>
+  <li>In Advanced Inbound Firewall Rule Settings : Don’t change</li>
+  <li>In Advanced Outbound Firewall Rule Settings : Don’t change</li>
+  <li>
+    <p>In Alexa Whitelist : Don’t change</p>
+  </li>
+  <li>In Custom Domain Whitelist :</li>
+</ul>
+
+<p><img src="/images/pages/pfBlocker-pfsense/12.png" width="100%" /></p>
+
+<p>To begin, enter the following white-list domains and modify as you like.</p>
+
+<pre><code class="language-dns">.play.google.com
+.drive.google.com
+.accounts.google.com
+.www.google.com
+.github.com
+.outlook.live.com
+.edge-live.outlook.office.com # CNAME for (outlook.live.com)
+.outlook.ha-live.office365.com # CNAME for (outlook.live.com)
+.outlook.ha.office365.com # CNAME for (outlook.live.com)
+.outlook.ms-acdc.office.com # CNAME for (outlook.live.com)
+.amazonaws.com
+.login.live.com
+.login.msa.akadns6.net # CNAME for (login.live.com)
+.ipv4.login.msa.akadns6.net # CNAME for (login.live.com)
+.mail.google.com
+.googlemail.l.google.com # CNAME for (mail.google.com)
+.pbs.twimg.com
+.wildcard.twimg.com # CNAME for (pbs.twimg.com)
+.sites.google.com
+.www3.l.google.com # CNAME for (sites.google.com)
+.docs.google.com
+.mobile.free.fr
+.plus.google.com
+.samsungcloudsolution.net
+.samsungelectronics.com
+.icloud.com
+.microsoft.com
+.windows.com
+.skype.com
+.googleusercontent.com
+</code></pre>
+
+<ul>
+  <li>In TLD Exclusion List : Don’t change</li>
+  <li>In TLD Blacklist : Don’t change</li>
+  <li>In TLD Whitelist : Don’t change</li>
+</ul>
+
+<p>Click on the Save button once all field are filling</p>
+
+<h3 id="step-05-configure-dnsbl-feeds">STEP 05: Configure DNSBL Feeds</h3>
+
+<p>To configure DNSBL feeds, go to Firewall &gt; pfBlockerNG &gt; DNSBL &gt; DNSBL Feeds</p>
+
+<p>Click on + Add button</p>
+
+<p>Go to  this URL and add preferred lists.</p>
+
+<p><a href="https://github.com/StevenBlack/hosts" target="_blank">https://github.com/StevenBlack/hosts</a></p>
+
+<p><strong>In DNSBL Feeds section, fill the following fields:</strong></p>
+
+<ul>
+  <li>DNS GROUP Name: Enter DNSBlockListGroup</li>
+  <li>Description: Enter DNS Block list</li>
+  <li>DNSBL Settings – These are the actual lists</li>
+  <li>State – Whether that source is used or not and how it is obtained</li>
+  <li>Source – The link/source of the DNS Black List</li>
+  <li>Header/Label – User choice; no special characters</li>
+  <li>List Action – Set to Unbound</li>
+  <li>Update Frequency – How often the list should be updated</li>
+</ul>
+
+<p><img src="/images/pages/pfBlocker-pfsense/13.png" width="100%" /></p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/14.png" width="100%" /></p>
+
+<p>You also can define custom black list domains.
+Now, save.</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/15.png" width="100%" /></p>
+
+<p>Next, Head over to the “Update” tab.</p>
+
+<p>Select “update” tick box and and hit the run button.</p>
+
+<p>Now, It will  starts to update blacklist index.</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/16.png" width="100%" /></p>
+
+<p>Now, Head over to “Status” tab and select “Services” from the drop  down menu.</p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/17.png" width="100%" /></p>
+
+<p>Now, restart both dnsbl &amp; unbound services.</p>
+
+<h3 id="step-05-test-effectiveness-by-browsing-on-client-side">STEP 05: Test Effectiveness by Browsing on Client Side.</h3>
+
+<p><img src="/images/pages/pfBlocker-pfsense/18.png" width="100%" /></p>
+
+<p><img src="/images/pages/pfBlocker-pfsense/19.png" width="100%" /></p>
+
+<h1 id="reference--">**Reference : **</h1>
+<p><strong>Here are the required resources to complete this tutorial:</strong></p>
+
+<p>My Website:</p>
+<ol>
+  <li>https://digitalave.github.io/spring/2019/12/02/site_domain_filtering_using-pfblocker_on_pfsense.html</li>
+</ol>
+
+<p>Steven’s Block List:</p>
+
+<ol>
+  <li>https://github.com/StevenBlack/hosts</li>
+</ol>
+
+<p>YouTube Black List:</p>
+
+<p>3.https://raw.githubusercontent.com/digitalave/digitalave.github.io/master/Config/youtube</p>
+
+<ol>
+  <li>Pi-Hole Black List:</li>
+</ol>
+
+<p>https://github.com/pi-hole/pi-hole/wiki/Customising-sources-for-ad-lists</p>
+
+<p>================================================================</p>
+
+:ET

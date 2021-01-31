@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'ELK Stack Client Side Configuration Using Auditbeat'
 img: elk-auditbeat/audit2.png
 tags: [pfSense, Firewall, OpenVPN, VPN]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 <img src="elk-auditbeat/audit1.png" width="100%">

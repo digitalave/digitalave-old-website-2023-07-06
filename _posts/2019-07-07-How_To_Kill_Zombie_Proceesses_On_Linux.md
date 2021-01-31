@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'How To Kill Zombie Processes on Linux'
 img: zombie_process/Zombie_N_N.jpg
 tags: [pfSense, Firewall, Captive Portal, WIFI]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 

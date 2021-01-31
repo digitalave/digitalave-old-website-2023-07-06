@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'How To Send Alerts From Nagios Core Using Gmail'
 img: nagios-gmail-alerts/nagios.png
 tags: [Nagios, Postfix, Gmail, CentOS 7, RHEL 7]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 ## How To Send Alerts From Nagios Core Using Gmail

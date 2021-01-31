@@ -1,0 +1,202 @@
+I"H7<h2 id="how-to-send-alerts-from-nagios-core-using-gmail">How To Send Alerts From Nagios Core Using Gmail</h2>
+
+<p>In my previous video, I instructed you on how to install Nagios, configure the basics, and have your network monitored. Today, I am going to show you how to configure Nagios for email alerts that can be associated with certain services to certain administrators.</p>
+
+<p>Before the installation begin, We need to setup an email relay server on the Nagios server. Which use to  send an automated emails when alerts are triggered.</p>
+
+<h2 id="step-01-install--configure-postfix-mail-server">STEP 01: Install &amp; Configure Postfix Mail Server</h2>
+
+<h4 id="1-install-postfix-package">1. Install Postfix Package</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# systemctl restart postfix
+</code></pre></div></div>
+
+<h4 id="2-create-sasl-password-to-able-to-authenticate-with-the-gmail-server">2. Create SASL Password to able to authenticate with the Gmail server</h4>
+
+<p>Open or create the /etc/postfix/sasl/sasl_passwd file and add the SMTP Host, username, and password information:
+Store Password Inside /etc/postfix/sasl_passwd</p>
+
+<blockquote>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /etc/postfix/sasl/sasl_passwd
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>smtp.gmail.com]:587 username@gmail.com:exhhwavdchsihk3l
+</code></pre></div></div>
+
+<h4 id="6-create-a-hash-db-for-the-password">6. Create a HASH DB for the password</h4>
+
+<p>Create the hash db file for Postfix by running the postmap command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postmap /etc/postfix/sasl/sasl_passwd
+</code></pre></div></div>
+
+<p>Compile password to db (we can safely remove previous clear-text file now)</p>
+
+<h4 id="7-set-required-ownershippermissions-for-the-following-files">7. Set required ownership/permissions for the following files:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown </span>root:root /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl/sasl_passwd.db
+<span class="nb">sudo chmod </span>0600 /etc/postfix/sasl/sasl_passwd /etc/postfix/sasl sasl_passwd.db
+</code></pre></div></div>
+
+<h4 id="8-modify-relayhost-directive-in-etcpostfixmaincf-to-match-the-following-example">8. Modify relayhost directive in /etc/postfix/main.cf to match the following example:</h4>
+
+<p>Define the following directives at the end of <strong>/etc/postfix/main.cf</strong> file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># This tells Postfix to hand off all messages to Gmail, and never do direct delivery.</span>
+relayhost <span class="o">=</span> <span class="o">[</span>smtp.gmail.com]:587
+
+<span class="c"># This tells Postfix to provide the username/password when Gmail asks for one.</span>
+<span class="c"># Enable SASL authentication</span>
+smtp_sasl_auth_enable <span class="o">=</span> <span class="nb">yes</span>
+<span class="c"># Disallow methods that allow anonymous authentication</span>
+smtp_sasl_security_options <span class="o">=</span> noanonymous
+<span class="c"># Location of sasl_passwd</span>
+smtp_sasl_password_maps <span class="o">=</span> <span class="nb">hash</span>:/etc/postfix/sasl/sasl_passwd
+<span class="c"># Enable STARTTLS encryption</span>
+smtp_tls_security_level <span class="o">=</span> encrypt
+<span class="c"># Location of CA certificates</span>
+smtp_tls_security_level <span class="o">=</span> verify
+smtp_tls_CAfile <span class="o">=</span> /etc/ssl/certs/ca-bundle.crt
+</code></pre></div></div>
+
+<h4 id="9-enable--restart-postfix-service">9: Enable &amp; Restart Postfix Service</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# systemctl <span class="nb">enable </span>postfix
+<span class="o">[</span>root@nagios ~]# systemctl restart postfix
+</code></pre></div></div>
+
+<h4 id="10-sending-an-test-email">10: Sending an Test Email:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span>  <span class="s2">"Mail Body - Test Message from NAgiso Digital Avenue"</span> | mailx <span class="nt">-vvv</span> <span class="nt">-s</span> <span class="s2">"Subjct is Mail Sending from Digital Avenue"</span> username@gmail.com
+</code></pre></div></div>
+
+<h2 id="step-02-define-email-notification-commands">STEP 02: Define Email Notification Commands</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/objects/commands.cfg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 'notify-host-by-email' command definition</span>
+define <span class="nb">command</span> <span class="o">{</span>
+
+	command_name    notify-host-by-email
+	command_line    /usr/bin/printf <span class="s2">"%b"</span> <span class="s2">"***** Nagios *****</span><span class="se">\n\n</span><span class="s2">Notification Type: </span><span class="nv">$NOTIFICATIONTYPE$\</span><span class="s2">nHost: </span><span class="nv">$HOSTNAME$\</span><span class="s2">nState: </span><span class="nv">$HOSTSTATE$\</span><span class="s2">nAddress: </span><span class="nv">$HOSTADDRESS$\</span><span class="s2">nInfo: </span><span class="nv">$HOSTOUTPUT$\</span><span class="s2">n</span><span class="se">\n</span><span class="s2">Date/Time: </span><span class="nv">$LONGDATETIME$\</span><span class="s2">n"</span> | mailx <span class="nt">-vvv</span> <span class="nt">-s</span> <span class="s2">"** </span><span class="nv">$NOTIFICATIONTYPE$ </span><span class="s2">Host Alert: </span><span class="nv">$HOSTNAME$ </span><span class="s2">is </span><span class="nv">$HOSTSTATE$ </span><span class="s2">**"</span> <span class="nv">$CONTACTEMAIL</span><span class="err">$</span>
+<span class="o">}</span>
+
+<span class="c"># 'notify-service-by-email' command definition</span>
+define <span class="nb">command</span> <span class="o">{</span>
+
+    command_name    notify-service-by-email
+    command_line    /usr/bin/printf <span class="s2">"%b"</span> <span class="s2">"***** Nagios *****</span><span class="se">\n\n</span><span class="s2">Notification Type: </span><span class="nv">$NOTIFICATIONTYPE$\</span><span class="s2">n</span><span class="se">\n</span><span class="s2">Service: </span><span class="nv">$SERVICEDESC$\</span><span class="s2">nHost: </span><span class="nv">$HOSTALIAS$\</span><span class="s2">nAddress: </span><span class="nv">$HOSTADDRESS$\</span><span class="s2">nState: </span><span class="nv">$SERVICESTATE$\</span><span class="s2">n</span><span class="se">\n</span><span class="s2">Date/Time: </span><span class="nv">$LONGDATETIME$\</span><span class="s2">n</span><span class="se">\n</span><span class="s2">Additional Info:</span><span class="se">\n\n</span><span class="nv">$SERVICEOUTPUT$\</span><span class="s2">n"</span> | mailx <span class="nt">-vvv</span> <span class="nt">-s</span> <span class="s2">"** </span><span class="nv">$NOTIFICATIONTYPE$ </span><span class="s2">Service Alert: </span><span class="nv">$HOSTALIAS$/$SERVICEDESC$ </span><span class="s2">is </span><span class="nv">$SERVICESTATE$ </span><span class="s2">**"</span> <span class="nv">$CONTACTEMAIL</span><span class="err">$</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="step-03-define-email-contacts-and-groups">STEP 03: Define Email Contacts and Groups</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/objects/contacts.cfg
+</code></pre></div></div>
+<p>Once you have that done all you will need is the email addresses you want to use for your alerts.
+Define contact section and define email address to need to be get notified.</p>
+
+<p>Modify <strong>“contact_name”</strong> and <strong>“email”</strong> address</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define contact <span class="o">{</span>
+
+    contact_name            nagiosadmin             <span class="p">;</span> Short name of user
+    use                     generic-contact         <span class="p">;</span> Inherit default values from generic-contact template <span class="o">(</span>defined above<span class="o">)</span>
+    <span class="nb">alias                   </span>Nagios Admin            <span class="p">;</span> Full name of user
+    email                   username1@gmail.com <span class="p">;</span> &lt;&lt;<span class="k">*****</span> CHANGE THIS TO YOUR EMAIL ADDRESS <span class="k">******</span>
+<span class="o">}</span>
+
+
+<span class="c">############### NEW CONTACT ###################</span>
+define contact<span class="o">{</span>
+        contact_name                    webadmin
+        use                             generic-contact
+        <span class="nb">alias                           </span>Web Admin
+        email                           username1@orelit.com
+        service_notification_commands   notify-service-by-email
+        host_notification_commands      notify-host-by-email
+        service_notification_period     24×7
+        host_notification_period        24×7
+        service_notification_options    w,u,c,r,f
+        host_notification_options       d,u,r,f
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>w = notify on warning states
+c = critical states
+r = recovery
+f = start/stop of flapping
+d = notify on down states
+u = notify on unreachable states
+s = notify on stopped states</p>
+
+<p>You are now ready to move on. The next section will be to define a contact group. Contact groups allow you to group people together so it is easier to alert specific people to certain events.</p>
+
+<p>Each group would have a specific user (or users) associated with it who would be alerted if a problem arises.</p>
+
+<p>Define email group to which the mail need to  be sent.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/objects/contacts.cfg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">############# NEW CONTACT GROUPS ##############</span>
+define contactgroup<span class="o">{</span>
+        contactgroup_name       admins
+        <span class="nb">alias                   </span>Nagios Administrators
+        members                 webadmin,mailadmin,nagiosadmin
+<span class="o">}</span>
+<span class="c">###############################################</span>
+</code></pre></div></div>
+
+<h2 id="step-04-define-contact-details-in-the-host--service-configuration-section">STEP 04: Define Contact Details in the Host &amp; Service Configuration Section</h2>
+
+<p>Once you have defined all of your groups, save that file and close it. Now you have to attach groups to services so those groups will be alerted when something is wrong with their specific service. To do this open up the file…</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# vim /usr/local/nagios/etc/hosts/cl2.cfg
+</code></pre></div></div>
+
+<p>Head over to host configuration file and define “contacts” and “contact_groups”</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Host configuration Section</span>
+define host <span class="o">{</span>
+        use                          linux-server
+        host_name                    cl2
+        <span class="nb">alias                        </span>CentOS 7 - Server
+        address                      172.25.10.100
+        register                     1
+        contact_groups               admins
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Also you can define “contacts” and “contact_groups” on  the</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## SNMP Service Definiton - Uptime</span>
+define service<span class="o">{</span>
+use                     generic-service
+host_name               cl2
+service_description     System <span class="nb">uptime
+</span>check_command           SNMP-Uptime!-C digitalavenue
+contacts                username@gmail.com
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="step-05-verify-nagios-configs-and-check-for-error">STEP 05: VERIFY NAGIOS CONFIGS AND CHECK FOR ERROR</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# /usr/local/nagios/bin/nagios <span class="nt">-v</span> /usr/local/nagios/etc/nagios.cfg
+</code></pre></div></div>
+
+<p>Now restart Nagios server to reflect the configuration changes.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@nagios ~]# systemctl restart nagios httpd
+</code></pre></div></div>
+
+<p>Once your changes have been made, restart Nagios. You can test notifications via the Nagios web portal. Follows these steps:</p>
+
+<p>Click “Services” in the left menu. Click on any failed service (yellow) in the main area.
+Click “Send custom service notifications” in the right menu.
+Enter a custom “comment” and click the “commit” button.
+Check your inbox for your notification email. If you don’t get it, check your server logs to see if there is a system issue on the Nagios server.</p>
+
+:ET

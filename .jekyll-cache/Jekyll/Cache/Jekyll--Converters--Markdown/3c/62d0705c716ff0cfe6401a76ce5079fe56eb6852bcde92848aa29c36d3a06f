@@ -1,0 +1,65 @@
+I"·<h1 id="install--configure-elk-stack-on-centos7">Install &amp; Configure ELK Stack On CentOS7</h1>
+
+<p><img src="zombie_process/Zombie_N_N.jpg" width="100%" /></p>
+
+<h3 id="how-to-kill-zombie-processes-on-linux">How To Kill Zombie Processes on Linux</h3>
+
+<h4 id="what-is-a-zombie-process-">What is a Zombie Process ?</h4>
+
+<p>Normally, When we launch a program, It starts their task &amp; once task is over, Its end that process. Once process ended, It hos to be removed from the process table.</p>
+
+<p>Sometimes, If programs are not programmed well enough to remove itâ€™s child processes (Zombies). Because of this, some of these child zombie processes are reside in the process table even after it has completed its execution.</p>
+
+<p>So, These process we called Zombie processes.</p>
+
+<h4 id="steps">STEPS:</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Run a Program &gt;&gt; Creates a Parent Process with Child Processes &gt;&gt; They utilize System's resources &gt;&gt; Complete Child Process Task &gt;&gt; Receive EXIT system call &gt;&gt; Die Child Process &gt;&gt; EXIT system call read by Parent &gt;&gt; Finally Child Process removed from Process table.</code></p>
+
+<p>If Parent failed to read the EXIT system call from the child process, The child processes are already exists on the process table even though that child process are already dead.</p>
+
+<h4 id="are-they-harmful-">Are they Harmful ?</h4>
+
+<p>No, But, If there are lot of Zombie process which will stored/collected in the RAM.</p>
+
+<h4 id="how-to-find-zombie-processes-">How To Find Zombie Processes ?</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux |grep Z
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux |grep <span class="s2">"defunct"</span>
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps <span class="nt">-A</span> <span class="nt">-ostat</span>,ppid | <span class="nb">awk</span> <span class="s1">'/[zZ]/ &amp;&amp; !a[$2]++ {print $2}'</span>
+</code></pre></div></div>
+
+<h4 id="how-to-kill-zombie-process-">How To Kill Zombie Process ?</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-s</span> SIGCHLD &lt;PID OF PARENT&gt;
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> <span class="si">$(</span>ps <span class="nt">-A</span> <span class="nt">-ostat</span>,ppid | <span class="nb">awk</span> <span class="s1">'/[zZ]/ &amp;&amp; !a[$2]++ {print $2}'</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p><strong>Note: You Can Use This For Rsync Zombie Processes As Well.</strong></p>
+
+<h4 id="alternatively-you-can-use-pkill-command-like-this-way">Alternatively, You can use PKILL command like this way.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> <span class="si">$(</span>ps <span class="nt">-Z</span> | <span class="nb">grep</span> <span class="s2">"&lt;PROCESS_EXACT_NAME&gt;"</span> | <span class="nb">awk</span> <span class="s1">'{print $2}'</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkill <span class="nt">--signal</span> <span class="nt">--SIGCHLD</span> rsync
+</code></pre></div></div>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" /></a></p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" alt="Foo" /></a></p>
+:ET

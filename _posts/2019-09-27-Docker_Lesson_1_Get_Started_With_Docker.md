@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'Lession 01 : Install Docker on CentOS7 /Redhat RHEL7'
 img: Docker-Installation/docker_N.jpg
 tags: [Docker, Containers,MicroServices, CentOS 7,RHEL 7]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 ### Install Docker on CentOS7 / Redhat RHEL7
 

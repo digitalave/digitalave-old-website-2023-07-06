@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'Install & Configure ELK Stack 6.8 On CentOS7'
 img: elk-stack/ELK.png
 tags: [pfSense, Firewall, Captive Portal, WIFI]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 # INSTALL & CONFIGURE ELK STACK 6.8 ON CENTOS7

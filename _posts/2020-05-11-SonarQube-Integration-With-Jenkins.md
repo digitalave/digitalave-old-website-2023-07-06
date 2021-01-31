@@ -4,8 +4,9 @@ authors: [dimuthu_daundasekara]
 title: 'How To Integrate SonarQube With Jenkins'
 img: Sonar-Jenkins/sonar-jenkins.jpg
 tags: [Jenkins, GitLab, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
-category: Spring
+category: devops
 comments: true
+last_modified_at: 2020-01-31
 ---
 
 

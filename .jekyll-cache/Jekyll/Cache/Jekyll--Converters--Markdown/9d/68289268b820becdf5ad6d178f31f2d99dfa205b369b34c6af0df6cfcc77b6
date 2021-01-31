@@ -1,0 +1,261 @@
+I"�/<h3 id="install-docker-on-centos7--redhat-rhel7">Install Docker on CentOS7 / Redhat RHEL7</h3>
+
+<h5 id="introduction">Introduction</h5>
+
+<p>This is the very first session of Docker lesson series. In this tutorial I’m going to demonstrate how to install Docker on CentOS7 with the little bit of explanation about Docker.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Catagory</th>
+      <th>Requirements, Software Versions Used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OS</td>
+      <td>CentOS 7</td>
+    </tr>
+    <tr>
+      <td>Software</td>
+      <td>Docker Version 18</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Before the installation, We should know about little bit of Docker.</p>
+
+<h5 id="what-docker-">What Docker ?</h5>
+
+<p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.</p>
+
+<ul>
+  <li>
+    <p>Docker is Opensource.</p>
+  </li>
+  <li>
+    <p>Docker is a set of platform-as-a-service.</p>
+  </li>
+  <li>That use OS-level virtualization to deliver software in packages.</li>
+  <li>
+    <p>They are called containers.</p>
+  </li>
+  <li>These containers are isolated from one another and bundle their own software, libraries and configuration files</li>
+  <li>
+    <p>They can communicate with each other.</p>
+  </li>
+  <li>Docker turns your Computer into isolated containers which runs your codes or services independently. The single operating system carved up into isolated little spaces.</li>
+</ul>
+
+<h5 id="overview-of-docker-editions">Overview of Docker editions:</h5>
+
+<p><strong>Docker is available in three Editions:</strong></p>
+
+<p><img src="Docker-Installation/1_N.jpg" width="100%" /></p>
+
+<ol>
+  <li>Docker Engine - Community Edition (CE):</li>
+</ol>
+
+<p>Good starting point for individual developers, small teams and those who are learning docker.</p>
+
+<ol>
+  <li>Docker Engine - Enterprise Edition (EE):</li>
+</ol>
+
+<p>Designed for enterprise level development of docker containers with better enhanced security.</p>
+
+<ol>
+  <li>Docker Enterprise:</li>
+</ol>
+
+<p>Designed for enterprise development and IT teams who build, ship, and run business critical apps in production.</p>
+
+<h5 id="what-is-a-container-">What is a Container ?</h5>
+
+<p>A self-contained sealed unit of software. It has everything in the container required to run the code.</p>
+
+<p>A Single Container Includes:</p>
+
+<ol>
+  <li>Code</li>
+  <li>Configs</li>
+  <li>Processes</li>
+  <li>Networking Services</li>
+  <li>All Dependencies for your code need to run</li>
+  <li>Operating System</li>
+</ol>
+
+<p><u>Supported Platforms</u></p>
+
+<p><img src="Docker-Installation/2_N.jpg" width="100%" /></p>
+
+<h5 id="install-docker-engine---community-for-centos-7--rhel-7">Install Docker Engine - Community For CentOS 7 / RHEL 7</h5>
+
+<p><strong>OS requirements:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">centos-extras</code> repository must be enable. This is enable by default on CentOS.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">overlay2</code> storage driver is recommended.</p>
+
+<h3 id="install-from-docker-yum-repository">Install From Docker yum repository</h3>
+
+<p><strong>STEP 01: SETUP THE DOCKER YUM REPOSITORY</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum update <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Install required packages For YUM repository management.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install</span> <span class="nt">-y</span> yum-utils device-mapper-persistent-data lvm2
+</code></pre></div></div>
+
+<p>Download and setup docker repository from docker.com</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum-config-manager  <span class="nt">--add-repo</span> https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre></div></div>
+
+<p>Install docker package</p>
+
+<p>This will install Docker latest version.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>docker-ce docker-ce-cli containerd.io
+</code></pre></div></div>
+
+<p><strong>STEP 02: Start &amp; Enable Docker Daemon</strong> 
+Once docker-ce installed on the system, we must start &amp; enable the docker daemon. So, that it will be launched automatically on system boots.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start docker
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> docker
+</code></pre></div></div>
+
+<p><strong>STEP 03: Verify Installation</strong>
+Now check whether docker has been installed correctly.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl is-active docker
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker run hello-world
+</code></pre></div></div>
+
+<p>which automatically start to download basic “hello-world” images from Docker Hub.</p>
+
+<p><strong>STEP 04: Testing Docker</strong></p>
+
+<p>Now, I’m going to build an image and run a container. In this case I’m going to use official “httpd”.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker run <span class="nt">--rm</span> <span class="nt">--name</span><span class="o">=</span>linuxconfig-test <span class="nt">-p</span> 80:80 httpd
+</code></pre></div></div>
+
+<p>Since the httpd image does not exists locally it will be automatically fetched and built. Finally, a container based on it will be launched in the foreground (it will be automatically removed when stopped). If our firewall is configured to allow access to port 80, we should be able to see the It works! message when we reach our machine ip via browser.</p>
+
+<h3 id="manage-docker-as-a-non-root-user">Manage Docker as a non-root user:</h3>
+
+<p>If you don’t want to preface the docker command with sudo, create a Unix group called docker and add users to it. When the Docker daemon starts, it creates a Unix socket accessible by members of the docker group.</p>
+
+<p><strong>STEP 01: Create The Docker Group:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>groupadd docker
+</code></pre></div></div>
+
+<p><strong>STEP 02: Add User To Docker Group:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+</code></pre></div></div>
+<p>In here $USER automatically resolve current user logged in.</p>
+
+<p>Now, You need to logout from $USER and log into $USER again.</p>
+
+<p>$USER is the username which user wants to run without “sudo” prefix.</p>
+
+<p>Verify that you can run docker commands without sudo</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run hello-world
+</code></pre></div></div>
+
+<p><strong>STEP 03: Configure Docker to Start on Boot:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>docker
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker version
+</code></pre></div></div>
+
+<h3 id="install-docker-on-ubuntudebian">Install Docker on Ubuntu/Debian</h3>
+
+<p><strong>Install Docker Engine - Community</strong></p>
+
+<p><strong>A. Setup apt Repository</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+
+<p><strong>B. Install required Packages to Allow apt Repositories over HTTPS.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+</code></pre></div></div>
+
+<p><strong>C. Add Docker’s GPG Key</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add -
+</code></pre></div></div>
+
+<p><strong>D. Setup Docker Repository</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>add-apt-repository <span class="se">\</span>
+   <span class="s2">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="se">\</span><span class="s2">
+   </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> </span><span class="se">\</span><span class="s2">
+   stable"</span>
+</code></pre></div></div>
+
+<p><strong>E. Update apt Package Index Again</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+
+<p><strong>F. Install Docker Engine</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker-ce docker-ce-cli containerd.io
+</code></pre></div></div>
+
+<p><strong>G. Verify The Docker Engine Installed Correctly</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker run hello-world
+</code></pre></div></div>
+
+<h4 id="post-installation---manage-docker-as-a-non-root-user">Post Installation - Manage Docker as a Non Root User</h4>
+
+<p><strong>A. Create a group  named “docker”</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>groupadd docker
+</code></pre></div></div>
+
+<p><strong>B. Add User to the group named “docker”</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+</code></pre></div></div>
+
+<p><strong>C. Restart the Host Machine</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reboot
+</code></pre></div></div>
+
+<p><strong>D. Verify the Docker Installation</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run hello-world
+</code></pre></div></div>
+
+<p><strong>E. Docker Start on Boot</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>docker
+</code></pre></div></div>
+
+<p>Grate, Now Docker installation on CentOS / Ubuntu has been completed. Now, Lets start to get hands dirty…</p>
+
+<p>Hope this helps for those who are looking for a starting point to learn Docker. I wish to teach more about Docker in the next lesson. 
+You can keep in touch  with the future tutorials by  Subscribing me on Youtube.</p>
+
+<p><a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1"><img src="Docker-Installation/sub.gif" alt="Foo" /></a></p>
+:ET
