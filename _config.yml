@@ -2,7 +2,7 @@
 title: Digital Avenue IT
 description: A Comprihensive DevOps Guide
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://digitalave.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://digitalave.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Banner Section
 hero: welcome.jpg
