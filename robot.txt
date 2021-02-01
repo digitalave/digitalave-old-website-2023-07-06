@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://digitalave.github.io/sitemap.xml
