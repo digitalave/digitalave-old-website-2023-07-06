@@ -9,7 +9,6 @@ comments: true
 last_modified_at: 2020-01-31
 ---
 
-
 ## SonarQube Integration With Jenkins
 
 ##### Goal ?

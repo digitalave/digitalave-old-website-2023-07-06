@@ -18,7 +18,7 @@ author-twitter: https://twitter.com/DigitalAvenue2
 author-facebook: https://www.facebook.com/digitalavenuelk
 author-instagram: https://www.instagram.com/dimuit86/
 author-youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
-author-medium: https://medium.com/@dimuit86
+#author-medium: https://medium.com/@dimuit86
 #author-pinterest: https://pinterest.com/
 
 # Other Authors - here you can add Other authors. For example Natali_Braxton
@@ -26,13 +26,13 @@ authors:
   dimuthu_daundasekara:
     author-name: Dimuthu Daundasekara
     author-image: dimuthu.jpg
-    about-author: My name is Natali Braxton. I love walking, I play the guitar in my spare time. And also write articles about different technologies.
-    author-email: natali.example@gmail.com
+    about-author: My name is Dimuthu. I'm a DevOps Engineer, Systems Engineer. I'm passionate about Kubernetes, Docker, AWS, Azure, Jenkins and more. I turn coffie into code.
+    author-email: digitalavenuelk@gmail.com
     author-twitter: https://twitter.com/dimuit86
     author-facebook: https://twitter.com/
     author-instagram: https://www.instagram.com/dimuit86/
     author-youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
-    author-medium: https://medium.com/@dimuit86
+    #author-medium: https://medium.com/@dimuit86
     #author-pinterest: https://pinterest.com/
 
 # Social Media Links (Links are located in hero and footer)
@@ -42,7 +42,7 @@ facebook: https://www.facebook.com/digitalavenuelk
 instagram: https://www.instagram.com/dimuit86/
 #pinterest: https://pinterest.com/
 youtube: https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1
-medium: https://medium.com/@dimuit86
+#medium: https://medium.com/@dimuit86
 
 # Contact Form Settings
 contact-subtitle: How can I help you?
@@ -80,7 +80,19 @@ include:
   - _pages
 
 # Exclude from processing.
-exclude:
- - Gemfile
- - Gemfile.lock
- - vendor
+#exclude:
+# - Gemfile
+## - Gemfile.lock
+# - vendor
+
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+
+gems:
+  - jekyll-sitemap
+
+## => GitHub Repository (if the site is hosted by GitHub)
+##############################
+repository: digitalave/digitalave.github.io
+repository_tree: master
