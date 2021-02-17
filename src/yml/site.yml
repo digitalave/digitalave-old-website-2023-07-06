@@ -1,0 +1,22 @@
+name: Digital Avenue
+title: Digital Avenue | A Comprihensive DevOps Guide
+description: 
+  Dimuthu.
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+show_hero: true
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+  - title: Feed
+    url: /feed.xml
+email: digitalavenuelk@gmail.com
+disqus_username: disqus_Q0ivAcl0wR
