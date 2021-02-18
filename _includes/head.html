@@ -3,6 +3,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--Google Tag Manager Head -->
+    {% include google-tag-manager-head.html %}
+
+    <!--Google Analytics -->
+    {% include google-analytics.html %}
+
     {% assign title = '' %}
     {% if page.layout == 'author' %}
         {% assign title = page.display_name %}
@@ -96,16 +102,6 @@
     <!-- JavaScript enabled/disabled -->
     <script>
         document.querySelector('html').classList.remove('no-js');
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X58Q72XZ3R"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-X58Q72XZ3R');
     </script>
 
 </head>
