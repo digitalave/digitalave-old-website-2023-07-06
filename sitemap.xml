@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://digitalavenue.dev/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/about/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/contact/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/SonarQube-Integration-With-Jenkins/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/GitLab-Integration-with-Jenkins/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/tags/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install-SonarQube-On-Ubuntu-Debian/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install-and-configre-wazuh-security-monitoring-and-detection-system/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install_and_Configure_Zabbix_Server-4.4_on_CentOS8-RHEL8/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How_To_Setup_Intrusion_Detection_Using_Snort_on_PfSense/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/site_domain_filtering_using-pfblocker_on_pfsense/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Setup-Postfix-To-Send-Emails-Using-Gmail-Relay/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Monitor-Linux-Server-With-Nagios-Core-Using-SNMP/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How_To_Send_Alerts_From_Nagios_Using_Gmail/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Add_linux_host_to_nagios_using_nrpe/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install_nagios_core_on_centos7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Docker_Lesson_2_Docker_Starting_Point/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Docker_Lesson_1_Get_Started_With_Docker/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How-To-Setup-OpenVPN_on-pfSense_With_Daul_WAN_Interfaces_as_Failover/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Configure_DNS_DHCP_with_pfSense/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/INSTALL_&amp;_CONFIGURE_ELK_STACK_7.3_ON_CENTOS7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/ELK_Stack_Client_Side_Configuration/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How_To_Kill_Zombie_Proceesses_On_Linux/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/INSTALL_&amp;_CONFIGURE_ELK_STACK_7_ON_CENTOS7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/INSTALL_&amp;_CONFIGURE_ELK_STACK_6.8_ON_CENTOS7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/How-to-Install-Zabbix-Server-4.0-on-CentOS-7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/INSTALL_AND_CONFIGURE_LibreNMS_SERVER_ON_CENTOS_7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install-&amp;-Configure-ELK-Stack-On-CentOS7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Setup-Remote-VPN-Access-Using-PfSense-and-OpenVPN/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install_PfSense_2.4.4_on_Virtual_Box/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install-and-Configure-Graylog2-on-CentOS7/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install-and-Configure-Captive-Portal-with-FreeRADIUS-on-pfSense/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/Install_Ubuntu_18_04_on_Oracle_VirtualBox/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/assets/docs/privacy_policy.html</loc>
+  <lastmod>2021-02-18T19:15:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/assets/docs/termsofuse.html</loc>
+  <lastmod>2021-02-18T19:15:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://digitalavenue.dev/authors/dimuthu/</loc>
+  <lastmod>2021-02-18T19:15:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
