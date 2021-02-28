@@ -576,23 +576,3 @@ $config[‘fping’] = “/usr/sbin/fping”;
 
 <img src="/assets/img/post-imgs/librenms/image013.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 
-
-**Little Request:**
-
-> I appreciate you guys taking the time in reading my post. Please check out my YouTube channel and please subscribe for more as it'll help me loads.
-
-
-<a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber" target="_blank">https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ/featured?view_as=subscriber</a>
-
-
-
-
-
-
-
-
-
-[<img src="Docker-Installation/sub.gif">](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1) 
-
-[![Foo](Docker-Installation/sub.gif)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ?sub_confirmation=1)
-
