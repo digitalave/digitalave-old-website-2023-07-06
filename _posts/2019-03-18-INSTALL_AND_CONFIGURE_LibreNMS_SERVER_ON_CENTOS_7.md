@@ -222,3 +222,90 @@ Paste below additional configuration under the ‘[mysqld]’ section.
 ```bash
 [root@LibreNMS ~]# systemctl restart mariadb.service
 ```
+
+### STEP 4:- Download and Configure LibreNMS
+
+Create new system user named ‘librenms’ and define the home directory under ‘/opt/librenms’ and add ‘librenms’ user to ‘nginx’ group.
+
+```bash
+[root@LibreNMS ~]# useradd librenms -d /opt/librenms -M -r
+[root@LibreNMS ~]# usermod -a -G librenms nginx
+```
+
+Clone LibreNMS into /opt/librenms directory.
+
+
+```bash
+[root@LibreNMS opt]# cd /opt/
+[root@LibreNMS opt]# git clone https://github.com/librenms/librenms.git librenms
+```
+
+
+
+**This Step is optional…**
+
+Create new directories for LibreNMS logs and rrd files.
+```bash
+[root@LibreNMS opt]# mkdir -p /opt/librenms/{logs,rrd}
+[root@LibreNMS opt]# chmod 755 /opt/librenms/rrd/
+```
+
+
+<img src="/assets/img/post-imgs/librenms/image009.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+
+
+<img src="/assets/img/post-imgs/librenms/image010.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+
+
+Change ownership of all files and directories under ‘/opt/librenms’ to the ‘librenms’ user and group.
+
+
+```bash
+[root@LibreNMS opt]# chown -R librenms:librenms /opt/librenms/
+```
+
+
+<img src="/assets/img/post-imgs/librenms/image011.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+
+
+
+**Configure LibreNMS virtual host**
+
+LibreNMS is a Web-based application and we using Nginx web server to host it.
+Create a new virtual host file user ‘librenms.conf’ under Nginx ‘conf.d’ directory.
+
+```bash
+[root@LibreNMS ~]# vim /etc/nginx/conf.d/librenms.conf
+```
+
+
+Paste configuration below.
+
+
+```bash
+server {
+ listen      80;
+ server_name librenms.orelit.com;
+ server_name 192.168.100.10;
+ root        /opt/librenms/html;
+ index       index.php;
+
+ charset utf-8;
+ gzip on;
+ gzip_types text/css application/javascript text/javascript application/x-javascript image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
+ location / {
+  try_files $uri $uri/ /index.php?$query_string;
+ }
+ location /api/v0 {
+  try_files $uri $uri/ /api_v0.php?$query_string;
+ }
+ location ~ \.php {
+  include fastcgi.conf;
+  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+  fastcgi_pass unix:/var/run/php-fpm/php7.2-fpm.sock;
+ }
+ location ~ /\.ht {
+  deny all;
+ }
+}
+```
