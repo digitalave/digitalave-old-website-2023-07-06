@@ -64,7 +64,7 @@ SonarQube 8.3
 OpenJDK 11
 PostgreSQL 12
 
-### STEP 01: Set kernel Parameters & System Limits
+### STEP 01: Set kernel Parameters and System Limits
 First  of all we need to  perform some OS level modifications to "Kernel Parameters" and "System limits"
 
 Append these entries to bottom of the "sysctl.conf" file.
@@ -95,7 +95,7 @@ Make sure to reboot systems once above changes made. Therefore New changes will 
 
 ### STEP 02: Install OpenJDK 11
 
-**Download & Install JDK 11 APT Repositories**
+**Download and Install JDK 11 APT Repositories**
 
 Now, It's time to install Java on your system. Don't forget to install compatible Java version with you SonarQube version.
 
@@ -127,7 +127,7 @@ sudo update-alternatives --config java
 java -version
 ```
 
-### STEP 02: Install & Configure PostgreSQL Database for SonarQube
+### STEP 02: Install and Configure PostgreSQL Database for SonarQube
 
 
 In this tutorial I'm using PostgreSQL as my database engine. You also can use other compatible DB such as MySQL or Oracle.
@@ -172,9 +172,9 @@ sudo -u postgres psql -c "SELECT version();"
 ```
 
 
-**Enable  & Start PostgreSQL Service** 
+**Enable  and Start PostgreSQL Service** 
 
-Enable & start service to be able to start at the system boots up.
+Enable and start service to be able to start at the system boots up.
 
 ```bash
 sudo systemctl enable postgresql.service
@@ -260,7 +260,7 @@ exit
 ```
 
 
-**Restart & Check PostgreSQL DB Service Status again**
+**Restart and Check PostgreSQL DB Service Status again**
 
 Enable PostgreSQL service to be able to start automatically at systems boots-up.
 
@@ -276,7 +276,7 @@ netstat -tulpena | grep postgres
 ```
 
 
-### STEP 03: Download & Install SonarQube 
+### STEP 03: Download and Install SonarQube 
 
 Now, It's time to  download SonarQube binary archive file and extract on out installation directory.
 
@@ -318,7 +318,7 @@ sudo mv /opt/sonarqube-8.3.0.34182/ /opt/sonarqube
 ```
 
 
-### STEP 04: Create Group & User for SonarQube
+### STEP 04: Create Group and User for SonarQube
 
 Now, We need to create a system user and group for SonarQube service.
 
@@ -340,7 +340,7 @@ sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
 ```
 
 
-Provide user & group directory ownership to "/opt/sonarqube/"****
+Provide user and group directory ownership to "/opt/sonarqube/"****
 
 ```bash
 sudo chown sonar:sonar /opt/sonarqube/ -R
@@ -423,7 +423,7 @@ LimitNPROC=4096
 WantedBy=multi-user.target
 ```
 
-**Enable & Start SonarQube Service**
+**Enable and Start SonarQube Service**
 
 ```bash
 systemctl daemon-reload 
@@ -501,7 +501,7 @@ server{
 
 `nginx -t`
 
-**Enable & Restart Nginx Service**
+**Enable and Restart Nginx Service**
 
 ```bash
 systemctl enable nginx.service 
@@ -529,7 +529,7 @@ sudo ufw status
 
 ### STEP 09: Access SonarQube Through Web Browser
 
-Now, SonarQube installation & configuration has been completed. It's time to access web console through the web browser.
+Now, SonarQube installation and configuration has been completed. It's time to access web console through the web browser.
 
 Provide the default administrator account username and password as admin / admin
 
@@ -560,7 +560,7 @@ SonarQube stores their service logs under "/opt/sonarqube/logs" directory. You m
 
 `/opt/sonarqube/logs/web.log` 
 
-**Troubleshooting Tips: JVM OPTION & HEAP MEMORY ISSUES**
+**Troubleshooting Tips: JVM OPTION and HEAP MEMORY ISSUES**
 
 Additionally you may required to modify some entries related to  elasticsearch and JVM options, Therefore SonarQube using elastciseach and JVM options. The reason is our system's HEAP MEMORY will not be compatible with the JVM configurations.
 
