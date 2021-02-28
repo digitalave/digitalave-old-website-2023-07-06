@@ -17,7 +17,8 @@ last_modified_at: 2020-01-31
     </iframe>
 </div>
 
-### What is Wazuh
+
+### What is Wazuh?
 
 Wazuh is a free, open source and enterprise-ready security detection and monitoring solution.
 
@@ -25,7 +26,7 @@ Wazuh is born as a fork of OSSEC (HIDS) host based intrusion detection system. L
 
 Which can perform threat detection, integrity monitoring, incident response and compliance.
 
-##### Wazuh System consist with several components 
+**Wazuh System consist with several components:**
 
 * OSSEC HIDS - Host Based Intrusion Detection System
 
@@ -185,7 +186,6 @@ When Script ask for what kind of installation need to perform, type "manager" to
 ```
 
 ```bash
-** Para instalação em português, escolha [br].
  (en/br/cn/de/el/es/fr/hu/it/jp/nl/pl/ru/sr/tr) [en]: en
 
 Wazuh v3.11.1 (Rev. 31116) Installation Script - http://www.wazuh.com
@@ -263,8 +263,6 @@ You must have a C compiler pre-installed in your system.
    by visiting us online at https://documentation.wazuh.com/.
 
 
-   --- Press ENTER to continue ---
-
 4- Installing the system
 
  - Running the Makefile
@@ -334,8 +332,6 @@ Completed.
 [root@server1 wazuh-3.11.1]# systemctl restart wazuh-manager.service
 [root@server1 wazuh-3.11.1]# systemctl status -l  wazuh-manager.service
 ```
-
-
 
 ### STEP 03: Install Wazuh API
 
@@ -652,8 +648,9 @@ elasticsearch.hosts: ["http://127.0.0.1:9200"]
 
 REF: <a href="https://documentation.wazuh.com/3.11/installation-guide/installing-elastic-stack/elastic_server_rpm.html" target="_blank">https://documentation.wazuh.com/3.11/installation-guide/installing-elastic-stack/elastic_server_rpm.html</a>
 
+##### TROUBLESHOOTING TIPS
+
 ```css
--------------- TROUBLESHOOTING TIPS --------------------
 ERROR: wazuh-elk kibana[6972]: Browserslist: caniuse-lite is outdated. Please run next command `npm update`
 
 [root@wazuh-elk ~]# yarn install
@@ -662,7 +659,6 @@ ERROR: wazuh-elk kibana[6972]: Browserslist: caniuse-lite is outdated. Please ru
 
 [root@wazuh-elk ~]# npm update
 ```
-
 
 ## CLIENT SIDE CONFIGURATION - Adding & Registering Wazuh Agent
 
@@ -714,25 +710,10 @@ Provide necessary responses while the installation process.
 [root@cl1 wazuh-3.11.1]# ./install.sh
 ```
 
-
 ```html
 [root@cl1 wazuh-3.11.1]# ./install.sh
 
-  ** Para instalação em português, escolha [br].
-  ** ?????????, ??? [cn].
-  ** Für eine deutsche Installation, wählen Sie [de].
-  ** G?a e??at?stas? sta ????????, ep????te [el].
   ** For installation in English, choose [en].
-  ** Para instalar en español, elija [es].
-  ** Pour une installation en français, choisissez [fr]
-  ** A Magyar nyelvu telepítéshez válassza [hu].
-  ** Per l'installazione in Italiano, scegli [it].
-  ** ?????????????.???????.[jp].
-  ** Voor installatie in het Nederlands, kies [nl].
-  ** Aby instalowac w jezyku Polskim, wybierz [pl].
-  ** ??? ?????????? ?? ????????? ?? ??????? ,??????? [ru].
-  ** Za instalaciju na srpskom, izaberi [sr].
-  ** Türkçe kurulum için seçin [tr].
   (en/br/cn/de/el/es/fr/hu/it/jp/nl/pl/ru/sr/tr) [en]: en
  Wazuh v3.11.1 (Rev. 31116) Installation Script - http://www.wazuh.com
 
@@ -742,9 +723,6 @@ Provide necessary responses while the installation process.
   - System: Linux cl1 3.10.0-862.el7.x86_64 (centos 7.5)
   - User: root
   - Host: cl1
-
-
-  -- Press ENTER to continue or Ctrl-C to abort. --
 ```
 
 ```html
@@ -800,9 +778,6 @@ Provide necessary responses while the installation process.
    the ossec.conf and add a new localfile entry.
    Any questions about the configuration can be answered
    by visiting us online at https://documentation.wazuh.com/.
-
-
-   --- Press ENTER to continue ---
 
 4- Installing the system
 
@@ -1031,3 +1006,4 @@ root@DA-PC:~# systemctl restart wazuh-agent.service
 <img src="/assets/img/post-imgs/wazuh/1.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 <img src="/assets/img/post-imgs/wazuh/2.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 <img src="/assets/img/post-imgs/wazuh/3.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+
