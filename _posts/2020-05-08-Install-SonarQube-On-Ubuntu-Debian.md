@@ -247,7 +247,7 @@ GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;
 Exit From PostgreSQL Shell
 
 ```bash
-\q
+q
 ```
 
 
