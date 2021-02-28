@@ -26,7 +26,7 @@ Wazuh is born as a fork of OSSEC (HIDS) host based intrusion detection system. L
 
 Which can perform threat detection, integrity monitoring, incident response and compliance.
 
-**Wazuh System consist with several components:**
+#### Wazuh System consist with several components
 
 * OSSEC HIDS - Host Based Intrusion Detection System
 
@@ -287,7 +287,6 @@ Starting Wazuh...
  - The configuration can be viewed or modified at /var/ossec/etc/ossec.conf
 
 
----------------------------------
 [root@server1 wazuh-3.11.1]# /var/ossec/bin/ossec-control start
 Starting Wazuh v3.11.1...
 Started ossec-csyslogd...
@@ -306,7 +305,6 @@ ossec-logcollector already running...
 ossec-monitord already running...
 wazuh-modulesd already running...
 Completed.
-----------------------------------
 ```
 ##### D. Allow Wazuh Manager Service Ports Through The Firewall
 
@@ -586,7 +584,6 @@ In this case I have 6GiB of total physical memory for  the demonstration purpose
 output.elasticsearch.hosts: ['http://127.0.0.1:9200']
 ```
 
-
 REF: <a href="https://documentation.wazuh.com/3.11/installation-guide/installing-wazuh-manager/linux/centos/wazuh_server_packages_centos.html#wazuh-server-packages-centos-filebeat" target="_blank">https://documentation.wazuh.com/3.11/installation-guide/installing-wazuh-manager/linux/centos/wazuh_server_packages_centos.html#wazuh-server-packages-centos-filebeat</a>
 
 ##### STEP 08: Load Filebeat Template
@@ -666,7 +663,7 @@ ERROR: wazuh-elk kibana[6972]: Browserslist: caniuse-lite is outdated. Please ru
 
 Wazuh agent runs on the host that you want to monitor. 
 
-**Wazuh Agent has following capabilities.**
+#### Wazuh Agent has following capabilities
  
 * Log & data collection
 * File integrity monitoring
@@ -699,6 +696,7 @@ Install "openssl" in order to support certificate creation while installation.
 ```
 
 ##### C. Install Wazuh Agent
+
 
 Run "install.sh" script. This will guide you through out the installation process.
 
@@ -862,6 +860,8 @@ OR
 ```bash
 [root@wazuh-elk /]# /var/ossec/bin/manage_agents
 ```
+
+
 ```html
 ****************************************
 * Wazuh v3.11.1 Agent manager.         *
@@ -912,7 +912,7 @@ Confirm adding it?(y/n): y
 Added.
 ```
 
-**OPTIONAL:** Check for Wazuh Manager's IP
+##### OPTIONAL - Check for Wazuh Manager's IP
 
 Edit the Wazuh agent configuration in "/var/ossec/etc/ossec.conf" to add/change the Wazuh Manager Server IP address. 
 
@@ -924,13 +924,12 @@ Edit the Wazuh agent configuration in "/var/ossec/etc/ossec.conf" to add/change 
 
 ```bash
 [root@cl1 /]# systemctl restart wazuh-agent
-
 [root@cl1 /]# systemctl status -l  wazuh-agent
 ```
 
 REF: <a href="https://documentation.wazuh.com/3.11/user-manual/registering/cli/using-command-line-linux.html" target="_blank">https://documentation.wazuh.com/3.11/user-manual/registering/cli/using-command-line-linux.html</a>
 
-## Add a Ubuntu Client Agent To Wazuh-Manager
+### Add a Ubuntu Client Agent To Wazuh-Manager
 
 **On The Manager:**
 
@@ -979,13 +978,16 @@ Agent key information for '002' is:
 MDAyIERBLVBDIDE3Mi4yNS4xMC4xMTAgMDU3NGM5NGE3M2I5MDE4ZTE5NDdmMGQ4NTBjYzE0MWIwNDgwYTViZGY4YmY0NmU5MTA1ZWE2YWZmN2M3ODc2OA==
 ```
 
-**On the Agent**
+##### On the Agent 
+
 
 ##### STEP 03: Import the created key for new agent at the Manger 
+
 
 ```bash
 root@DA-PC:~# /var/ossec/bin/manage_agents -i MDAyIERBLVBDIDE3Mi4yNS4xMC4xMTAgMDU3NGM5NGE3M2I5MDE4ZTE5NDdmMGQ4NTBjYzE0MWIwNDgwYTViZGY4YmY0NmU5MTA1ZWE2YWZmN2M3ODc2OA==
 ```
+
 
 ```bash
 Agent information:
@@ -997,12 +999,12 @@ Confirm adding it?(y/n): y
 Added.
 ```
 
-
 ##### STEP 04: Restart Wazuh Agent Service
 
 ```bash
 root@DA-PC:~# systemctl restart wazuh-agent.service
 ```
+
 <img src="/assets/img/post-imgs/wazuh/1.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 <img src="/assets/img/post-imgs/wazuh/2.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 <img src="/assets/img/post-imgs/wazuh/3.png" width="auto" alt="Digital Avenue DevOps Tutorials">
