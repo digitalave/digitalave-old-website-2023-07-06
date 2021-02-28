@@ -840,7 +840,7 @@ Execute this command to add new agent to wazuh-manager.
    (R)emove an agent (R).
    (Q)uit.
 Choose your action: A,E,L,R or Q: 
-- Adding a new agent (use '\q' to return to the main menu).
+- Adding a new agent (use 'q' to return to the main menu).
   Please provide the following:
    * A name for the new agent:    * The IP Address of the new agent: Confirm adding it?(y/n): Agent added with ID 001.
 
@@ -948,7 +948,7 @@ REF: <a href="https://documentation.wazuh.com/3.11/user-manual/registering/cli/u
    (R)emove an agent (R).
    (Q)uit.
 Choose your action: A,E,L,R or Q: 
-- Adding a new agent (use '\q' to return to the main menu).
+- Adding a new agent (use 'q' to return to the main menu).
   Please provide the following:
    * A name for the new agent:    
    * * The IP Address of the new agent: 
