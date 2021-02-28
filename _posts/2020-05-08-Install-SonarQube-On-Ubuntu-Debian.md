@@ -243,3 +243,16 @@ Now, Grant all privileges to that user and database.
 ```bash
 GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;
 ```
+
+Exit From PostgreSQL Shell
+
+```bash
+\q
+```
+
+
+**Exit From  "postgres" User**
+
+```bash
+exit
+```
