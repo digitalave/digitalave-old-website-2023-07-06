@@ -155,3 +155,91 @@ wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key a
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 ```
 
+**Install PostgreSQL** 
+
+Let's install PostgreSQL on your system.
+
+```bash
+sudo apt install postgresql postgresql-contrib
+```
+
+
+**Check PostgreSQL Version**
+
+```bash
+sudo -u postgres psql -c "SELECT version();"
+```
+
+
+**Enable  and Start PostgreSQL Service** 
+
+Enable and start service to be able to start at the system boots up.
+
+```bash
+sudo systemctl enable postgresql.service
+
+sudo systemctl start  postgresql.service
+```
+
+
+**Change PostgreSQL default user password**
+
+Change default PostgreSQL password and set new password.
+
+```bash
+sudo passwd postgres
+```
+
+
+**Switch  to PostgreSQL User**
+
+Now, Switch into "postgres" user.
+
+```bash
+su - postgres
+```
+
+**Create New User "sonar"**
+
+Create a new database user which named with "sonar".
+
+```bash
+createuser sonar
+```
+
+
+**Log Into PostgreSQL Shell**
+
+Now, Login to postgresql database shell.
+
+
+```bash
+psql
+```
+
+
+**Set Password for SonarQube Database User "sonar"**
+
+And, Then set a password for the database user "sonar"
+
+```bash
+ALTER USER sonar WITH ENCRYPTED PASSWORD 'p@ssw0rd';
+```
+
+**Create New Database "sonarqube"**
+
+
+Create a new database which  named with "sonarqube"
+
+```bash
+CREATE DATABASE sonarqube OWNER sonar;
+```
+
+
+**Grant Privileges to "sonar" User on "sonarqube" Database**
+
+Now, Grant all privileges to that user and database.
+
+```bash
+GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;
+```
