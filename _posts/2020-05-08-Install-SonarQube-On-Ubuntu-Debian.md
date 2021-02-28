@@ -256,3 +256,348 @@ q
 ```bash
 exit
 ```
+
+**Restart and Check PostgreSQL DB Service Status again**
+
+Enable PostgreSQL service to be able to start automatically at systems boots-up.
+
+```bash
+systemctl restart  postgresql
+systemctl status -l   postgresql
+```
+
+Now Check wether PostgreSQL is listing on default port "5432"
+
+```bash
+netstat -tulpena | grep postgres
+```
+
+
+### STEP 03: Download and Install SonarQube 
+
+Now, It's time to  download SonarQube binary archive file and extract on out installation directory.
+
+**Download SonarQube Archive File**
+
+REF: <a href="https://binaries.sonarsource.com/Distribution/sonarqube/" target="_blank">https://binaries.sonarsource.com/Distribution/sonarqube/</a>
+
+Now, Let's create temporary directory and download SonarQube archive file.
+
+```bash
+sudo mkdir /sonarqube/
+
+cd /sonarqube/
+```
+
+
+```bash
+sudo curl -O https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.3.0.34182.zip
+```
+
+Additionally, you may need to  install "zip" apt package if not available your system.
+
+
+```bash
+sudo apt-get install zip
+```
+
+Extract your downloaded archive into /opt/ directory.
+
+```bash
+sudo unzip sonarqube-8.3.0.34182.zip -d /opt/
+```
+
+
+Move Extracted setup into /opt/sonarqube/ directory
+
+```bash
+sudo mv /opt/sonarqube-8.3.0.34182/ /opt/sonarqube
+```
+
+
+### STEP 04: Create Group and User for SonarQube
+
+Now, We need to create a system user and group for SonarQube service.
+
+**Create a group named "sonar"**
+
+First create a system group which named with "sonar"
+
+```bash
+sudo groupadd sonar
+```
+
+
+**Create a user named "sonar" and into "sonar" group with directory access**
+
+Then, Create an user and the add user into the group with directory permission to the /opt/ directory.
+
+```bash
+sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
+```
+
+
+Provide user and group directory ownership to "/opt/sonarqube/"****
+
+```bash
+sudo chown sonar:sonar /opt/sonarqube/ -R
+```
+
+
+### STEP 05: Configure SonarQube 
+
+Now, Let's head-over to "**sonar.properties**" configuration file and do the following changes
+
+```bash
+sudo vim /opt/sonarqube/conf/sonar.properties
+```
+
+
+**UnComment and type PostgreSQL database username and password that we've created at privous step.**
+
+
+Now, We need to point our PostgreSQL database to SonarQube service.
+We are using "localhost" as db host since we've installed postgreSQl on same server.
+
+Un-comment these lines and modify them as necessary.
+
+```bash
+sonar.jdbc.username=sonar
+sonar.jdbc.password=p@ssw0rd
+sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+sonar.search.javaOpts=-Xmx512m -Xms512m -XX:+HeapDumpOnOutOfMemoryError
+```
+
+
+```bash
+########### OPTIONAL USE ONLY #############
+sonar.jdbc.username=sonar
+sonar.jdbc.password=sonar
+sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+sonar.web.host=127.0.0.1
+sonar.web.port=9000
+sonar.web.javaAdditionalOpts=-server
+sonar.search.javaOpts=-Xmx512m -Xms512m -XX:+HeapDumpOnOutOfMemoryError
+sonar.log.level=INFO
+sonar.path.logs=logs
+###########################################
+```
+
+
+### STEP 06: Configure Systemd Service For SonarQube
+
+Now, Create a startup script for SonarQube service that start at system boots
+
+Create a systemd service file for SonarQube to be run at system startup. 
+
+```bash
+vim /etc/systemd/system/sonarqube.service
+```
+
+
+Add these content into the "sonarqube.service" file.
+
+```bash
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
+User=sonar
+Group=sonar
+Restart=always
+
+LimitNOFILE=65536
+LimitNPROC=4096
+
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Enable and Start SonarQube Service**
+
+```bash
+systemctl daemon-reload 
+systemctl enable sonarqube.service
+systemctl start sonarqube.service
+systemctl status -l sonarqube.service
+```
+
+
+After sometime later, Check whether the port are listening 
+
+```bash
+netstat -tulpena  | grep 9000
+```
+
+### STEP 07: Configure NGINX Reverse Proxy For SonarQube
+
+**Install NGINX Package**
+
+Now we need to expose our SonarQube server into outside as it is listening only on localhost. Therefore we are creating a Nginx reverse proxy to redirect outside traffic into the SonarQube.  
+
+```bash
+apt-get install nginx -y
+```
+
+
+Goto **/etc/nginx/nginx.conf** and un-comment these two lines
+
+```bash
+vim /etc/nginx/nginx.conf
+```
+
+```bash
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+```
+
+
+
+**Create NGINX Configuration File For SonarQube**
+
+Create a reverse proxy configuration file
+
+sudo vim /etc/nginx/sites-enabled/sonarqube.conf
+
+Copy and paste this vertual-host server block and change "server_name" entry as you required.
+
+```bash
+server{
+    listen      80;
+    server_name sonarqube.da.com;
+
+    access_log  /var/log/nginx/sonar.access.log;
+    error_log   /var/log/nginx/sonar.error.log;
+
+    proxy_buffers 16 64k;
+    proxy_buffer_size 128k;
+
+    location / {
+        proxy_pass  http://127.0.0.1:9000;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_redirect off;
+
+        proxy_set_header    Host            $host;
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto http;
+    }
+}
+```
+
+
+
+**Check ENGINX configurations**
+
+`nginx -t`
+
+**Enable and Restart Nginx Service**
+
+```bash
+systemctl enable nginx.service 
+systemctl restart nginx.service
+systemctl status -l  nginx.service
+```
+
+**Check whether port 80 listening for connections** 
+
+```bash
+netstat -tulpena | grep 80
+```
+
+
+### STEP 08: Firewall Configuration
+
+**Allow TCP ports 9000, 9001, 80 through the firewall**
+
+```bash
+sudo ufw allow 80,9000,9001/tcp
+
+sudo ufw status
+```
+
+
+### STEP 09: Access SonarQube Through Web Browser
+
+Now, SonarQube installation and configuration has been completed. It's time to access web console through the web browser.
+
+Provide the default administrator account username and password as admin / admin
+
+**Default Username: admin**
+
+**Default Password: admin**
+
+> http://172.25.10.10/ OR http://YOUR-SERVER-IP
+
+
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/1.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/2.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+
+
+##### Torubleshooting TIPS #####
+
+Sometime SonaqQube will not start as we expected. Most of the time the reason is related to elasticsearch service. SonarQube uses elasticsearch as it's indexing engine. So, We may need to  troubleshoot elasticsearch as well.
+
+Here are some troubleshooting tips:
+
+SonarQube stores their service logs under "/opt/sonarqube/logs" directory. You may need those log files in case of troubleshooting purpose.
+
+**Troubleshooting Tips : Log Paths**
+
+`/opt/sonarqube/logs/es.log` 
+
+`/opt/sonarqube/logs/sonar.log` 
+
+`/opt/sonarqube/logs/web.log` 
+
+**Troubleshooting Tips: JVM OPTION and HEAP MEMORY ISSUES**
+
+Additionally you may required to modify some entries related to  elasticsearch and JVM options, Therefore SonarQube using elastciseach and JVM options. The reason is our system's HEAP MEMORY will not be compatible with the JVM configurations.
+
+If your sonarqube service not starting or keep restarting, check following log file.
+
+tail  -f /opt/sonarqube/logs/es.log
+
+tail  -f /opt/sonarqube/logs/sonar.log
+
+tail  -f /opt/sonarqube/logs/access.log
+
+and check port number 9000 or 9001 listing on locahost.
+
+If not, your JVM.OPTION may not compatible with you physical RAM amount.Then,  You need to define matching JAVA HEAP Memory size for  you host machine.
+
+`vim /opt/sonarqube/elasticsearch/config/jvm.options `
+
+```bash
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms1g
+-Xmx1g
+```
+
+You may need to adjust your HEAP MEMORY according to you physical usable memory size.
+
+`/opt/sonarqube/elasticsearch/config/elasticsearch.yml`
+
+
+`/opt/sonarqube/elasticsearch/config/log4j2.properties`
+
+
+
+**SonarQube initial configuration has been completed. 
+In the next tutorial, I will show you how to integrate and analyze your project code on SonarQube with Jenkins server and GitLab. And analysis of code deployments real-time.**
+
+If you need further clarification, Please ask on YouTube video comment section.
+
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/3.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/4.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/5.png" width="auto" alt="Digital Avenue DevOps Tutorials">
+<img src="/assets/img/post-imgs/SonarQube-Ubuntu/6.png" width="auto" alt="Digital Avenue DevOps Tutorials">
