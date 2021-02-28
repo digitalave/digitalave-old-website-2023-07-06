@@ -24,7 +24,7 @@ I suppose, You've already installed Jenkins on your own. If you haven't Jenkins 
 REF: <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
 
 
-<a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">How To Install & Configure Jenkins</a> : <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
+<a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">How To Install and Configure Jenkins</a> : <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
 
 
 If you don't have GitLab account, Please create an account.
@@ -46,7 +46,7 @@ Organizations using Jenkins to build and deploy their applications and integrate
 
 **GitLab - Jenkins integration allows you to build and deploy application on Jenkins and reflect the output on  the GitLab UI more convenience**
 
-GitLab & Jenkins integration allows you to trigger a Jenkins build when a code is pushed to a repository, or when a merge request is created. 
+GitLab and Jenkins integration allows you to trigger a Jenkins build when a code is pushed to a repository, or when a merge request is created. 
 
 ### STEP 01: Install GitLAB Plugins on Jekins Server
 
@@ -63,7 +63,7 @@ Go to Manage Plugin section, then search and install following plugins on your J
 `"GitLab Authentication Plugin"`
 
 
-**Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install & Restart** 
+**Manage Jenkins > Manage Plugins > Available Plugin [Search] > Install and Restart** 
 
 <img src="/assets/img/post-imgs/GitLab_Jenkins/1.png" width="auto" width="50%">
 <img src="/assets/img/post-imgs/GitLab_Jenkins/2.png" width="auto" width="100%">
@@ -283,7 +283,7 @@ On the same configuration page, find the "**Build Triggers**" section and check 
 
 <img src="/assets/img/post-imgs/GitLab_Jenkins/19.png" width="100%">
 
-Finally Apply & Save Changes 
+Finally Apply and Save Changes 
 
 Now, GitLab integration with Jenkins has been completed. Now, We can check the connectivity, using build button and checking console logs.
 
