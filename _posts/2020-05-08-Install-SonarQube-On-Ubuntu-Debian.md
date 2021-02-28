@@ -127,3 +127,31 @@ sudo update-alternatives --config java
 java -version
 ```
 
+### STEP 02: Install and Configure PostgreSQL Database for SonarQube
+
+
+In this tutorial I'm using PostgreSQL as my database engine. You also can use other compatible DB such as MySQL or Oracle.
+
+It's always better to check version compatibility matrix, which recommends by SonarQube developers.
+
+REF: <a href="https://docs.sonarqube.org/latest/requirements/requirements/
+" target="_blank">https://docs.sonarqube.org/latest/requirements/requirements/
+</a>
+
+Let's do a system update again.
+
+```bash
+sudo apt update
+```
+
+
+**Import Trusted PGP Key and PostgreSQL APT Repo**
+
+Then, Install trusted GPG key on your system. And create a repository file for PostgreSQL.
+
+```bash
+wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+```
+
