@@ -16,7 +16,7 @@ comments: true
     </iframe>
 </div>
 
-**Before You Begin !**
+### Before You Begin
 
 In this tutorial, I'm going to  demonstrate you, how to integrated GitLab with Jenkins Server. 
 I suppose, You've already installed Jenkins on your own. If you haven't Jenkins server, Please refer my previous video/article. I'll put the link in the description.
