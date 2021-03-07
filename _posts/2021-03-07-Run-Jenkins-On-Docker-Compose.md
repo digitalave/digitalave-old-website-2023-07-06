@@ -1,8 +1,8 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'How To Run Jenkins In Docker Using Docker Compose With Volumes - Step by Step Explanation'
-image: /assets/img/post-imgs/Jenins-Install-ubuntu/Jenkins-Docker-Thumb.jpg
+title: 'Run Jenkins In Docker Using Docker Compose With Persistent Volumes'
+image: /assets/img/post-imgs/jenkins-docker-per-vol/Jenkins-Docker-Thumb.jpg
 tags: [Jenkins, CICD,Continuous Integration, Continuous Delivery, Docker, Docker-Compose]
 category: devops
 comments: true
