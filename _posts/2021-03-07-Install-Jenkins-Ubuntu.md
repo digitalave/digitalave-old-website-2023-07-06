@@ -152,8 +152,6 @@ This plugin installation may take considerable time. Please wait until completed
 
 Next, You have to provide your "name", username", "password", and "email" for the Jenkins admin user.
 
-IMG6
-
 Next, You need to provide your FQDN or IP address. By default, IP address will automatically load into the "instance URL" section.
 
 <img src="/assets/img/post-imgs/Jenins-Install-ubuntu/7.png" width="auto" width="100%">
