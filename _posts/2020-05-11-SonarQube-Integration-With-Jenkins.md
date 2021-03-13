@@ -214,4 +214,3 @@ https://github.com/gabrie-allaigre/sonar-gitlab-plugin
 
 
 
-
