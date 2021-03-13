@@ -9,17 +9,17 @@ comments: true
 last_modified_at: 2020-01-31
 ---
 
-##### Goal ?
+### Goal?
 
-**I want to ensure quality of the code, identify bugs, code vulnerabilities, code smells and align with code standards, after I committed codes into repositories such as Github, Gitlab. And the same way build my code automatically, using with Jenkins. I want to perform this task every time when commit code and see the static code analysis report at SonarQube.**
+**I want to ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github and Gitlab. And the same way build my code automatically, using Jenkins. I want to perform this task whenever I commit code and see the static code analysis report at SonarQube.**
 
 In this case, GitLab-Jenkins-SonarQube integration comes to play.
 
-So, In this tutorial, I'm going to demonstrate how to integrate SonarQube with Jenkins server.
+In this tutorial, I'm going to demonstrate how to integrate SonarQube with the Jenkins server.
 
-##### Work Flow - How It Goes ?
+##### Work Flow - How It Goes?
 
-Developer commit code changes to the GitLab/GitHub. Then, Jenkins server will fetch/pull code changes from Git repository and do a static code analysis using Sonar-Scanner and send analysis reports to SonarQube server. Finally, Jenkins build the project code.
+Developer commit code changes to the GitLab/GitHub. Then, the Jenkins server will fetch/pull code changes from Git repository and do a static code analysis using Sonar-Scanner and send analysis reports to SonarQube server. Finally, Jenkins build the project code.
 
 
 ##### Before You Begin !!!
@@ -27,17 +27,17 @@ Developer commit code changes to the GitLab/GitHub. Then, Jenkins server will fe
 **I Assume...**
 
 1. You have a Pre-Configured Jenkins server
-If not ? Refer this article to complete Jenkins Installation
+If not? Refer to my other article to complete Jenkins Installation
 
 2. You have a Pre-Configured SonarQube server
-If not ? Refer this article to complete SonarQube Installation
-3. You have a GitLab/GitHub account with developer role.
-If not ? Refer this article to complete GitLab-Jenkins integration
+If not? Refer to this article to complete SonarQube Installation
+3. You have a GitLab/GitHub account with a developer role.
+If not? Refer to this article to complete GitLab-Jenkins integration
 4. You have integrated GitLab/GitHub with Jenkins server
 
 ### STEP 01: Generate User Token
 
-Log in to SonarQube Server and go-to "**My Account**" section on your profile. And move to "**Security**" tab. Then, Generate a "**User Access Token**"
+Log in to SonarQube Server and go-to the "**My Account**" section on your profile. And move to the "**Security**" tab. Then, Generate a "**User Access Token**."
 
 **Login > Profile > My Account > Security > Generate Token**
 
@@ -52,7 +52,7 @@ You need to copy & save this code immediately. This code won't be able to see ag
 
 ### STEP 02: Install Sonar-Scanner on Jenkins
 
-Let's move on to your Jenkins server and install following plugins.
+Let's move on to your Jenkins server and install the following plugins.
 
 `SonarQube Scanner for Jenkins`
 
@@ -66,17 +66,17 @@ Let's move on to your Jenkins server and install following plugins.
 <img src="/assets/img/post-imgs/Sonar-Jenkins/3.png" width="auto" width="100%">
 <img src="/assets/img/post-imgs/Sonar-Jenkins/4.png" width="auto" width="100%">
 
-Restart once plugins installed on Jenkins server.
+Restart once plugins installed on the Jenkins server.
 
 ### STEP 03: Add SonarQube Authentication Token Into Jenkins
 
 Head-over to  Jenkins server and go-to **Jenkins > Credentials > System > Global Credentials > Add Credentials** 
 
-Kind : Secret test
+Kind: Secret test
 
-Secret : SonarQube Authentication Token
+Secret: SonarQube Authentication Token
 
-Description : Provide a descriptive name
+Description: Provide a descriptive name
 
 Click OK to add new credentials.
 
@@ -84,19 +84,19 @@ Click OK to add new credentials.
 
 ### STEP 04: Add SonarQube Server on Jenkins
 
-Now, We need to  add SonarQube server settings into Jenkins.
+Now, We need to add SonarQube server settings into Jenkins.
 
 **Manage Jenkins > Configure System > SonarQube servers [Scrol Down]**
 
-Add following settings in the "SonarQube server" section.
+Add the following settings in the "SonarQube server" section.
 
-Enable :  Enable injection of SonarQube server configuration as build environment variables 	
+Enable:  Enable injection of SonarQube server configuration as build environment variables     
 
-Name : Provide a descriptive name for the connection
+Name: Provide a descriptive name for the connection.
 
-Server URL : Provide you SonarQube server URL with port number.
+Server URL: Provide your SonarQube server URL with the port number.
 
-Server Authentication Token : Select credentials that we added previously as the step 02.
+Server Authentication Token: Select credentials that we added previously as step 02.
 
 Apply & Save.
 
@@ -107,19 +107,19 @@ Apply & Save.
 **Goto Jenkins > Manage Jenkins > Global Tool Configuration > SonarQube Scanner [Scrol Down] > Add SonarQube-Scanner**
 
 
-Now, We have two options, Either we can install automatically or manually. If you install specific version manually, Then you need to  define "**SONAR_RUNNER_HOME**" path manually.
+Now, We have two options. Either we can install automatically or manually. If you install a specific version manually, you need to define the "**SONAR_RUNNER_HOME**" path manually.
 
-In this case, I'm going to  install automatically.
+In this case, I'm going to install it automatically.
 
-Name : Sonar Scanner 4
+Name: Sonar Scanner 4
 
-Install Automatically : Enabled 
+Install Automatically: Enabled 
 
-Version : Select a version
+Version: Select a version
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/7.png" width="auto" width="100%">
 
-Finally Save & Apply changes.
+Finally, Save & Apply changes.
 
 ### STEP 05: Create a Jenkins Job
 
@@ -129,14 +129,14 @@ Go-to **Jenkins > New Item > Enter Project Name > Select Freestyle Project > OK*
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/8.png" width="auto" width="100%">
 
-Fill-out details on general section
+Fill-out details on the general section
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/9.png" width="auto" width="100%">
 
 Here I have used GitLab for my source code management task. 
-In here you can provide your own Github/GitLab repository URL and SSH Key for GitLab, as show in my "GitLab integration with Jenkins" tutorial.
+Here you can provide your own Github/GitLab repository URL and SSH Key for GitLab, as shown in my "GitLab integration with Jenkins" tutorial.
 
-Refer this article to know how to use SSH key authention with Gitlab.
+Refer to this article to know how to use SSH key authentic with Gitlab.
 
 REF: <a href="https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html" target="_blank">https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-with-Jenkins.html</a>
 
@@ -145,20 +145,20 @@ REF: <a href="https://digitalave.github.io/spring/2020/05/09/GitLab-Integration-
 <img src="/assets/img/post-imgs/Sonar-Jenkins/11.png" width="auto" width="100%">
 
 
-Alternatively, You also can directly enter your GitLab username and password in Jenkins > Credentials > System > Global Credentials > Add Credentials > Select "Username Password" from  the drop down menu as the option for "Kind"
+Alternatively, You also can directly enter your GitLab username and password in Jenkins > Credentials > System > Global Credentials > Add Credentials > Select "Username Password" from  the drop-down menu as the option for "Kind."
 
 
-Now, Let's move on to "**Build**" section, and click "**Add build step**" and select "**Execute Sonar Scanner**" option
+Now, Let's move on to the "**Build**" section, and click "**Add build step**" and select the "**Execute Sonar Scanner**" option.
 
 **Build > Add Build Step > Execute Sonar Scanner** 
 
-Task to run : Define a name for Scanner
+The task to run: Define a name for Scanner
 
-JDK : Leave it default or set your own JAVA 
+JDK: Leave it to default or set your own JAVA 
 
-Path to project properties : In here, you can define sonar-project.properties file location. [Optional]
+Path to project properties: In here, you can define the sonar-project. properties file location. [Optional]
 
-Analysis properties : Define Analysis Properties
+Analysis properties: Define Analysis Properties
 
 ```bash
 sonar.projectBaseDir=/var/lib/jenkins/workspace/{YOUR_PRJECT_DIRECTORY}
@@ -178,12 +178,12 @@ sonar.buildbreaker.skip=true
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/12.png" width="auto" width="100%">
 
-Save & Apply changes you made.
-Now, Rest of the configuration has been completed. Now, Head Over to  your project home on Jenkins and run "**Build Now**" button.
+Save & Apply the changes you made.
+Now, the Rest of the configuration has been completed. Now, Head Over to your project home on Jenkins and run the "**Build Now**" button.
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/13.png" width="auto" width="100%">
 
-Now, Go to console output will show you long list and you'll "**EXECUTION SUCCESS**" status. 
+Now, Go to console output will show you a long list, and you'll see "**EXECUTION SUCCESS**" status. 
 
 <img src="/assets/img/post-imgs/Sonar-Jenkins/15.png" width="auto" width="100%">
 <img src="/assets/img/post-imgs/Sonar-Jenkins/16.png" width="auto" width="100%">
@@ -199,18 +199,12 @@ Great, Now head over to your SonarQube server. And you'll see the analysis repor
 
 Troubleshooting Tips: 
 
-Issue : Unable To Load Component Class --- Project.lock
-		Report Task
-		GitLab Errors
-Resolution : Remove GitLab Plugin from SonarQube Server
+Issue: Unable To Load Component Class --- Project.lock
+        Report Task
+        GitLab Errors
+Resolution: Remove GitLab Plugin from SonarQube Server
 
 https://github.com/adnovum/sonar-build-breaker
 https://github.com/gabrie-allaigre/sonar-gitlab-plugin
-
-
-
-
-
-
 
 

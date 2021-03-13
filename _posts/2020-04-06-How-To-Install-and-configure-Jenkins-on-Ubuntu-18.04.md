@@ -20,15 +20,15 @@ last_modified_at: 2020-01-31
 
 ### Introduction:
 
-Jenkins is an open source automation server which provides hundreds of plugin to perform continues integration and continues delivery for building and deploying projects.
+Jenkins is an open-source automation server that provides hundreds of plugin to perform continuous integration and continues delivery to build and deploy projects.
 
-Continuous integration (CI) is a DevOps practice in which team members regularly commit their code changes to the version control repository, after which automated builds and tests are run. Continuous delivery (CD) is a series of practices where code changes are automatically built, tested and deployed to production.
+Continuous integration (CI) is a DevOps practice in which team members regularly commit their code changes to the version control repository. Automated builds and tests are run. Continuous delivery (CD) is a series of practices where code changes are automatically built, tested and deployed to production.
 
-If you are a software developer, Then surely Jenkins suites for you and automate your CI/CD build tasks easily.
+If you are a software developer, surely Jenkins suites and automates your CI/CD build tasks quickly.
 
 Jenkins can automate continuous integration and continuous delivery (CI/CD) for any project.
-Support for hundreds of plugins in the update center.  Which provides infinite possibilities for what Jenkins can do.
-Jenkins can configure into distributed system that distribute work across multiple node/machines.
+Support for hundreds of plugins in the update centre.  Which provides infinite possibilities for what Jenkins can do.
+Jenkins can configure into a distributed system that distributes work across multiple node/machines.
 
 ### Features: 
 
@@ -50,7 +50,7 @@ Following JDK/JRE Versions support for current Jenkins versions
 `OpenJDK JDK / JRE 8 - 64 bits`
 `OpenJDK JDK / JRE 11 - 64 bits`
 
-**NOTE: Always check JAVA version requirement before proceed the Jenkins installation.**
+**NOTE: Always check JAVA version requirement before proceeding with the Jenkins installation.**
 
 REF: <a href="https://www.jenkins.io/doc/administration/requirements/java/" target="_blank">https://www.jenkins.io/doc/administration/requirements/java/</a>
 
@@ -107,13 +107,13 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
-Jenkins service will automatically start after the installation process is complete. You can verify it by printing the service status
+Jenkins service will automatically start after the installation process is complete. You can verify it by printing the service status.
 
 ```bash
 sudo systemctl status jenkins
 ```
 
-If it isn't enabled/started automatically.
+If it isn't enabled,/started automatically.
 
 ```bash
 sudo systemctl enable jenkins
@@ -123,7 +123,7 @@ sudo systemctl start jenkins
 
 ### STEP 03: Configure Firewall
 
-Allow port 8080 through the Ubuntu firewall
+Allow port 8080 through the Ubuntu firewall.
 
 ```bash
 sudo ufw allow 8080/tcp
@@ -131,11 +131,11 @@ sudo ufw allow 8080/tcp
 
 ### STEP 04: Initial Setup For Jenkins
 
-Once above configuration completed, Open-up your web browser and access through the IP:PORT.
+Once the above configuration completed, Open-up your web browser and access it through the IP: PORT.
 
 > http://your_ip_or_domain:8080 
 
-Now, Head-over to terminal again, and find out the Administrator password using  this command
+Now, Head-over to the terminal again, and find out the Administrator password using this command.
 
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -143,11 +143,11 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 <img src="/assets/img/post-imgs/jenkins-ubuntu/1.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 
-Copy the password from terminal and paste it in the required field
+Copy the password from the terminal and paste it into the required field
 
 
 
-On the next screen at the initial setup wizard will ask for install suggested plugins or you want to select specific plugins. Click on the Install suggested plugins box, and the installation process will start immediately.
+The next screen at the initial setup wizard will ask for Install suggested plugins or select specific plugins. Click on the Install suggested plugins box, and the installation process will start immediately.
 
 <img src="/assets/img/post-imgs/jenkins-ubuntu/2.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 
@@ -159,7 +159,7 @@ Once the plugins are installed, you will be prompted to set up the first admin u
 
 <img src="/assets/img/post-imgs/jenkins-ubuntu/5.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 
-Click on the Start using Jenkins button and you will be redirected to the Jenkins dashboard logged in as the admin user you have created in one of the previous steps.
+Click on the Start using Jenkins button. You will be redirected to the Jenkins dashboard logged in as the admin user you have created in one of the previous steps.
 
 <img src="/assets/img/post-imgs/jenkins-ubuntu/6.png" width="auto" alt="Digital Avenue DevOps Tutorials">
 
@@ -171,7 +171,7 @@ Now you've successfully installed Jenkins on your Ubuntu system.
 
 ##### I hope you learned how to install Jenkins on Ubuntu. And In the next tutorial, I'll show you how to integrate GitLab with your newly built Jenkins server.
 
-##### If you have any questions, Please leave a comment on the YouTube comment section. 
+##### If you have any questions, please leave a comment on the YouTube comment section. 
 
 
 

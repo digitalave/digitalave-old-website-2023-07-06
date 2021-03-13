@@ -10,13 +10,13 @@ comments: true
 
 # Setup Jenkins On Ubuntu 20.04 LTS / Debian
 
-Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular automation server.  Jenkins built using Java, which can integrate with numerous plugins.
+Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular automation server.  Jenkins built using java, which can integrate with numerous plugins.
 
-We can extend the capability of Jenkins by integrating with many other tools sych as SonarQube and mesure code quolity and standered before the deployment performed. 
+We can extend Jenkins's capability by integrating with many other tools such as SonarQube and measure code quality and standard before the deployment performed. 
 
 ## Prerequisites
 
-OS Requirement : Make sure to use Ubuntu LTS versions
+OS Requirement: Make sure to use Ubuntu LTS versions
 
 Hardware Requirement:
 
@@ -29,7 +29,7 @@ Software Requirement:
 
 *  Java - JRE8/11 (32Bit or 64Bit Supported)
 
-> Note : Older versions and Java 9, 10,12 are not supported
+> Note: Older versions and Java 9, 10,12 are not supported
 
 | JDK                     | JRE    |
 |-------------------------|--------|
@@ -45,10 +45,10 @@ sudo apt update -y
 
 ### STEP 02: Install Java
 
-Jenkins is built with Java, So we need to install appropriate Java version. This time I'm going to use OpenJDK version 11.
-Now head-over to  you ubuntu terminal and do the following steps.
+Jenkins is built with Java, So we need to install the appropriate Java version. This time I'm going to use OpenJDK version 11.
+Now head-over to your ubuntu terminal and do the following steps.
 
-Run this command and pick one openJDK version 8 or 11 from the list
+Run this command and pick one OpenJDK version 8 or 11 from the list
 
 ```bash
 sudo apt search openjdk
@@ -73,14 +73,14 @@ sudo wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt
 ```
 Add Jenkins Repository
 
-In this step is to append Jenkins repository in Debian source.list
+This step is to append the Jenkins repository in the Debian source.list
 
 ```bash
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
     /etc/apt/sources.list.d/jenkins.list'
 ```
 
-Once again update OS repositories.
+Once again, update OS repositories.
 
 ```bash
 sudo apt-get update -y
@@ -102,7 +102,7 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 ```
 
-Optionally, Sometime you naeed to allow TCP port 8080 though out the firewall. If you using, Ubuntu the execute fullowing command.
+Optionally, Sometimes you need to allow TCP port 8080 though out the firewall. If you are using Ubuntu, execute the following command.
 
 ```bash
 sudo ufw allow 8080
@@ -116,13 +116,13 @@ Now, You can access your Jenkins server through the web browser.
 
 <img src="/assets/img/post-imgs/Jenins-Install-ubuntu/1.png" width="auto" width="100%">
 
-For the 1st time Jenkins will prompt to enter unlock password. You need to execute following command on your terminal and copy output password and paste into the Administrator password text box.
+For the 1st time, Jenkins will prompt to enter an unlock password. You need to execute the following command on your terminal and copy the output password and paste it into the Administrator password text box.
 
 `Troubleshooting: If the "initialAdminPassword" not available, You may have to remove jenkins and try again.`
 
 **REF:** <a href="https://stackoverflow.com/questions/48611411/initialadminpassword-file-is-not-created-in-jenkins-folder-in-windows-10-os" target="_blank">Admin Password Not Available</a>
 
-For the first time Jenkins will prompt to unlock and it will tell us to copy the password from this  location. Copy this 32charactor alphanumric password and paste into the text box in the wizard.
+For the first time, Jenkins will prompt us to unlock, and it will tell us to copy the password from this location. Copy this 32charactor alphanumeric password and paste it into the text box in the wizard.
 
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -134,13 +134,13 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ### STEP 07: Install Plugins
 
-In this section, You will need to install Jekins plugins according to how going to use. you can choose either option. 
+In this section, You will need to install Jenkins plugins according to how going to use them. You can choose either option. 
 
-In this case, I'm choosing "select plugins to install option"
+In this case, I'm choosing the "select plugins to install option."
 
 <img src="/assets/img/post-imgs/Jenins-Install-ubuntu/3.png" width="auto" width="100%">
 
-Once you choose required plugins, click next.
+Once you choose the required plugins, click next.
 This plugin installation may take considerable time. Please wait until completed.
 
 
@@ -152,7 +152,7 @@ This plugin installation may take considerable time. Please wait until completed
 
 Next, You have to provide your "name", username", "password", and "email" for the Jenkins admin user.
 
-Next, You need to provide your FQDN or IP address. By default, IP address will automatically load into the "instance URL" section.
+Next, You need to provide your FQDN or IP address. By default, the IP address will automatically load into the "instance URL" section.
 
 <img src="/assets/img/post-imgs/Jenins-Install-ubuntu/7.png" width="auto" width="100%">
 
@@ -161,9 +161,9 @@ Next, You need to provide your FQDN or IP address. By default, IP address will a
 <img src="/assets/img/post-imgs/Jenins-Install-ubuntu/9.png" width="auto" width="100%">
 
 Now, Jenkins installation has been completed successfully.
-This is the 1st session of the Jenkins tutorial series. If you love to learn more on jenkins, refer my other articles available on this website.
+This is the 1st session of the Jenkins tutorial series. If you love to learn more about Jenkins, refer to my other articles available on this website.
 
-If you are facing issues with the installation please comment below. I will regularly reply here. 
+If you are facing issues with the installation, please comment below. I will regularly reply here. 
 
 **And also don't forget to subscribe my <a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ" target="_blank">YouTube</a> channel for upcoming tutorials.**
 
