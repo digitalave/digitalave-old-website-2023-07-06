@@ -3,7 +3,7 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: How To Integrate GitLab With Jenkins
 image: /assets/img/post-imgs/GitLab_Jenkins/gitlab-jenkins.jpg
-tags: [Jenkins, GitLab, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
+tags: [Jenkins, GitLab, CICD, Automation,Continuous Integration, Continuous Delivery]
 category: DevOps
 comments: true
 ---
@@ -16,29 +16,29 @@ comments: true
     </iframe>
 </div>
 
-### Before You Begin
+## Before You Begin
 
 In this tutorial, I'm going to demonstrate to you how to integrate GitLab with Jenkins Server. 
-I suppose You've already installed Jenkins on your own. If you haven't Jenkins server, Please refer to my previous video/article. I'll put the link in the description.
+I suppose You've already installed Jenkins on your own. If you haven't Jenkins server, Please refer to my previous video and article. I'll put the link in the description.
 
-REF: <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
+REF: <a href="https://digitalavenue.dev/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04/" target="_blank">https://digitalavenue.dev/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04/</a>
 
 
-<a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">How To Install and Configure Jenkins</a> : <a href="https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
+<a href="https://digitalavenue.dev/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04/" target="_blank">How To Install and Configure Jenkins</a> : <a href="https://digitalavenue.dev/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04/" target="_blank">https://digitalave.github.io/spring/2020/04/06/How-To-Install-and-configure-Jenkins-on-Ubuntu-18.04.html</a>
 
 
 If you don't have a GitLab account, Please create an account.
 
 **REF**: <a href="https://gitlab.com/" target="_blank">https://gitlab.com/</a>
 
-### Prerequisites : 
+## Prerequisites : 
 
 * Pre-Configured Jenkins Server 
 
-* GitLab Account + Developer Role Permission
+* GitLab Account With Developer Role Permission
 
 
-### Introduction : 
+## Introduction : 
 
 **Jenkins** is an open-source software development platform enriched with continuous integration (CI) and many more DevOps automation capabilities.
 
@@ -48,7 +48,7 @@ Organizations using Jenkins to build and deploy applications and integrate with 
 
 Integration GitLab and Jenkins allows you to trigger a Jenkins build when a code is pushed to a repository or when a merge request is created. 
 
-### STEP 01: Install GitLab Plugins on Jenkins Server
+## STEP 01: Install GitLab Plugins on Jenkins Server
 
 Go to the Manage Plugin section, then search and install the following plugins on your Jenkins server.
 
