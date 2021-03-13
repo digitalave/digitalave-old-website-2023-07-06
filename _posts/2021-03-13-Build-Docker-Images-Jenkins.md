@@ -1,9 +1,9 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Build Docker Images With Jenkins - Docker Containers as Jenkins Build Slaves
-subtitle: Dynamically Provision ephemeral Docker Containers as Jenkins Agent Node
-description: In this tutorial, I will walk you through setting up temporary Docker containers as Jenkins builds slaves for better resource utilization. Usually, Spinning up a new container takes less than a minute. And every build task spins up a new container, build the project, and finally, it's destroyed itself. You can reduce the number of static VMs for Jenkins to build jobs. This step will require when you will use Docker with CI/CD pipelines that build your applications into Docker images and deploying into deferent environments such as dev, staging, and finally in production.
+title: 'Build Docker Images With Jenkins - Docker Containers as Jenkins Build Slaves'
+subtitle: 'Dynamically Provision ephemeral Docker Containers as Jenkins Agent Node
+description: In this tutorial, I will walk you through setting up temporary Docker containers as Jenkins builds slaves for better resource utilization. Usually, Spinning up a new container takes less than a minute. And every build task spins up a new container, build the project, and finally, it's destroyed itself. You can reduce the number of static VMs for Jenkins to build jobs. This step will require when you will use Docker with CI/CD pipelines that build your applications into Docker images and deploying into deferent environments such as dev, staging, and finally in production.'
 image: /assets/img/post-imgs/Build_Docker_Images_on_Jenkins/docker-image-build-jenkins.jpg
 tags: [How to configure Jenkins to build Docker Images, Configure Docker Jenkins Plugin, Jenkins Add Docker Agent, Jenkins Create Build Project , Jenkins Build Project]
 category: DevOps
