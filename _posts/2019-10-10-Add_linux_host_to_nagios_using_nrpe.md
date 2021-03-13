@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin'
 image: /assets/img/post-imgs/add-linux-to-nagios/linux2nagios_N.jpg
 tags: [Nagios,Server Monitoring]
-category: devops
+category: Server Monitoring
 comments: true
 last_modified_at: 2020-01-31
 ---

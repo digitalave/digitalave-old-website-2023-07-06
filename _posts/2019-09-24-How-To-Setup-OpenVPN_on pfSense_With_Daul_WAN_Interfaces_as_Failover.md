@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How To Setup an OpenVPN on pfSense with Dual-WAN Interfaces as Fail-over'
 image: /assets/img/post-imgs/dual-wan-pf-vpn/Dual-WAN-OVPN-pfSense_N.jpg
 tags: [pfsense, OpenVPN,Failover Firewall]
-category: devops
+category: pfSense
 comments: true
 last_modified_at: 2020-01-31
 ---

@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Configure Local DHCP Server and DNS Resolver on pfSense'
 image: /assets/img/post-imgs/pfsense-dns-dhcp/pf-DNS&DHCP.png
 tags: [pfsense, DNS, DHCP, Firewall]
-category: devops
+category: pfSense
 comments: true
 last_modified_at: 2020-01-31
 ---
