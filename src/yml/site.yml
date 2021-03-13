@@ -1,13 +1,19 @@
 name: Digital Avenue
 title: Digital Avenue | A Comprihensive DevOps Guide
 description: 
-  Dimuthu.
+  Digital Avenue IT Verified DevOps IT Admin Tutorials For Kubernetes, Azure, Jenkins, Docker, Linux, PfSense, Git, AWS and more. Learn DevOps Now.
 tags:
-  - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - DevOps
+  - Digital Avenue
+  - Tutorial
+  - IT
+  - Kubernete
+  - Azure
+  - Amazon
+  - Jenkins
+  - Docker
+  - HowTo
+  - DevOps Tutorials
 show_hero: true
 menu:
   - title: Home
@@ -19,4 +25,4 @@ menu:
   - title: Feed
     url: /feed.xml
 email: digitalavenuelk@gmail.com
-disqus_username: disqus_Q0ivAcl0wR
+disqus_username: digitalavenue

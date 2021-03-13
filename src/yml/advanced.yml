@@ -1,6 +1,6 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://digitalavenue.dev" # the base hostname & protocol for your site
-google_analytics: "G-X58Q72XZ3R"
+google_analytics: "G-JK6MHZTQXW"
 language: "en"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"

@@ -27,9 +27,9 @@ translations:
     subject: "New contact!"
     submit_btn: "Send"
     placeholders:
-      name: "Your name"
-      email: "Your e-mail"
-      message: "Your message"
+      name: "Dimuthu Daundasekara"
+      email: "dimuit86@gmail.com"
+      message: "Hello There..."
     errors:
       locale: "en"
       empty_name: "Name is required"
