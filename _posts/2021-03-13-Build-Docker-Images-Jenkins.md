@@ -81,7 +81,7 @@ The "Docker Host URI" is where Jenkins launches the agent container. In this sce
 Click on the "Add" drop down button and select "Jenkins", And then we need to add create "X.509 Client Certificate" from the Docker-Agent(Dind)'s "/cert" dirctory. We have create those certificates at the STEP-04. 
 
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/7png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/7.png" width="auto" width="100%">
 
 Do accomplish this task, you will need following certificates. 
 
