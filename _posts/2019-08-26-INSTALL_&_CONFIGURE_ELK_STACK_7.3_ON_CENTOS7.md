@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Install and Configure ELK Stack 7.3 On CentOS7'
 image: /assets/img/post-imgs/elk-stack/ELK.png
 tags: [ELK, Elastisearch, Logstash, Kibana, Log Server]
-category: devops
+category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---

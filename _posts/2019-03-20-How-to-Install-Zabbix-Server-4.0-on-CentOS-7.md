@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How to Install Zabbix Server 4.0 on CentOS 7'
 image: /assets/img/post-imgs/zabbix/zabbix_N.jpg
 tags: [Zabbix, Server Monitoring, Log Monitoring]
-category: devops
+category: Server Monitoring
 comments: true
 last_modified_at: 2020-01-31
 ---

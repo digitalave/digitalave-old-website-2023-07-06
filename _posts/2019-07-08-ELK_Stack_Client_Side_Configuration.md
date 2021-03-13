@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'ELK Stack Client Side Configuration Using Auditbeat'
 image: /assets/img/post-imgs/elk-auditbeat/audit2.png
 tags: [pfSense, Firewall, OpenVPN, VPN]
-category: devops
+category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---

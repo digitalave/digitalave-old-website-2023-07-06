@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Install and Configure Captive Portal with FreeRADIUS on pfSense'
 image: /assets/img/post-imgs/pfsense_captive_portal/captive_portal_N.jpg
 tags: [pfSense, Firewall, Captive Portal, WIFI]
-category: devops
+category: pfSense
 comments: true
 last_modified_at: 2020-01-31
 categories: 

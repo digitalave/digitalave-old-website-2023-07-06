@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Install and Configure ELK Stack On CentOS7'
 image: /assets/img/post-imgs/elk-stack/ELK.png
 tags: [pfSense, Firewall, Captive Portal, WIFI]
-category: devops
+category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---

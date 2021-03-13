@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7'
 image: /assets/img/post-imgs/graylog_ins/graylog.png
 tags: [Graylog, Logs, Log Monitoring]
-category: devops
+category: Server Monitoring
 comments: true
 last_modified_at: 2020-01-31
 ---
