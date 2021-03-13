@@ -1,3 +1,4 @@
 User-Agent: *
 Allow: /
+Sitemap: https://digitalavenue.dev/sitemap.xml
 
