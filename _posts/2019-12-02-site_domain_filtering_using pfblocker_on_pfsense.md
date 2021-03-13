@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Internet Content Filtering and Site Blocking Using pfBlockerNG on pfSense'
 image: /assets/img/post-imgs/pfBlocker-pfsense/pfblocker_N.jpg
 tags: [SquidGuard, Firewall, pfBlockerNG, pfsense]
-category: devops
+category: IT Security
 comments: true
 last_modified_at: 2020-01-31
 ---

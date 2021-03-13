@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How To Setup Intrusion Detection Using Snort on PfSense'
 image: /assets/img/post-imgs/Snort-pfsense/snort-pfSense.jpg
 tags: [SquidGuard, Firewall, pfBlockerNG, pfsense]
-category: devops
+category: IT Security
 comments: true
 last_modified_at: 2020-01-31
 ---

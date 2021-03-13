@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How to Install and Configure SonarQube 8 on Ubuntu 18.04'
 image: /assets/img/post-imgs/SonarQube-Ubuntu/sonarqube.jpg
 tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
-category: devops
+category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---

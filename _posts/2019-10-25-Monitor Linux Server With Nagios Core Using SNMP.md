@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Monitor Linux Server With Nagios Core Using SNMP'
 image: /assets/img/post-imgs/nagios-snmp/1_N.jpg
 tags: [Nagios, Monitoring, SNMP,CentOS 7, RHEL 7]
-category: devops
+category: Server Monitoring
 comments: true
 last_modified_at: 2020-01-31
 ---

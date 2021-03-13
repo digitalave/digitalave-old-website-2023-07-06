@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Run Jenkins In Docker Using Docker Compose With Persistent Volumes'
 image: /assets/img/post-imgs/jenkins-docker-per-vol/Jenkins-Docker-Thumb.jpg
 tags: [Jenkins, CICD,Continuous Integration, Continuous Delivery, Docker, Docker-Compose]
-category: devops
+category: DevOps
 comments: true
 ---
 

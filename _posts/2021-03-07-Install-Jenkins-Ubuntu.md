@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How To Setup Jenkins On Ubuntu 20.04LTS'
 image: /assets/img/post-imgs/Jenins-Install-ubuntu/Jenkins-Ubuntu.jpg
 tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery]
-category: devops
+category: DevOps
 comments: true
 ---
 

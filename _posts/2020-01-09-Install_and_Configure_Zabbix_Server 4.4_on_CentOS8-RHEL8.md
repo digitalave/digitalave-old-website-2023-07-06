@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Install and Configure Zabbix 4.4 on CentOS8 RHEL8'
 image: /assets/img/post-imgs/Zabbix4.4/zabbix_44.jpg
 tags: [Zabbix, Server Monitoring, Log Monitoring]
-category: devops
+category: Server Monitoring
 comments: true
 last_modified_at: 2020-01-31
 ---

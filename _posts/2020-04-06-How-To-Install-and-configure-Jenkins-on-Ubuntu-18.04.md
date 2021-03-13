@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How to Install and Configure Jenkins on Ubuntu 18.04 LTS 16.04 Debian'
 image: /assets/img/post-imgs/jenkins-ubuntu/Jenkins.jpg
 tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery]
-category: devops
+category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---
