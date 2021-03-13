@@ -1,432 +1,169 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Run Jenkins In Docker Using Docker Compose With Persistent Volumes'
-image: /assets/img/post-imgs/jenkins-docker-per-vol/Jenkins-Docker-Thumb.jpg
-tags: [Jenkins, CICD,Continuous Integration, Continuous Delivery, Docker, Docker-Compose]
+title: 'How To Setup Jenkins On Ubuntu 20.04LTS'
+image: /assets/img/post-imgs/Jenins-Install-ubuntu/Jenkins-Ubuntu.jpg
+tags: [Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery]
 category: devops
 comments: true
 ---
 
-# How to Run Jenkins on Docker with Persistent Volumes
+# Setup Jenkins On Ubuntu 20.04 LTS / Debian
 
-Do you want to setup Jenkins on Docker? But You may just curious about the persistence of your Jenkins data. Ok, I will explain them here step by step.
+Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular automation server.  Jenkins built using Java, which can integrate with numerous plugins.
 
-**You may arise a few questions like...**
+We can extend the capability of Jenkins by integrating with many other tools sych as SonarQube and mesure code quolity and standered before the deployment performed. 
 
-* How can I access Jenkins data from outside of the container? 
+## Prerequisites
 
-* Are these data persists even after the Jenkins container restarted?
+OS Requirement : Make sure to use Ubuntu LTS versions
 
-* What happens if the container crashed?
+Hardware Requirement:
 
-* how do I backup data after Jenkins is containerized? 
+| Minimum Hardware Requirement | Recommended Hardware Requirement |
+|------------------------------|---------------------------------|
+| 1GB+ Hard Disk Space         | 50GB+ Hard  Disk Space          |
+| 256 MB RAM                   | 1GB + RAM                       |
 
-In this tutorial, I will walk you through setting up the Jenkins server on docker with persistent volumes. First, I'll show you each step manually, and then I'll use docker-compose to make things faster and reusable.
+Software Requirement:
 
-#### In this tutorial, I will walk you through the following sections.
+*  Java - JRE8/11 (32Bit or 64Bit Supported)
 
-##### Section 01. Run Jenkins on a Docker Container Manually
+> Note : Older versions and Java 9, 10,12 are not supported
 
-##### Section 02. Run Jenkins on a Docker Container Using Docker Compose ( make things faster and reusable)
+| JDK                     | JRE    |
+|-------------------------|--------|
+| OpenJDK 8 , OpenJRE 8   | JRE 8  |
+| OpenJDK 11 , OpenJRE 11 | JRE 11 |
+|                         |        |
 
-## What is Jenkins?
+### STEP 01: Update OS
 
-Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular CI/CD automation tool. 
+```bash
+sudo apt update -y
+```
 
-We can extend Jenkins's capability by integrating with many other tools such as SonarQube and measuring code quality and standard before the deployment performed. And also, Jenkins supports thousands of plugins that can use to make things easier.
+### STEP 02: Install Java
 
-### Prerequisites
+Jenkins is built with Java, So we need to install appropriate Java version. This time I'm going to use OpenJDK version 11.
+Now head-over to  you ubuntu terminal and do the following steps.
 
-Hardware Requirement
+Run this command and pick one openJDK version 8 or 11 from the list
 
-| Minimum Requirement | Recommended Requirement |
-|---------------------|------------------------|
-| 256MB+ of RAM       | 1GB+ of RAM            |
-| 1GB+ HDD Capacity   | 50GB+ HDD Capacity     |
+```bash
+sudo apt search openjdk
+```
 
+```bash
+sudo apt-get install openjdk-11-jdk -y
+```
 
+```bash
+dimuthu@build-svr:~$ java -version
+openjdk version "11.0.10" 2021-01-19
+OpenJDK Runtime Environment (build 11.0.10+9-Ubuntu-0ubuntu1.20.04)
+OpenJDK 64-Bit Server VM (build 11.0.10+9-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)
+```
 
-## Sections 01: Run Jenkins On Docker Container Manually
+### STEP 03: Add GPG Key and Repository
 
-### STEP 01: Install Docker and Docker-Compose On Ubuntu
+Install GPG Trusted Key 
+```bash
+sudo wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+```
+Add Jenkins Repository
 
-You can directly jump into the "STEP 02" If you have already installed Docker Engine on your host. In the 1st step, I'm setting up my Ubuntu host to run the Docker container.
+In this step is to append Jenkins repository in Debian source.list
 
-> Note: You can skip this section and jump to "STEP 02" if you already installed docker on your HOST. Or else you are going to do this on a Cloud Platform.
+```bash
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+```
 
-### Install Docker Engine
+Once again update OS repositories.
 
-1. Setup The Repository
-
-Update Ubuntu once.
 ```bash
 sudo apt-get update -y
 ```
-2. Install Additionally Required Packages.
-```bash
-sudo apt-get install \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     gnupg-agent \
-     software-properties-common
-```
-3. Install Official Trusted GPG Key
-```bash
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-```
-4. Add Docker Stable Repository
-```bash
-sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
-```
-5. Update OS 
-```bash
-sudo apt-get update -y
-```
 
-6. Install Docker Docker Engine
-```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-```
-7. Start and Enable Docker Daemon Service 
-```bash
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
-```
+Install Jenkins
 
-For Production usage, always use official, Long-Term Support(LTS) releases. But, the official Docker image doesn't come with docker CLI inside the Jenkins image.
-
-### Install Docker Compose
-
-1. Download Docker Compose Binary 
 
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo apt-get install jenkins -y
 ```
 
-2. Provide executable permissions
+### STEP 04: Enable & Start Jenkins
+
+Start & enable Jenkins service on system boot.
 
 ```bash
-sudo chmod +x /usr/local/bin/docker-compose
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
 ```
 
-3. Set the binary executable path
+Optionally, Sometime you naeed to allow TCP port 8080 though out the firewall. If you using, Ubuntu the execute fullowing command.
 
 ```bash
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo ufw allow 8080
 ```
 
-4. Verify Installation
+### STEP 05: Access Jenkins
+
+Now, You can access your Jenkins server through the web browser.
+
+`http://<YOUR-HOST-NAME-OR-IP>:8080/`
+
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/1.png" width="auto" width="100%">
+
+For the 1st time Jenkins will prompt to enter unlock password. You need to execute following command on your terminal and copy output password and paste into the Administrator password text box.
+
+`Troubleshooting: If the "initialAdminPassword" not available, You may have to remove jenkins and try again.`
+
+**REF:** <a href="https://stackoverflow.com/questions/48611411/initialadminpassword-file-is-not-created-in-jenkins-folder-in-windows-10-os" target="_blank">Admin Password Not Available</a>
+
+For the first time Jenkins will prompt to unlock and it will tell us to copy the password from this  location. Copy this 32charactor alphanumric password and paste into the text box in the wizard.
 
 ```bash
-docker-compose --version
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-### STEP 02: Create Docker Bridge Network
+`204bedca295343e483335ae2f26e75f4`
 
-First, I'm going to create a bridge network named "jeknins-net". And I will attach all docker containers to this network.
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/2.png" width="auto" width="100%">
 
-```bash
-sudo docker network create jenkins-net
-```
+### STEP 07: Install Plugins
 
-### STEP 03: Create Docker Volumes
+In this section, You will need to install Jekins plugins according to how going to use. you can choose either option. 
 
-Here we are going to create volumes and map them into Jenkins container. We may need these volumes to store the Jenkins data persistently.  This volume use to make sure you don't lose your Jenkins data even after a reboot or crash container situations.
+In this case, I'm choosing "select plugins to install option"
 
-I will create a Docker volume to store the "JENKINS_HOME" directory, which use to mount into the docker host machine.
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/3.png" width="auto" width="100%">
 
-| Docker Host          | Jenkins Container |
-|----------------------|-------------------|
-| jenkins-data         | /var/jenkins_home |
-
-```bash
-sudo docker volume create jenkins-docker-data
-```
-
-### STEP 04: Start Jenkins Server Container
-
-In this step, we will use the same bridged network created as "jenkins-net" at STEP 02. Basically, Docker-Agent(Dind) and Jenkins Servier will be on the same Docker network. 
-
-```bash
-sudo docker container run \
-  --name jenkins-server \
-  --detach \
-  --restart unless-stopped \
-  --network jenkins-net \
-  --hostname jenkins \
-  --publish 8080:8080 \
-  --volume jenkins-data:/var/jenkins_home \
-  jenkins/jenkins:lts
-```
-
-If you were wondering what the arguments stand for, here is what each means:
-
--d: detached mode
-
--v: attach volume
-
--p: assign port target
-
-—name: Name of the container
+Once you choose required plugins, click next.
+This plugin installation may take considerable time. Please wait until completed.
 
 
-TCP port 8080 is using to access the Jenkins dashboard. Instead of the default port 8080,  we can use any other uncommon TCP port as well.
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/4.png" width="auto" width="100%">
 
-In the above command, we can see "--volume" is the most crucial argument which helps docker link the volume into the docker container and preserve data persistency. The jenkins docker container path "/var/jenkins_home" where the Jenkins container is storing the data. You don't need to worry about the docker container to restart or even after a container crashed. You can easily mount this volume into the new container in such a situation.
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/5.png" width="auto" width="100%">
 
-Finally, You can see them out like this.
-
-```bash
-dimuthu@svr05:~$ sudo docker container ps
-CONTAINER ID   IMAGE                 COMMAND                  CREATED         STATUS         PORTS                               NAMES
-b45233ebcbba   jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   7 seconds ago   Up 5 seconds   0.0.0.0:8080->8080/tcp, 50000/tcp   jenkins-server
-```
-
-### STEP 05: Access Jenkins Console
-
-Access your Jenkins Server through the web browser
-
-```bash
-http://<DOCKER-HOST-IP>:8080/
-```
-### STEP 06: Get Jenkins Init Password  
-
-In the post configuration wizard, It will be asking for an administrator password. So, You need to access the running Jenkins container to get this password.  You can get the initial default Administrator password using the following command.
-
-
-You can use Jenkins container ID or name and the following command.
-According to my setup, Jenkins-server is our Jenkins docker container name. And copy the output and paste it into the text box.
-
-```bash
-sudo docker exec jenkins-server cat /var/jenkins_home/secrets/initialAdminPassword
-```
-
-```bash
-02ac16bd27af4e8c8d1ffc82841f419f
-```
-
-Or else you can use the following command. Replace your container name or ID. 
-
-```bash
-docker container exec \
-    [CONTAINER ID or NAME] \
-    sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
-```
-
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.png" width="auto" width="100%">
-
-
-### STEP 07: Install Jenkins Plugins
-
-As usually, We can install the required plugins from here. In my case, I'll choose the "install suggested plugin" options. And please wait until Installation completed.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/2.png" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/3.png" width="auto" width="100%">
 ### STEP 08: Create First Admin User
 
-Create an administrator user providing your details here.
+Next, You have to provide your "name", username", "password", and "email" for the Jenkins admin user.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/4.png" width="auto" width="100%">
+Next, You need to provide your FQDN or IP address. By default, IP address will automatically load into the "instance URL" section.
 
-### STEP 09: Instance configuration
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/7.png" width="auto" width="100%">
 
-After creating the admin user, next move on to set up the Instance configuration. Since you need to access Jenkins internally, leave the URL to your localhost URL. Either you can provide your FQDN or IP address. If you not sure, go to this URL as it is. 
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/8.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/5.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/9.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/6.png" width="auto" width="100%">
+Now, Jenkins installation has been completed successfully.
+This is the 1st session of the Jenkins tutorial series. If you love to learn more on jenkins, refer my other articles available on this website.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/7.png" width="auto" width="100%">
-
-Now, the Jenkins server has been set up successfully. Now, I'm going to check the data persistency. 
-
-
-### STEP 10: Confirm Jenkins Data Persistency 
-
-Once you logged into the Jenkins dashboard, I will create a sample job to whether Jenkins is working fine.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/8.png" width="auto" width="100%">
-
-Now head-over to Jenkins dashboard and click on "New Item." 
-
-On the next screen, enter a job name. In this case, I'm naming it HelloWorld. and then choose the "Freestyle" project option.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/9.png" width="auto" width="100%">
-
-Then, In the next screen, move on to the "Build" tab and click on the "Add Build Step" button and choose the "Execute Shell" option.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/10.png" width="auto" width="100%">
-
-Then save the job and click on the "Build Now" button to start the job.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/11.png" width="auto" width="100%">
-
-Click on the Build Status (blue ball) under Build History (left sidebar) to view the console output. You should see that our command ran with no problems.
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/12.png" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/13.png" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/14.png" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/15.png" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.png" width="auto" width="100%">
-
-Other than the step that I've mentioned above, there so many ways to create build jobs. That's what makes Jenkins such a fantastic continuous deployment tool.
-
-## Section 02. Run Jenkins on a Docker Container Using Docker Compose ( Make things faster and reusable)
-
-### Run Jenkins on Docker Using Docker-Compose
-
-In the previous sections, I've created a docker container that runs the Jenkins instance. Docker containers are ephemeral. These containers can be stopped or destroyed and build new once anytime using docker images. If something terrible happens, it may cause Jenkins data losses too.
-
-Now, I'm going to do the same setup using docker-compose with persistent data volume mounts.
-
-##### Where is the Jenkins Data in Docker Container?
-
-It's always better to understand where the Jenkins data stored. To list Jenkins data, you can use the following command.
-
-```bash
-docker exec jenkins-server ls -l /var/jenkins_home
-```
-
-In here, "jenkins-server" is my Jenkins container name. So, You can replace it with your container name. After executing the command, You can see what the output looks like below.
-
-```bash
-total 108
--rw-r--r--  1 jenkins jenkins  1647 Mar  7 14:23 config.xml
--rw-r--r--  1 jenkins jenkins    53 Mar  7 14:01 copy_reference_file.log
--rw-r--r--  1 jenkins jenkins   156 Mar  7 14:01 hudson.model.UpdateCenter.xml
--rw-r--r--  1 jenkins jenkins   370 Mar  7 14:18 hudson.plugins.git.GitTool.xml
--rw-------  1 jenkins jenkins  1712 Mar  7 14:01 identity.key.enc
--rw-r--r--  1 jenkins jenkins     7 Mar  7 14:23 jenkins.install.InstallUtil.lastExecVersion
--rw-r--r--  1 jenkins jenkins     7 Mar  7 14:23 jenkins.install.UpgradeWizard.state
--rw-r--r--  1 jenkins jenkins   183 Mar  7 14:23 jenkins.model.JenkinsLocationConfiguration.xml
--rw-r--r--  1 jenkins jenkins   171 Mar  7 14:01 jenkins.telemetry.Correlator.xml
-drwxr-xr-x  3 jenkins jenkins  4096 Mar  7 16:21 jobs
-drwxr-xr-x  3 jenkins jenkins  4096 Mar  7 14:01 logs
--rw-r--r--  1 jenkins jenkins   907 Mar  7 14:01 nodeMonitors.xml
-drwxr-xr-x  2 jenkins jenkins  4096 Mar  7 14:01 nodes
-drwxr-xr-x 79 jenkins jenkins 12288 Mar  7 14:18 plugins
--rw-r--r--  1 jenkins jenkins   129 Mar  7 16:34 queue.xml
--rw-r--r--  1 jenkins jenkins    64 Mar  7 14:01 secret.key
--rw-r--r--  1 jenkins jenkins     0 Mar  7 14:01 secret.key.not-so-secret
-drwx------  4 jenkins jenkins  4096 Mar  7 16:35 secrets
--rw-rw-r--  1 root    root     7152 Feb 10 17:58 tini_pub.gpg
-drwxr-xr-x  2 jenkins jenkins  4096 Mar  7 14:18 updates
-drwxr-xr-x  2 jenkins jenkins  4096 Mar  7 14:01 userContent
-drwxr-xr-x  3 jenkins jenkins  4096 Mar  7 14:23 users
-drwxr-xr-x 11 jenkins jenkins  4096 Mar  7 14:01 war
-drwxr-xr-x  2 jenkins jenkins  4096 Mar  7 14:18 workflow-libs
-drwxr-xr-x  3 jenkins jenkins  4096 Mar  7 16:33 workspace
-```
-
-##### Where is the Jenkins Data in Docker Host?
-
-As we did before, Our Jenkins container's "JENKINS_HOME" directory is mounted to the "jenkins_home" directory in our Docker host machine.
-
-You can find your docker volume using the command below.
-
-```bash
-dimuthu@srv01:~/$ docker volume inspect jenkins-data 
-[
-    {
-        "CreatedAt": "2021-03-07T16:34:42Z",
-        "Driver": "local",
-        "Labels": null,
-        "Mountpoint": "/var/lib/docker/volumes/jenkins-data/_data",
-        "Name": "jenkins-data",
-        "Options": null,
-        "Scope": "local"
-    }
-]
-```
-
-According to the output, You can see the "JENKINS_HOME" directory is mounted on "/var/lib/docker/volumes/jenkins-data/_data" docker volume. This means your data is persistent under that directory, and it is available even container is deleted. So, data will remain on the Docker host.
-
-### STEP 03: Create Docker-Compose.YAML
-
-Another best way to run Jenkins is by using the docker-compose command. By using docker-compose. yaml, you can deploy multiple Jenkins containers more quickly.
-
-Open your favourite text editor and create a new file named "docker-compose.yaml", and paste the below YAML manifest into the file. And the save and exit.
-
-```bash
-sudo vim docker-compose.yml
-```
-
-
-```yaml
-version: "3.9"
-
-services:
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins-server
-    privileged: true
-    hostname: jenkinsserver
-    user: root
-    labels:
-      com.example.description: "Jenkins-Server by DigitalAvenue.dev"
-    ports: 
-      - "8080:8080"
-      - "50000:50000"
-    networks:
-      jenkins-net:
-        aliases: 
-          - jenkins-net
-    volumes: 
-     - jenkins-data:/var/jenkins_home
-     - /var/run/docker.sock:/var/run/docker.sock
-     
-volumes: 
-  jenkins-data:
-
-networks:
-  jenkins-net:
-```
-
-You can change this docker-compose file as you want. But, here I'll explain the most essential sections only.
-
-* image = The base image name used to create a docker instance. Generally, this will be pulled from the docker hub docker registry.
-
-* Ports = This defines port mapped between docker container and the docker host machine
- 
-* volume = This defines container data storage volume mapped between the docker container and the docker host machine. This allows accessing containerized data from the docker host. 
-
-* Container_name = This defines the name of the container that you are going to spin up. In here, I'm using "jenkins-server" as my container name.
-
-### 04: Run Docker Container Using Docker-Compose In Detached Mode
-
-```bash
-docker-compose up -d
-```
-
-### 05: Access Jenkins Console
-
-`http://<YOUR-IP-OR-FQDN>:8080/`
-
-### 06: Get Init Administrator Password
-
-```bash
-docker exec jenkins-server cat /var/jenkins_home/secrets/initialAdminPassword
-```
-
-### Summary
-
-In this article, you learned to deploy Jenkins using imperatively and declaratively. You also learned how to get your hands dirty with docker volumes and how to mount them. 
-
-You also learned how to preserve container data on docker volumes by mounting docker volume into a docker container. Making the Jenkins settings persistent and consistent even if the Docker container is deleted.
-
-If you are facing issues with the implementation, please comment below. I will regularly reply here.
-
-**Happy learning !** 
+If you are facing issues with the installation please comment below. I will regularly reply here. 
 
 **And also don't forget to subscribe my <a href="https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ" target="_blank">YouTube</a> channel for upcoming tutorials.**
+
