@@ -1,4 +1,3 @@
-# robotstxt.org/
-User-agent: *
+User-Agent: *
 Allow: /
-Sitemap: https://digitalavenue.dev/sitemap.xml
+
