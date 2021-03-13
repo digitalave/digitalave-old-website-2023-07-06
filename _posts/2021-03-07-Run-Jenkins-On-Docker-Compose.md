@@ -2,6 +2,8 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'Run Jenkins In Docker Using Docker Compose With Persistent Volumes'
+subtitle: Jenkins on Docker Step By Step and Docker Compose File Includes
+description: Do you want to setup Jenkins on Docker? But You may just curious about the persistence of your Jenkins data. Ok, I will explain them here step by step. In this tutorial, I will walk you through setting up the Jenkins server on docker with persistent volumes. First, I'll show you each step manually, and then I'll use docker-compose to make things faster and reusable.
 image: /assets/img/post-imgs/jenkins-docker-per-vol/Jenkins-Docker-Thumb.jpg
 tags: [Jenkins, CICD,Continuous Integration, Continuous Delivery, Docker, Docker-Compose]
 category: DevOps
