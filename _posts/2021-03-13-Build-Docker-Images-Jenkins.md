@@ -54,7 +54,6 @@ Manage Jenkins > Configure System > [Scroll Down to Far Bottom] > Cloud > [Confi
 
 The Cloud Configuration section will be open in a separate section.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/3.5.png" width="auto" width="100%">
 
 <img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/4.png" width="auto" width="100%">
 
