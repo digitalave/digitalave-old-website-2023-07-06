@@ -8,7 +8,7 @@ category: DevOps
 comments: true
 ---
 
-# Setup Jenkins On Ubuntu 20.04 LTS / Debian
+# Setup Jenkins On Ubuntu 20.04 LTS, Debian
 
 Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular automation server.  Jenkins built using java, which can integrate with numerous plugins.
 
