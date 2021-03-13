@@ -1,7 +1,9 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'Build Docker Images With Jenkins - Dynamic Docker Container as Jenkins Agent'
+title: 'Build Docker Images With Jenkins'
+subtitle: Dynamically Provission Docker Container as a Jenkins Agent Node
+description: In this tutorial, I'm going to show you how to configure jenkins to build Docker images based on a Dockerfile. These step will require when yoy going to use Docker with a CI/CD pipelines which build you applications into docker images and deploying into deferent environments such as dev, staging and finally in prodcution.
 image: /assets/img/post-imgs/Build_Docker_Images_on_Jenkins/docker-image-build-jenkins.jpg
 tags: [Jenkins, CICD,Continuous Integration, Continuous Delivery, Docker, Docker-Compose]
 category: devops
