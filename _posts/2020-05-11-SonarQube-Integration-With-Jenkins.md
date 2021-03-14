@@ -1,28 +1,29 @@
 ﻿---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'How To Integrate SonarQube With Jenkins'
+title: 'How To Integrate SonarQube With Jenkins For Code Analysis'
+subtitle: "Analyze Code Standerd, Bugs, Vulnarabilities Before Jenkins Build Jobs "
+description: "Ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github, Bitbucket, and Gitlab. And the same way build my code automatically, using Jenkins. Perform this task whenever I commit code and see the static code analysis report at SonarQube."
 image: /assets/img/post-imgs/Sonar-Jenkins/sonar-jenkins.jpg
-tags: [Jenkins, GitLab, CICD, Automation,Continuous Integration, Continuous Delivery,SonarQube]
+tags: [Integrate SonarQube With Jenkins, Code Analysis, Jenkins, CICD, Automation, Continuous Integration, Continuous Delivery, SonarQube,]
 category: DevOps
 comments: true
 last_modified_at: 2020-01-31
 ---
 
-### Goal?
+# How To Integrate SonarQube With Jenkins For Code Analysis
 
-**I want to ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github and Gitlab. And the same way build my code automatically, using Jenkins. I want to perform this task whenever I commit code and see the static code analysis report at SonarQube.**
+I want to ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github and Gitlab. And the same way build my code automatically, using Jenkins. I want to perform this task whenever I commit code and see the static code analysis report at SonarQube.
 
 In this case, GitLab-Jenkins-SonarQube integration comes to play.
-
 In this tutorial, I'm going to demonstrate how to integrate SonarQube with the Jenkins server.
 
-##### Work Flow - How It Goes?
+## Work Flow - How It Goes?
 
 Developer commit code changes to the GitLab/GitHub. Then, the Jenkins server will fetch/pull code changes from Git repository and do a static code analysis using Sonar-Scanner and send analysis reports to SonarQube server. Finally, Jenkins build the project code.
 
 
-##### Before You Begin !!!
+### Before You Begin !!!
 
 **I Assume...**
 
