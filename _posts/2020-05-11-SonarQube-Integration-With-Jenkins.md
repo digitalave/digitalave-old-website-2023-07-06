@@ -4,11 +4,10 @@ authors: [dimuthu_daundasekara]
 title: 'How To Integrate SonarQube With Jenkins For Code Analysis'
 subtitle: "Analyze Code Standerd, Bugs, Vulnarabilities Before Jenkins Build Jobs"
 description: "Ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github, Bitbucket, and Gitlab. And the same way build my code automatically, using Jenkins. Perform this task whenever I commit code and see the static code analysis report at SonarQube"
-image: /assets/img/post-imgs/Sonar-Jenkins/sonar-jenkins.jpg
+image: /assets/img/post-imgs/Sonar-Jenkins/SonarQube+Jenkins.png
 tags: [Integrate SonarQube With Jenkins, Code Analysis, Jenkins, CICD, Automation, Continuous Integration, Continuous Delivery, SonarQube,]
 category: DevOps
 comments: true
-last_modified_at: 2020-01-31
 ---
 
 # How To Integrate SonarQube With Jenkins For Code Analysis
