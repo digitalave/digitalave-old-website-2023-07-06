@@ -221,31 +221,31 @@ docker container exec \
 ```
 
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.jpg" width="auto" width="100%">
 
 
 ### STEP 07: Install Jenkins Plugins
 
 As usually, We can install the required plugins from here. In my case, I'll choose the "install suggested plugin" options. And please wait until Installation completed.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/2.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/2.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/3.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/3.jpg" width="auto" width="100%">
 ### STEP 08: Create First Admin User
 
 Create an administrator user providing your details here.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/4.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/4.jpg" width="auto" width="100%">
 
 ### STEP 09: Instance configuration
 
 After creating the admin user, next move on to set up the Instance configuration. Since you need to access Jenkins internally, leave the URL to your localhost URL. Either you can provide your FQDN or IP address. If you not sure, go to this URL as it is. 
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/5.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/5.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/6.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/6.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/7.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/7.jpg" width="auto" width="100%">
 
 Now, the Jenkins server has been set up successfully. Now, I'm going to check the data persistency. 
 
@@ -254,33 +254,33 @@ Now, the Jenkins server has been set up successfully. Now, I'm going to check th
 
 Once you logged into the Jenkins dashboard, I will create a sample job to whether Jenkins is working fine.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/8.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/8.jpg" width="auto" width="100%">
 
 Now head-over to Jenkins dashboard and click on "New Item." 
 
 On the next screen, enter a job name. In this case, I'm naming it HelloWorld. and then choose the "Freestyle" project option.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/9.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/9.jpg" width="auto" width="100%">
 
 Then, In the next screen, move on to the "Build" tab and click on the "Add Build Step" button and choose the "Execute Shell" option.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/10.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/10.jpg" width="auto" width="100%">
 
 Then save the job and click on the "Build Now" button to start the job.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/11.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/11.jpg" width="auto" width="100%">
 
 Click on the Build Status (blue ball) under Build History (left sidebar) to view the console output. You should see that our command ran with no problems.
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/12.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/12.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/13.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/13.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/14.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/14.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/15.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/15.jpg" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-docker-per-vol/1.jpg" width="auto" width="100%">
 
 Other than the step that I've mentioned above, there so many ways to create build jobs. That's what makes Jenkins such a fantastic continuous deployment tool.
 
