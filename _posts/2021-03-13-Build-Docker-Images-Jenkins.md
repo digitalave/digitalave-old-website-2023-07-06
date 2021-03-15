@@ -29,7 +29,7 @@ The Pipelines with build jobs will use this agent container to execute Docker im
 Fist, Head-over to Jenkins server and select "Manage jenkins", then select the "Manage Plugin" option under "system Configuration."
 
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/1.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/1.png" width="auto" width="100%">
 
 
 
@@ -37,9 +37,9 @@ Now, Click the "Available" tab to view all the Jenkins plugins that can be insta
 
 Docker Plugin For Jenkins : <a href="https://plugins.jenkins.io/docker-plugin/" target="_blank">https://plugins.jenkins.io/docker-plugin/</a>
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/2.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/2.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/3.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/3.png" width="auto" width="100%">
 
 ## STEP 02: Configure Docker Plugin
 
@@ -57,12 +57,12 @@ Manage Jenkins > Configure System > [Scroll Down to Far Bottom] > Cloud > [Confi
 The Cloud Configuration section will be open in a separate section.
 
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/4.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/4.png" width="auto" width="100%">
 
 Click on the "Add New Cloud" dropdown menu and select the option "Docker" from the list. And then click on the "Docker Cloud Details" button.
 
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/5.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/5.png" width="auto" width="100%">
 
 
 Select the option "Docker" from the "Configure Cloud" dropdown button. And then click on the "Docker Cloud Details" button.
@@ -70,7 +70,7 @@ Select the option "Docker" from the "Configure Cloud" dropdown button. And then 
 
 Now, You want to set the Docker-Agent Host URI. And Click "Test Connection". Here you will get the following error as "Client sent an HTTP request to an HTTPS server".
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/6.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/6.png" width="auto" width="100%">
 
 To solve this issue, we need to setup **Server Credentials**.
 
@@ -81,7 +81,7 @@ The "Docker Host URI" is where Jenkins launches the agent container. In this sce
 Click on the "Add" dropdown button and select "Jenkins", And then we need to create "X.509 Client Certificate" from the Docker-Agent(Dind)'s "/cert" directory. We have created those certificates at STEP-04. 
 
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/7.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/7.png" width="auto" width="100%">
 
 To accomplish this task, you will need the following certificates. 
 
@@ -103,11 +103,11 @@ Or else you can locate these file on "/var/lib/docker/volumes/jenkins-docker-cer
 
 In the end, Your credentials will look like this.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/8.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/8.png" width="auto" width="100%">
 
 Now, Add your "Docker Host URI and select "Server Credentials" from the dropdown menu. Finally, "Test Connection" will get the Docker version and API version as a result. So, now we can reach the Docker daemon from the Jenkins server. Now, the Jenkins server has been configured to build Docker images.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/9.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/9.png" width="auto" width="100%">
 
 ## STEP 03: Configure Docker Agent Templates
 
@@ -124,7 +124,7 @@ Here, "Labels" and "Name" cam use to associate a job to a particular agent. This
 
 Provide required docker command options, as seen in the image below.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/10.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/10.png" width="auto" width="100%">
 
 ## STEP 04: Test The Setup
 
@@ -132,26 +132,26 @@ A. Create a Build Project
 
 Now, Let's move on to the Jenkins dashboard, click on "New Item", and create "Freestyle Project".
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/13.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/13.png" width="auto" width="100%">
 
 Set the "Label expression" to "jenkins-agent."
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/14.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/14.png" width="auto" width="100%">
 
 Then, We need to add a new build step. Move down further and select "Execute Shell" from the "Build" section.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/15.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/15.png" width="auto" width="100%">
 
 Add the sample "Hello World!" text inside the execution shell box.
 Now, Save and build your job.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/16.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/16.png" width="auto" width="100%">
 
 According to the execution commands, Jenkins will download the image, and run the container then run the job upon it. Finally, you will get an output, as seen in the image below.
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/17.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/17.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/18.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Build_Docker_Images_on_Jenkins/18.png" width="auto" width="100%">
 
 Also, You can check weather which containers are running on the Docker-on-Docker container by using this command.
 
