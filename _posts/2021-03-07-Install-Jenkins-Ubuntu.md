@@ -114,7 +114,7 @@ Now, You can access your Jenkins server through the web browser.
 
 `http://<YOUR-HOST-NAME-OR-IP>:8080/`
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/1.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/1.png" width="auto" width="100%">
 
 For the 1st time, Jenkins will prompt to enter an unlock password. You need to execute the following command on your terminal and copy the output password and paste it into the Administrator password text box.
 
@@ -130,7 +130,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 `204bedca295343e483335ae2f26e75f4`
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/2.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/2.png" width="auto" width="100%">
 
 ### STEP 07: Install Plugins
 
@@ -138,15 +138,15 @@ In this section, You will need to install Jenkins plugins according to how going
 
 In this case, I'm choosing the "select plugins to install option."
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/3.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/3.png" width="auto" width="100%">
 
 Once you choose the required plugins, click next.
 This plugin installation may take considerable time. Please wait until completed.
 
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/4.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/4.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/5.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/5.png" width="auto" width="100%">
 
 ### STEP 08: Create First Admin User
 
@@ -154,11 +154,11 @@ Next, You have to provide your "name", username", "password", and "email" for th
 
 Next, You need to provide your FQDN or IP address. By default, the IP address will automatically load into the "instance URL" section.
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/7.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/7.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/8.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/8.png" width="auto" width="100%">
 
-<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/9.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/Jenins-Install-ubuntu/9.png" width="auto" width="100%">
 
 Now, Jenkins installation has been completed successfully.
 This is the 1st session of the Jenkins tutorial series. If you love to learn more about Jenkins, refer to my other articles available on this website.
