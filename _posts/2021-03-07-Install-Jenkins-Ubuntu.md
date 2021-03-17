@@ -76,8 +76,8 @@ Add Jenkins Repository
 This step is to append the Jenkins repository in the Debian source.list
 
 ```bash
-sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
-    /etc/apt/sources.list.d/jenkins.list'
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    
 ```
 
 Once again, update OS repositories.
