@@ -147,15 +147,7 @@ sudo docker volume create jenkins-docker-data
 In this step, we will use the same bridged network created as "jenkins-net" at STEP 02. Basically, Docker-Agent(Dind) and Jenkins Servier will be on the same Docker network. 
 
 ```bash
-sudo docker container run \
-  --name jenkins-server \
-  --detach \
-  --restart unless-stopped \
-  --network jenkins-net \
-  --hostname jenkins \
-  --publish 8080:8080 \
-  --volume jenkins-data:/var/jenkins_home \
-  jenkins/jenkins:lts
+sudo docker container run --name jenkins-server --detach --restart unless-stopped --network jenkins-net --hostname jenkins --publish 8080:8080 --volume jenkins-data:/var jenkins_home jenkins/jenkins:lts
 ```
 
 If you were wondering what the arguments stand for, here is what each means:
@@ -207,9 +199,7 @@ sudo docker exec jenkins-server cat /var/jenkins_home/secrets/initialAdminPasswo
 Or else you can use the following command. Replace your container name or ID. 
 
 ```bash
-docker container exec \
-    [CONTAINER ID or NAME] \
-    sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+docker container exec [CONTAINER ID or NAME] sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
 ```
 
 
