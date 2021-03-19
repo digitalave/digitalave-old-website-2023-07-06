@@ -305,3 +305,5 @@ So far, We were discussing stateless applications. How are We going to take care
 Kubernetes offers many  kinds of objects to manage Stateful applications using "StatefulSet", "StorageClass", "PersistentVolumeClaim" and "PersistentVolumes"
 
 We will discus other most commonly used Kubernetes object in the next episode.
+
+{% include comments.html %}
