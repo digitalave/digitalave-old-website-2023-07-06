@@ -10,8 +10,6 @@ category: DevOps, Kubernetes
 comments: true
 ---
 
-# Most Wanted Kubernetes Objects Explained - Part 01 [Pods, Replication Controllers, Replica Sets, Deployments]
-
 # Most Wanted Kubernetes Objects
 
 ## Pods
