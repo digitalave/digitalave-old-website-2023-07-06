@@ -1,4 +1,12 @@
-{% if site.disqus_username %}
+{% if page.comments %}
+  {% include disqus.html %}
+  {% include fb-comment.html %}
+  {% include staticman-comments.html %}
+  {% include utterances-comment.html %}
+{% endif %}
+
+
+<!-- {% if site.disqus_username %}
 
 <section class="comments">
     <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
@@ -27,4 +35,4 @@
     };
 </script>
 
-{% endif %}
+{% endif %} -->
