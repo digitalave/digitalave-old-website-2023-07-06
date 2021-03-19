@@ -25,6 +25,7 @@ menu:
   - title: Feed
     url: /feed.xml
 email: digitalavenuelk@gmail.com
+<<<<<<< HEAD
 # disqus_username: https-digitalavenue-dev
 
 # --- Comments --- #
@@ -60,6 +61,9 @@ fb_comment_id: ""
 #    secret   : # Encrypt your password by going to https://<your-own-api>/v3/encrypt/<your-site-secret>
 
 
+=======
+disqus_username: https-digitalavenue-dev
+>>>>>>> parent of ceea215 (A)
 
 
 # Social Media Settings
