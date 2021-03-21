@@ -21,12 +21,6 @@ Contact me via email.
 [digitalavenuelk@gmail.com](mailto:digitalavenuelk@gmail.com)
 
 ***
-#### Find me on...
-[![YouTube]({{site.baseurl}}/assets/img/icons/soical-icons/facebook.png)](https://www.youtube.com/channel/UCovlVsoRVItner26ZJPBjmQ)  
-[![LinkedIN]({{site.baseurl}}/assets/img/icons/soical-icons/linkedin.png)](https://www.linkedin.com/in/dimuthu-daundasekara-2b002271)  
-[![Medium]({{site.baseurl}}/assets/img/icons/soical-icons/medium.png)](https://medium.com/@dimuit86)  
-[![Twitter]({{site.baseurl}}/assets/img/icons/soical-icons/twitter.png)](https://twitter.com/dimuit86)  
-[![Instagram]({{site.baseurl}}/assets/img/icons/soical-icons/instagram.png)](https://www.instagram.com/dimuit86)  
 
 *Thank You for reading!*
 
