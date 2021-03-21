@@ -1,9 +1,0 @@
-<ul>
-  {% for item in site.menu %}
-    {% if item.title and item.url %}
-      <li>
-        <span><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></span>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
