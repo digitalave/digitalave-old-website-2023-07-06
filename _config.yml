@@ -1,0 +1,131 @@
+name: Digital Avenue IT
+title: Digital Avenue IT | Verified DevOps Tutorials For Docker Kubernetes Azure Amazon Jenkins and System Administrator Tutorials
+description: Digital Avenue IT Verified DevOps IT Admin Tutorials For Kubernetes, Azure, Jenkins, Docker, Linux, PfSense, Git, AWS and more. Learn DevOps Now.
+tags:
+  - DevOps
+  - Digital Avenue
+  - Tutorial
+  - IT
+  - Kubernete
+  - Azure
+  - Amazon
+  - Jenkins
+  - Docker
+  - HowTo
+  - DevOps Tutorials
+show_hero: true
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+  - title: Categories
+    url: /category/
+    sublinks:
+    - title: DevOps
+      url: /category/devops/
+    - title: SysAdmin Tutorials
+      url: /category/sysadmin/
+  - title: DevOps
+    type: inverse
+    url: /category/devops
+  - title: Feed
+    url: /feed.xml
+email: dimuit86@gmail.com
+# disqus_username: disqus_username
+
+#paginate: 12
+
+
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: dimuit86
+facebook_username: digitalavenuelk
+twitter_username: dimuit86
+instagram_username: dimuit86
+linkedin_username: dimuthu-daundasekara-2b002271
+medium_username: dimuit86
+youtube_username: UCovlVsoRVItner26ZJPBjmQ
+devto_username: dimuit86
+formspreeid: mrgonyll
+
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "G-JK6MHZTQXW"
+language: "en"
+categories_folder: category
+sent_message_url: "/contact/message-sent/"
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+show_get_theme_btn: false
+use_logo: true
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# Theme Color
+themeColor: '#ff0a16' #'#ff0a16'
+primaryDark: '#141414'
+accentDark: '#ffffff'
+lightGray: '#f2f2f2'
+texts: '#333333'
+
+
+# SASS
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+
+# Exclude my node related stuff
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]
+
+# Theme
+# version: v3.1.0
