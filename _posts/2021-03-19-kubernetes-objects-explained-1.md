@@ -3,16 +3,20 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'Most Wanted Kubernetes Objects Explained - Episode 01'
 subtitle: Pods, Replication Controllers, Replica Sets, Deployments
-description: A Pod is the fundamental building block in the Kubernetes. Usually, a pod runs only a single container.  But there are some instances you need to run more than one container in the pod. Such as init containers and internal containers.
+description: Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy, scale, and manage thousands of containerized applications more quicker. This article would helps anyone who steping into the kubernetes world. Before we are diving deeper,  Let't start from basic building blocks of kubernetes. A Pod is the fundamental building block in the Kubernetes. Usually, a pod runs only a single container.  But there are some instances you need to run more than one container in the pod. Such as init containers and internal containers.
 image: /assets/img/post-imgs/k8s-objects-01/kubernetes-objects-01.jpg
-tags: [Kubernetes, Kubernetes Objects Explained ,DevOps kubernetes tutorial, kubernetes pod yaml, kubernetes deployment yaml, kubernetes replication controller,kubernetes replicaset]
+tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, kubernetes pod, kubernetes deployment, kubernetes replication controller,kubernetes replicaset, cluster kubernetes,kubernetes pod, kubernetes docker]
 category: DevOps, Kubernetes
 comments: true
 ---
 
-# Most Wanted Kubernetes Objects
+Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy, scale, and manage thousands of containerized applications more quicker. This article would helps anyone who steping into the kubernetes world. Before we are diving deeper,  Let't start from basic building blocks of kubernetes. 
 
-## Pods
+Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy scale and manage thousands of containerized applications more quicker. Now, most of cloud providers such as AWS, Azure , and Google privde managed kubernetes services run our deployments.
+
+This article would helps anyone who steping into the kubernetes world. This will also would helpful for someone who getting ready for Certified Kubernetes Administrator exam. Now, I'll explain main kubernetes component you need to know.
+
+## Kubernetes Pods
 
 A Pod is the fundamental building block in the Kubernetes. Usually, a pod runs only a single container.  But there are some instances you need to run more than one container in the pod. Such as init containers and internal containers.
 
@@ -63,7 +67,7 @@ spec:
 
 The above configuration shows the Nginx container with a busy-box init container. In here, the busybox container start first and making sure correct permission "UID":101 and "GID":101 in the "/etc/nginx" persistent volume. Then spin up the nginx container secondly.
 
-## Replication Controller
+## Kubernetes Replication Controller
 
 If you deploy only a pod, It is not possible to scale and replicate. Once you delete it, it's gone. Replication controllers maintain a minimum number of pods that are always running. To do this, we need to have an object called "ReplicationController". However, Now Kubernetes has introduced a new object called "ReplicaSet" as a replacement for "ReplicationController."
 
@@ -91,7 +95,7 @@ spec:
 
 In the above Kubernetes manifest, The replicas determine the number of pods that would run at their desired state. Replication Controllers scales pods by searching on the pod labels. "Selector" labels use to match the pod labels exactly.
 
-## Replica Sets
+## Kubernetes Replica Sets
 
 Replica Sets are the new replacement for the Replication Controllers.
 Unlike the Replication Controllers, The ReplicaSets can use set-based search notations to group pods rather than a named Key: Value pair based match. You will get more control and more dynamic selector options to use ReplicaSet.
@@ -146,7 +150,7 @@ spec:
         image: nginx
 ```
 
-## Deployments
+## Kubernetes Deployments
 
 Deployment manifest is the most recommended and primarily used method to deploy Kubernetes pods. Deployment manifest replaces "Replication Controllers". Deployment is the most powerful Kubernetes object since It's possible to roll out and roll back changes/deployments. 
 
