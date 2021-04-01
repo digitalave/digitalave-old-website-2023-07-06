@@ -214,8 +214,6 @@ The Horizontal Pod AutoScaler ensures your Kubernetes deployment ca scale based 
 
 You can do this either using "kubectl" or using "HorizontalPodScaler" manifest file.
 
-IMG3
-
 First of all, we need to modify our deployment manifest to apply a resource limit to the pods. 
 
 ```yaml
