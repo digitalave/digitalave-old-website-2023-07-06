@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Install Ubuntu 18.04 on Oracle VirtualBox'
 image: /assets/img/post-imgs/ubuntu/Ubuntu_N.jpg
 tags: [LibreNMS, Server Monitoring]
-category: devops
+category: sysadmin
 comments: true
 last_modified_at: 2020-01-31
 ---

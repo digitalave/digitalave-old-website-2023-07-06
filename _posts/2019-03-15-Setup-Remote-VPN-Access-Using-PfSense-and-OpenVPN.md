@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'Setup Remote VPN Access Using PfSense and OpenVPN'
 image: /assets/img/post-imgs/pf-vpn/pf-openvpn_N.jpg
 tags: [pfSense, Firewall, OpenVPN, VPN]
-category: devops
+category: sysadmin
 comments: true
 last_modified_at: 2020-01-31
 ---
