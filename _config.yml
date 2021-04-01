@@ -21,13 +21,8 @@ menu:
     url: /about
   - title: Contact
     url: /contact
-  - title: Categories
-    url: /category/
-    sublinks:
-    - title: DevOps
-      url: /category/devops/
-    - title: SysAdmin Tutorials
-      url: /category/sysadmin/
+  - title: System Admin
+    url: /category/sysadmin
   - title: DevOps
     type: inverse
     url: /category/devops
