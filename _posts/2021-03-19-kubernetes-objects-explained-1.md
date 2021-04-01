@@ -3,7 +3,7 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'Most Wanted Kubernetes Objects Explained - Episode 01'
 subtitle: Pods, Replication Controllers, Replica Sets, Deployments
-description: Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy, scale, and manage thousands of containerized applications more quicker. This article would helps anyone who steping into the kubernetes world. Before we are diving deeper,  Let't start from basic building blocks of kubernetes. A Pod is the fundamental building block in the Kubernetes. Usually, a pod runs only a single container.  But there are some instances you need to run more than one container in the pod. Such as init containers and internal containers.
+description: "Kubernetes is now becoming a new kid in town. Now, Kubernetes is in action because its easy to deploy, scale, and manage thousands of containerized applications more quicker. This article would helps anyone who steping into the kubernetes world. Before we are diving deeper, Let's start from basic building blocks of kubernetes. A Pod is the fundamental building block in the Kubernetes. Usually, a pod runs only a single container. But there are some instances you need to run more than one container in the pod. Such as init containers and internal containers."
 image: /assets/img/post-imgs/k8s-objects-01/kubernetes-objects-01.jpg
 tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, kubernetes pod, kubernetes deployment, kubernetes replication controller,kubernetes replicaset, cluster kubernetes,kubernetes pod, kubernetes docker]
 category: DevOps, Kubernetes
