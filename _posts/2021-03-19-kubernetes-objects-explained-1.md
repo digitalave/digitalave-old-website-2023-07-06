@@ -10,11 +10,7 @@ category: DevOps, Kubernetes
 comments: true
 ---
 
-Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy, scale, and manage thousands of containerized applications more quicker. This article would helps anyone who steping into the kubernetes world. Before we are diving deeper,  Let't start from basic building blocks of kubernetes. 
-
-Kubernetes is now becoming a "new kid in town". Now, Kubernetes is in action, because its easy to deploy scale and manage thousands of containerized applications more quicker. Now, most of cloud providers such as AWS, Azure , and Google privde managed kubernetes services run our deployments.
-
-This article would helps anyone who steping into the kubernetes world. This will also would helpful for someone who getting ready for Certified Kubernetes Administrator exam. Now, I'll explain main kubernetes component you need to know.
+Kubernetes is now becoming a new kid in town. Now, Kubernetes is in action, because its easy to deploy scale and manage thousands of containerized applications more quicker. Now, most of cloud providers such as AWS, Azure , and Google privde managed kubernetes services run our deployments. This article would helps anyone who steping into the kubernetes world. This will also would helpful for someone who getting ready for Certified Kubernetes Administrator exam. Now, I'll explain main kubernetes component you need to know.
 
 ## Kubernetes Pods
 
