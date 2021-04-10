@@ -110,7 +110,7 @@ plugins:
   - jekyll-paginate-content
   - jekyll-sitemap
   - jekyll-seo-tag
-
+  - jekyll-feed
 # Exclude my node related stuff
 exclude: [
   'package.json',
