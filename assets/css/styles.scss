@@ -3,9 +3,9 @@
 @import "jekflix";
 
 // Resize Content Two Columns 
-@media (min-width: 40.5rem) {
+@media (min-width: 35.5rem) {
     .post.two-columns {
-      max-width: 80rem;
+      max-width: 95rem;
     }
   }
   
@@ -20,6 +20,6 @@
     ul,
     ol,
     iframe {
-      max-width: 90%;
+      max-width: 95%;
     }
   }
