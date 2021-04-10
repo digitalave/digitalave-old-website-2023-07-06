@@ -109,6 +109,7 @@ plugins:
   - jekyll-paginate
   - jekyll-paginate-content
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Exclude my node related stuff
 exclude: [

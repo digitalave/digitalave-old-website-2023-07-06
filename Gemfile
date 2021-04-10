@@ -10,3 +10,4 @@ gem "jekyll-paginate-content"
 gem "json"
 gem 'wdm', '>= 0.1.0'
 gem "jekyll-sitemap"
+gem 'jekyll-seo-tag'
