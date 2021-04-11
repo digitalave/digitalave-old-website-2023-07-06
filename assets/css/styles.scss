@@ -1,34 +1,25 @@
 ---
 ---
+
 @import "jekflix";
 
-// Resize Content Two Columns 
-@media (min-width: 0.5rem) {
-    .post.two-columns {
-      max-width: 90rem;
-    }
+@media (min-width: 37.5rem) {
+  .post.two-columns {
+    max-width: 100rem;
   }
-  
-  .post-content {
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    ul,
-    ol,
-    iframe {
-      max-width: 90%;
-      display: flow-root;
+}
 
-    }
+.post-content {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  iframe {
+    max-width: 100%;
   }
-
-// Resize Content See Also
-@media (min-width: 0.5rem) {
-    .see-also {
-        flex-basis: 30%;
-    }
-  }
+}
