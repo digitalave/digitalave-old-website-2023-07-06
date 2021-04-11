@@ -3,9 +3,17 @@
 
 @import "jekflix";
 
-@media (min-width: 37.5rem) {
+@media (min-width: 34.5rem) {
   .post.two-columns {
-    max-width: 80rem;
+    max-width: 85rem;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    align-content: center;
+    align-items: flex-start;
+    aspect-ratio: auto;
   }
 }
 
@@ -20,6 +28,6 @@
   ul,
   ol,
   iframe {
-    max-width: 80%;
+    max-width: 85%;
   }
 }
