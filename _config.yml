@@ -13,6 +13,15 @@ tags:
   - Docker
   - HowTo
   - DevOps Tutorials
+
+category:
+  - devops
+  - IT Security
+  - Server Monitoring
+  - DevOps
+  - pfSense
+  - SysAdmin
+
 show_hero: true
 menu:
   - title: Home
@@ -30,7 +39,7 @@ menu:
 email: dimuit86@gmail.com
 # disqus_username: disqus_username
 
-#paginate: 12
+paginate: 15
 
 
 # Social Media Settings
@@ -49,7 +58,7 @@ formspreeid: mrgonyll
 # Posts Settings
 show_time_bar: true
 show_modal_on_exit: false
-show_modal_on_finish_post: false
+show_modal_on_finish_post: true
 two_columns_layout: true
 
 
@@ -79,7 +88,7 @@ paginate_content:
   debug: false
   collections:
     - posts
-  auto: false
+  auto: true
   separator: "--page-break--"
   permalink: "/:num/"
   seo_canonical: true

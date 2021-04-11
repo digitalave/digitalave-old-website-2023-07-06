@@ -5,7 +5,7 @@ title: 'How To Setup Jenkins On Ubuntu 20.04LTS'
 subtitle: "Automate Application Build and Deployments Using Jennkins CI/CD Pipelines"
 description: "This tutorial walk you through how to setup Jenkins on Ubuntu 20.04LTS and Debian. Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying. Jenkins is the most popular automation server.  Jenkins built using java, which can integrate with numerous plugins."
 image: /assets/img/post-imgs/Jenins-Install-ubuntu/Jenkins-Ubuntu.jpg
-tags: [How to configure Jenkins on Ubuntu,Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery, Jenkins Build Pipelines]
+tags: [How to configure Jenkins on Ubuntu,Jenkins, CICD, Automation,Continuous Integration, Continuous Delivery, Jenkins Build Pipelines, featured]
 category: DevOps
 comments: true
 ---

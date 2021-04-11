@@ -5,7 +5,7 @@ title: 'Most Wanted Kubernetes Objects Explained - Episode 01'
 subtitle: Pods, Replication Controllers, Replica Sets, Deployments
 description: "Kubernetes is now becoming a new kid in town because its easy to deploy, scale, and manage thousands of containerized applications more quicker. Let's start from scratch."
 image: /assets/img/post-imgs/k8s-objects-01/kubernetes-objects-01_kubernetes.jpg
-tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, kubernetes pod, kubernetes deployment, kubernetes replication controller,kubernetes replicaset, cluster kubernetes,kubernetes pod, kubernetes docker]
+tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, kubernetes pod, kubernetes deployment, kubernetes replication controller,kubernetes replicaset, cluster kubernetes,kubernetes pod, kubernetes docker,featured]
 category: DevOps, Kubernetes
 comments: true
 ---
