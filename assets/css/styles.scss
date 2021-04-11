@@ -3,17 +3,12 @@
 
 @import "jekflix";
 
-@media (min-width: 37.5rem) {
+@media (min-width: 26rem) {
   .post.two-columns {
-    max-width: 95rem;
-    margin: 0 auto;
-    margin-top: 0px;
+    max-width: 90rem;
     margin-right: auto;
-    margin-bottom: 0px;
     margin-left: auto;
-    align-content: center;
-    align-items: flex-start;
-    aspect-ratio: auto;
+    padding: 0 0.875rem 0 5.625rem;
   }
 }
 
@@ -29,14 +24,10 @@
   ol,
   code,
   iframe {
-    max-width: 95%;
-    margin: 0 auto;
-    margin-top: 0px;
+    max-width: 90rem;
     margin-right: auto;
-    margin-bottom: 0px;
     margin-left: auto;
-    align-content: center;
-    align-items: flex-start;
-    aspect-ratio: auto;
+    // padding: 0 0.875rem 0 5.625rem;
+    padding: 0px 0.875rem 0px 0.625rem;
   }
 }
