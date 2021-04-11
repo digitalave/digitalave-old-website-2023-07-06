@@ -1,0 +1,21 @@
+<!-- <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=802578830668874&autoLogAppEvents=1" nonce="Okm0q5PF"></script>
+
+<div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-numposts="5"></div> -->
+
+<section class="comments">
+    <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
+    <div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-numposts="5"></div>
+</section>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=802578830668874&autoLogAppEvents=1" nonce="Okm0q5PF"></script>
+
+<style>
+    .fb-comments{
+    margin: auto;
+    /* width: 50%; */
+    /* border: 3px solid green; */
+    text-align: center;
+    /* padding: 10px; */
+  }
+</style>

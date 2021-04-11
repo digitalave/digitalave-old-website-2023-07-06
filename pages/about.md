@@ -20,9 +20,7 @@ I create blog posts and open source packages mainly about DevOps and System Engi
 Contact me via email.
 [digitalavenuelk@gmail.com](mailto:digitalavenuelk@gmail.com)
 
+
 ***
 
 *Thank You for reading!*
-
-
-
