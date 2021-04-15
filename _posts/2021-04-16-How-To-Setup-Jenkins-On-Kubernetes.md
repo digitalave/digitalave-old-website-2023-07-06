@@ -356,9 +356,7 @@ In this case, I'm choosing the "select plugins to install option."
 Once you choose the required plugins, click next.
 This plugin installation may take considerable time. Please wait until completed.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.jpg" width="auto" width="100%">
-
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-9.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.png" width="auto" width="100%">
 
 ### STEP 08: Create First Admin User
 
