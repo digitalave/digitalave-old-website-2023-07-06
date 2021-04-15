@@ -2,7 +2,7 @@
 layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Setup Dynamically Scalable Jenkins Master Slave Setup on Kubernetes Clsuter'
-subtitle: Stateful Sets, Persistent Volumes, Persistent Volume Claims, Storage Class, Daemon Sets, Services, Ingress Controllers
+subtitle: Running Dynamically Scalable Jenkins Server on Kubernetes 
 description: "In this tutorial, I will walk you through how to setup scalable Jenkins server on Kubernetes cluster using set of kubernetes deployment manifest YAMLs."
 image: /assets/img/post-imgs/jenkins-k8s-deploy/Jenkins-on-kubernetes.jpg
 tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, Stateful Sets, Persistent Volumes, Persistent Volume Claims, Storage Class, Daemon Sets, Services, Ingress Controllers,featured]
@@ -10,7 +10,7 @@ category: DevOps, Kubernetes
 comments: true
 ---
 
-# How to Create a Dynamically Scalable Jenkins Master-Slave Setup on Kubernetes Cluster 
+# How to Setup Jenkins on Kubernetes with Scalable Master Slave Setup 
 
 Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don't need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence. 
 
