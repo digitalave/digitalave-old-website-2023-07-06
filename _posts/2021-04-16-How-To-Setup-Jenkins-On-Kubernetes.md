@@ -10,46 +10,46 @@ category: DevOps, Kubernetes
 comments: true
 ---
 
-# How to Create a Dynamically Scalable Jenkins Master Slave Setup on Kubernetes Clsuter 
+# How to Create a Dynamically Scalable Jenkins Master-Slave Setup on Kubernetes Cluster 
 
-Jenkins is the most commanly used and populer opensource CI/CD tool which use by many famous companies arrond the world. We don't need to  have a second though of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence. 
+Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don't need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence. 
 
-When your Jenkins running on traditional method, (on a VM, baremetal server, single container) code base growing accrodingly and your code build jobs will increase, You also might running numorous build jobs in pararall. This will lead to redundent resource utilizations and slowness of your delivery pipelines and build/deploy jobs. 
+When your Jenkins running on the traditional method (on a VM, bare metal server, single container) code base growing accordingly and your code build jobs increase, You also might be running numerous build jobs in parallel. This will lead to redundant resource utilizations and slowness of your delivery pipelines and build/deploy jobs. 
 
-#### So, Is there anyway to overcome this slowness ? 
+#### So, Is there any way to overcome this slowness? 
 
 ##### Yes, For sure... Here's the way.
 
-In this tutorial, I will walk you through how to setup scalable Jenkins server on Kubernetes cluster using set of kubernetes deployment manifest YAMLs. Use of kubernetes YAML files will help you to track , edit, modify changes and reuse deployemnts as much as you want.
+This tutorial will walk you through the setup scalable Jenkins server on the Kubernetes cluster using a set of Kubernetes deployment manifest YAML. The use of Kubernetes YAML files will help you track, edit, modify changes and reuse deployments as much as you want.
 
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.png" width="auto" width="100%">
 
 #### Jenkins Scalability:
 
-Scalability can be define as the ability of the system to exapand it capabilites to handle an additional load as required.
+Scalability can be defined as the system's ability to expand its capabilities to handle an additional load as required.
 
-Jenkins scaling is based on the Master-Slave model. Which means, You will have several Jenkins agent instances (Salves) and one Master jenkins instance which is responsible to destribute jobs among Jenkins slaves. Jenkins Slaves are doing the jobs when Jenkins Master triggered the build/deploy pipeline. 
+Jenkins scaling is based on the Master-Slave model. This means You will have several Jenkins agent instances (Salves) and one Master Jenkins instance responsible for distributing jobs among Jenkins slaves. Jenkins Slaves were doing the jobs when Jenkins Master triggered the build/deploy pipeline. 
 
-Sounds great! right? 
+Sounds great! Right? 
 
-Have a look at this image and it will feed more idea into your mind.
+Have a look at this image, and it will feed more idea into your mind.
 
 IMG: scalable-jenkins-master-slave-on-kubernetes-3
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-02.png" width="auto" width="100%">
 
-#### You Got Benifits !!!
-* Multi-Tasking : You can run many more build jobs in parallel
-* Self-Healing : Replacing courroupted Jenkins instances automatically.
-* Cost Saving : Spinning up and removing slaves dynamically based on need. 
-* Even Load Distribution : Spreading the load accross deferent physical macines/ VMs / Nodes when required.
+#### You Got Benefits !!!
+* Multi-Tasking: You can run many more build jobs in parallel
+* Self-Healing: Replacing corrupted Jenkins instances automatically.
+* Cost Saving: Spinning up and removing slaves dynamically based on need. 
+* Even Load Distribution: Spreading the load across different physical machines/ VMs / Nodes when required.
 
-By spining up jenkins on kubernetes you will get the power of inifity stones of the kubernetes. :) 
+By spinning up Jenkins on Kubernetes, you will get the power of infinity stones of the Kubernetes. :) 
 
 ## STEP 01: Create a Namespace for the Jenkins Deployment
 
-Kubernetes namespace provides and aditional layer of isolation for your jenkins deployment and allow you more control over CI/CD environment.
+Kubernetes namespace provides an additional layer of isolation for your Jenkins deployment. It allows you more control over the CI/CD environment.
 
-create a file named with jenkins-ns.yaml and define your namespace name here.
+Create a file named with Jenkins-ns. yaml and define your namespace name here.
 
 ```bash
 vim jenkins-ns.yaml
@@ -61,23 +61,23 @@ kind: Namespace
 metadata:
   name: jenkins
 ```
-Apply changes the kubernetes cluster
+Apply changes to the Kubernetes cluster
 
 ```bash
 kubectl apply -f jenkins-ns.yaml
 ```
 
-Use following command to list all exisiting namespaces
+Use the following command to list all existing namespaces
 
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-1.jpg" width="auto" width="100%">
 
 ## STEP 02: Create Persistent Volume
 
-Creating a persistence volume is essential, since all of your Jenkins jobs, plguins, configurations should be persist. If one pod dies then another new pod can continue with persitent data from your volume. 
+Creating a persistence volume is essential since all of your Jenkins jobs, plugins, configurations should be persisted. If one pod dies, then another new pod can continue with persistent data from your volume. 
 
-Ok, Then Let's create a Persitent Volume
+Ok, Then Let's create a Persistent Volume
 
-Create a new file named with "jenkins-pv.yaml" and phast below content into your file.
+Create a new file named with "jenkins-pv.yaml" and paste the below content into your file.
 
 ```bash
 vim jenkins-deployment.yaml
@@ -111,11 +111,11 @@ kubectl apply -f jenkins-pv.yaml -n jenkins
 
 ## STEP 03: Create a PersistentVolumeClaim 
 
-"PersistentVolumeClaim" is request for storage with a specific size and access mode. In this case I'm  going to claim 5GB of storage to my "Jenkins_Home"
+"PersistentVolumeClaim" request for storage with a specific size and access mode. In this case, I'm  going to claim 5GB of storage to my "Jenkins_Home."
 
-Now, Create another file named with "jenkins-pvc.yaml" and phast below content.
+Now, Create another file named "jenkins-pvc.yaml" and paste the below content.
 
-Note: Make sure to match the selector lables If you are planing to change the manifest as you like. (Ex: usage: jenkins-shared-deployement)
+Note: Make sure to match the selector labels If you plan to change the manifest as you like. (Ex: usage: Jenkins-shared-deployment)
 
 ```yaml
 apiVersion: v1
@@ -144,12 +144,12 @@ kubectl apply -f jenkins-pvc.yaml -n jenkins
 
 ## STEP 04: Create a Deployment Manifest
 
-Here, I'm using Jenkins LTS docker image and expose port 8080 for the web access and port 50000 for the jenkins jnlp service which use to access Jenkins workers respectivly.
+Here, I'm using Jenkins LTS docker image and expose port 8080 for the web access and port 50000 for the Jenkins JNLP service, which use to access Jenkins workers, respectively.
 
-Let's create a Kubernetes deployment manifet for the Jenkins server.
-Here I'm using Jenkins LTS image and expose port number 8080 and 50000 for the web access and inter master agent commiumications respectivly.
+Let's create a Kubernetes deployment manifest for the Jenkins server.
+Here I'm using Jenkins LTS image and exposing port number 8080 and 50000 for web access and inter master agent communications.
 
-Now, create a file named with "jenkins-deployemt.yaml" and phast below conent.
+Now, create a file named "jenkins-deployemt.yaml" and paste the below content.
 
 ```yaml
 apiVersion: apps/v1
@@ -212,7 +212,7 @@ spec:
           claimName: jenkins-home-pvc 
 ```
 
-Then apply changes to the cluster by execcuting following command.
+Then apply changes to the cluster by executing the following command.
 
 ```bash
 kubectl apply -f jenkins-deployment.yaml -n jenkins
@@ -220,11 +220,11 @@ kubectl apply -f jenkins-deployment.yaml -n jenkins
 
 ## STEP 05: Create a Service Manifest
 
-Now, We have deployed Jenkins on kubernetes. But, It is stil not accessible
+Now, We have deployed Jenkins on Kubernetes. But, It is still not accessible.
 
-Services in Kubernetes use to expose applications running on Kubernetes pods. Now we need to grant access to the jenkins via kubernetes service. So, We need to define a service for jenkins server. In here we exposing port 8080 and 50000.
+Services in Kubernetes use to expose applications running on Kubernetes pods. Now we need to grant access to the Jenkins via Kubernetes service. So, We need to define a service for the Jenkins server. Here, we expose port 8080 and 50000.
 
-Ok, Let's create a file named with "jenkins-svc.yaml" and paste content below.
+Ok, Let's create a file named "jenkins-svc.yaml" and paste the content below.
 
 ```yaml
 apiVersion: v1
@@ -257,7 +257,7 @@ spec:
     app: jenkins
 ```
 
-And the apply the chanes to the cluster.
+And then apply the changes to the cluster.
 
 ```bash
 kubectl  apply -f jenkins-svc.yaml -n jenkins
@@ -266,16 +266,16 @@ kubectl  apply -f jenkins-svc.yaml -n jenkins
 
 Now you can access the Jenkins Dashboard. 
 
-## STEP 06: Port-Forwarding (Optinal)
+## STEP 06: Port-Forwarding (Optional)
 
 As you can see in the service manifest, I have used "ClusterIP" as my network service. 
-So, I need to port-forward jenkins-UI service to be able to access through my (localhost) computer. 
+So, I need to port-forward Jenkins-UI service to access through my (localhost) computer. 
 
-If you planning to deploy on a Cloud service you will get many more options such as ingress controllers so on. We discus them in a next tutorial.
+If you plan to deploy on Cloud service, you will get many more options such as ingress controllers. We discuss them in the next tutorial.
 
-For now, I'm going to port forward Jenkins-UI (8080/TCP) to my localhost as I'm deploying jenkins on Minikube.
+For now, I'm going to port forward Jenkins-UI (8080/TCP) to my localhost as I'm deploying Jenkins on Minikube.
 
-Get the Jenkins-UI service details
+Get the Jenkins-UI service details.
 
 ```bash
 dimuthu@srv01:~/jenkins-k8s$ kubectl get svc -n jenkins
@@ -284,7 +284,7 @@ jenkins-jnlp-service   ClusterIP   10.106.232.10   <none>        50000/TCP   10m
 jenkins-ui-service     ClusterIP   10.98.225.50    <none>        8080/TCP    10m
 ```
 
-Now, I'm going to forward my port 8080 into my local machine. Simply run the following command.
+Now, I'm going to forward my port 8080 to my local machine. Simply run the following command.
 
 ```bash
 dimuthu@srv01:~/jenkins-k8s$ kubectl port-forward service/jenkins-ui-service 8080:8080 -n jenkins
@@ -297,15 +297,15 @@ Now, You can access your Jenkins server through the web browser.
 
 `http://<YOUR-HOST-NAME-OR-IP>:8080/`
 
-For the 1st time, Jenkins will prompt to enter an unlock password. You can get the passwrd by looking at the logs for jenkins deployment or pod.
+For the 1st time, Jenkins will prompt to enter an unlock password. You can get the password by looking at the logs for Jenkins deployment or pod.
 
 Get the name of the deployment.
 
 ```bash
 kubectl get deployments -n jenkins
 ```
-Look for initial password in the deployment logs.
-In order to get the initial password You need to execute the following command on your kubectl terminal and copy the output password and paste it into the Administrator password text box.
+Look for the initial password in the deployment logs.
+To get the initial password, You need to execute the following command on your kubectl terminal and copy the output password and paste it into the Administrator password text box.
 
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-5.jpg" width="auto" width="100%">
 
@@ -347,7 +347,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 ## STEP 07: Install Plugins
 
-In this section, You will need to install Jenkins plugins according to how you going to use them. You can choose either option. 
+In this section, You will need to install Jenkins plugins according to how you will use them. You can choose either option. 
 
 In this case, I'm choosing the "select plugins to install option."
 
@@ -374,14 +374,14 @@ Provide a domain name as required. (optional)
 
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-13.jpg" width="auto" width="100%">
 
-Now we have deployed our Jenkins server on a Kubernete cluster. Now we can use this jenkins server as normally. But, We also can setup Jenkins Slave agent to our Jenkins Master. 
+Now we have deployed our Jenkins server on a Kubernetes cluster. Now we can use this Jenkins server as usual. But, We also can set up Jenkins Slave agent to our Jenkins Master. 
 
-We will discuss how to setup Jenkins-Slaves in the next tutorial. You can visit the next session from this link.
+We will discuss how to set up Jenkins-Slaves in the next tutorial. You can visit the next session from this link.
 
-In this lession you leared...
+In this lesson, you learned...
 
-* How to setup how to deploy kubernetes cluster
-* How to use persitenet volumes, attaching services to the depoyment.
+* How to setup how to deploy a Kubernetes cluster
+* How to use persistent volumes, attaching services to the deployment.
 
 I hope you learn something new from this tutorial. If you facing any difficulties, please comment below. I'll regularly jump into comments.
 
