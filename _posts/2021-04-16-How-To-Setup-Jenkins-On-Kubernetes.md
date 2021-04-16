@@ -23,7 +23,7 @@ When your Jenkins running on the traditional method (on a VM, bare metal server,
 This tutorial will walk you through the setup scalable Jenkins server on the Kubernetes cluster using a set of Kubernetes deployment manifest YAML. The use of Kubernetes YAML files will help you track, edit, modify changes and reuse deployments as much as you want.
 
 <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%">
-
+{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg %} 
 #### Jenkins Scalability:
 
 Scalability can be defined as the system's ability to expand its capabilities to handle an additional load as required.
