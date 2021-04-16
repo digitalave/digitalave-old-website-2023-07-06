@@ -128,7 +128,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-archives
-  - jekyll-responsive-image
 
 # Exclude my node related stuff
 exclude: [

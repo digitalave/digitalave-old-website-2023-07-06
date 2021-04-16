@@ -11,5 +11,5 @@ gem 'wdm', '>= 0.1.0'
 gem "jekyll-sitemap"
 gem "jekyll-seo-tag"
 gem "jekyll-feed"
-
-gem 'jekyll-responsive-image'
+gem 'jemoji'
+gem 'jekyll-archives'

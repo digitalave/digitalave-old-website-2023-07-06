@@ -10,6 +10,17 @@ category: DevOps, Jenkins, Kubernetes
 comments: true
 ---
 
+<div class="w-youtube"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="w-youtube__embed" frameborder="0" loading="lazy" src="https://www.youtube.com/embed/AQqFZ5t8uNc?start=88" title="youtube embed"></iframe></div>
+<style>
+.w-youtube {
+    padding-top: 56.25%;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+</style>
+
 ## How to Setup Jenkins on Kubernetes with Scalable Master Slave Setup 
 
 Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don't need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence. 
