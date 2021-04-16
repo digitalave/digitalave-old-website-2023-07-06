@@ -1,9 +1,9 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'How to Setup Jenkins Master and Slave on Kubernetes'
+title: 'How To Setup Jenkins Server on Kubernetes - Master Slave Setup'
 subtitle: Setup Dynamically Scalable Jenkins Server on Kubernetes 
-description: "In this tutorial, I'll show you how to setup Jenkins on Kubernetes cluster using a set of Kubernetes deployment manifest YAML."
+description: "This guide will walk you through installing a scalable Jenkins server on a Kubernetes cluster. Jenkins servers on traditional platforms become slower as the build code base grows."
 image: /assets/img/post-imgs/jenkins-k8s-deploy/Jenkins-on-kubernetes.jpg
 tags: [Jenkins, Jenkins Tutorials, Jenkins Kubernetes,Jenkins Kubernetes Plugin , Jenkins Docker, how to setup jenkins on kubernetes , featured]
 category: DevOps, Jenkins, Kubernetes
