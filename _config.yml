@@ -42,6 +42,11 @@ email: dimuit86@gmail.com
 paginate: 15
 
 
+# Contact Form Setting
+# See: https://formspree.io/
+formspree_form_id: formspree_form_id
+
+
 # Social Media Settings
 # Remove the item if you don't need it
 github_username: dimuit86
