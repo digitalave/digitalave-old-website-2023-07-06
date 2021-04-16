@@ -22,7 +22,7 @@ When your Jenkins running on the traditional method (on a VM, bare metal server,
 
 This tutorial will walk you through the setup scalable Jenkins server on the Kubernetes cluster using a set of Kubernetes deployment manifest YAML. The use of Kubernetes YAML files will help you track, edit, modify changes and reuse deployments as much as you want.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%">
+<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%"> -->
 {% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg %} 
 #### Jenkins Scalability:
 
@@ -69,8 +69,8 @@ kubectl apply -f jenkins-ns.yaml
 
 Use the following command to list all existing namespaces
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-1.jpg" width="auto" width="100%">
-
+<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-1.jpg" width="auto" width="100%"> -->
+{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-1.jpg %} 
 ## STEP 02: Create Persistent Volume
 
 Creating a persistence volume is essential since all of your Jenkins jobs, plugins, configurations should be persisted. If one pod dies, then another new pod can continue with persistent data from your volume. 
@@ -107,8 +107,8 @@ Let's apply the change to the Kubernetes cluster. (Make sure to append the "-n j
 ```bash
 kubectl apply -f jenkins-pv.yaml -n jenkins
 ```
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-2.jpg" width="auto" width="100%">
-
+<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-2.jpg" width="auto" width="100%"> -->
+{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-2.jpg %} 
 ## STEP 03: Create a PersistentVolumeClaim 
 
 "PersistentVolumeClaim" request for storage with a specific size and access mode. In this case, I'm  going to claim 5GB of storage to my "Jenkins_Home."
