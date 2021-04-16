@@ -3,7 +3,7 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'How To Setup Jenkins Server on Kubernetes - Master Slave Setup'
 subtitle: Setup Dynamically Scalable Jenkins Server on Kubernetes 
-description: "This tutorial helps you install a scalable Jenkins server on a Kubernetes cluster. Jenkins can be easily set up using the kubernetes YAML definitions I've given. When your code base grows by the day, your Jenkins server becomes slower. Jenkins scaling is based on the Master-Slave model. This means You will have several Jenkins agent instances (Salves) and one Master Jenkins instance responsible for distributing jobs among Jenkins slaves. Jenkins Slaves were doing the jobs when Jenkins Master triggered the build/deploy pipeline."
+description: "This tutorial helps you install a scalable Jenkins server on a Kubernetes cluster. Jenkins can be easily set up using the kubernetes YAML definitions I've given. When your code base grows by the day, your Jenkins server becomes slower. Jenkins scaling is based on the Master-Slave model."
 image: /assets/img/post-imgs/jenkins-k8s-deploy/Jenkins-on-kubernetes.jpg
 tags: [Jenkins, Jenkins Tutorials, Jenkins Kubernetes,Jenkins Kubernetes Plugin , Jenkins Docker, how to setup jenkins on kubernetes , featured]
 category: DevOps, Jenkins, Kubernetes
