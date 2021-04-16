@@ -22,7 +22,7 @@ When your Jenkins running on the traditional method (on a VM, bare metal server,
 
 This tutorial will walk you through the setup scalable Jenkins server on the Kubernetes cluster using a set of Kubernetes deployment manifest YAML. The use of Kubernetes YAML files will help you track, edit, modify changes and reuse deployments as much as you want.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%">
 
 #### Jenkins Scalability:
 
@@ -35,7 +35,7 @@ Sounds great! Right?
 Have a look at this image, and it will feed more idea into your mind.
 
 IMG: scalable-jenkins-master-slave-on-kubernetes-3
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-02.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-02.jpg" width="auto" width="100%">
 
 #### You Got Benefits !!!
 * Multi-Tasking: You can run many more build jobs in parallel
@@ -356,7 +356,7 @@ In this case, I'm choosing the "select plugins to install option."
 Once you choose the required plugins, click next.
 This plugin installation may take considerable time. Please wait until completed.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.png" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.jpg" width="auto" width="100%">
 
 ### STEP 08: Create First Admin User
 
