@@ -1,16 +1,16 @@
 ---
 layout: post
 authors: [dimuthu_daundasekara]
-title: 'How To Setup Dynamically Scalable Jenkins Master Slave Setup on Kubernetes Clsuter'
-subtitle: Running Dynamically Scalable Jenkins Server on Kubernetes 
-description: "In this tutorial, I will walk you through how to setup scalable Jenkins server on Kubernetes cluster using set of kubernetes deployment manifest YAMLs."
+title: 'How to Setup Jenkins Master and Slave on Kubernetes'
+subtitle: Setup Dynamically Scalable Jenkins Server on Kubernetes 
+description: "In this tutorial, I'll show you how to setup Jenkins on Kubernetes cluster using a set of Kubernetes deployment manifest YAML."
 image: /assets/img/post-imgs/jenkins-k8s-deploy/Jenkins-on-kubernetes.jpg
-tags: [Kubernetes, k8s, kubernetes basics, Kubernetes Objects Explained ,kubernetes tutorial, Stateful Sets, Persistent Volumes, Persistent Volume Claims, Storage Class, Daemon Sets, Services, Ingress Controllers,featured]
-category: DevOps, Kubernetes
+tags: [Jenkins, Jenkins Tutorials, Jenkins Kubernetes,Jenkins Kubernetes Plugin , Jenkins Docker, how to setup jenkins on kubernetes , featured]
+category: DevOps, Jenkins, Kubernetes
 comments: true
 ---
 
-# How to Setup Jenkins on Kubernetes with Scalable Master Slave Setup 
+## How to Setup Jenkins on Kubernetes with Scalable Master Slave Setup 
 
 Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don't need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence. 
 
@@ -22,8 +22,8 @@ When your Jenkins running on the traditional method (on a VM, bare metal server,
 
 This tutorial will walk you through the setup scalable Jenkins server on the Kubernetes cluster using a set of Kubernetes deployment manifest YAML. The use of Kubernetes YAML files will help you track, edit, modify changes and reuse deployments as much as you want.
 
-<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%"> -->
-{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg %} 
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-01.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
+
 #### Jenkins Scalability:
 
 Scalability can be defined as the system's ability to expand its capabilities to handle an additional load as required.
@@ -34,8 +34,7 @@ Sounds great! Right?
 
 Have a look at this image, and it will feed more idea into your mind.
 
-IMG: scalable-jenkins-master-slave-on-kubernetes-3
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-02.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-02.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 #### You Got Benefits !!!
 * Multi-Tasking: You can run many more build jobs in parallel
@@ -69,8 +68,8 @@ kubectl apply -f jenkins-ns.yaml
 
 Use the following command to list all existing namespaces
 
-<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-1.jpg" width="auto" width="100%"> -->
-{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-1.jpg %} 
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-1.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
+
 ## STEP 02: Create Persistent Volume
 
 Creating a persistence volume is essential since all of your Jenkins jobs, plugins, configurations should be persisted. If one pod dies, then another new pod can continue with persistent data from your volume. 
@@ -107,8 +106,8 @@ Let's apply the change to the Kubernetes cluster. (Make sure to append the "-n j
 ```bash
 kubectl apply -f jenkins-pv.yaml -n jenkins
 ```
-<!-- <img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-2.jpg" width="auto" width="100%"> -->
-{% responsive_image path: /assets/img/post-imgs/jenkins-k8s-deploy/jenkins-kubernetes-2.jpg %} 
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-2.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
+
 ## STEP 03: Create a PersistentVolumeClaim 
 
 "PersistentVolumeClaim" request for storage with a specific size and access mode. In this case, I'm  going to claim 5GB of storage to my "Jenkins_Home."
@@ -140,7 +139,7 @@ Then, apply changes to the cluster.
 kubectl apply -f jenkins-pvc.yaml -n jenkins
 ```
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-3.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-3.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 ## STEP 04: Create a Deployment Manifest
 
@@ -262,7 +261,7 @@ And then apply the changes to the cluster.
 ```bash
 kubectl  apply -f jenkins-svc.yaml -n jenkins
 ```
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-4.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-4.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 Now you can access the Jenkins Dashboard. 
 
@@ -307,14 +306,14 @@ kubectl get deployments -n jenkins
 Look for the initial password in the deployment logs.
 To get the initial password, You need to execute the following command on your kubectl terminal and copy the output password and paste it into the Administrator password text box.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-5.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-5.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 ```bash
 kubectl logs deployment/jenkins-master  -n jenkins
 ```
 > 706f68110c5b4b3a8846c1208f0c1c7c
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-6.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-6.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 Log output will look like below.
 
@@ -351,12 +350,12 @@ In this section, You will need to install Jenkins plugins according to how you w
 
 In this case, I'm choosing the "select plugins to install option."
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-7.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-7.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 Once you choose the required plugins, click next.
 This plugin installation may take considerable time. Please wait until completed.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-8.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 ### STEP 08: Create First Admin User
 
@@ -364,15 +363,15 @@ Next, You have to provide your "name", username", "password", and "email" for th
 
 Next, You need to provide your FQDN or IP address. By default, the IP address will automatically load into the "instance URL" section.
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-10.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-10.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 Provide a domain name as required. (optional)
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-11.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-11.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-12.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-12.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
-<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-13.jpg" width="auto" width="100%">
+<img src="/assets/img/post-imgs/jenkins-k8s-deploy/jenkins-on-kubernetes-13.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 Now we have deployed our Jenkins server on a Kubernetes cluster. Now we can use this Jenkins server as usual. But, We also can set up Jenkins Slave agent to our Jenkins Master. 
 
