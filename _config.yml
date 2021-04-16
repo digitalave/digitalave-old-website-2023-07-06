@@ -1,3 +1,4 @@
+# Site Settings
 name: Digital Avenue IT
 title: Digital Avenue DevOps Tutorials
 description: Digital Avenue Carefully Verified DevOps and System Admin Tutorials For Kubernetes, Docker, Jenkins, Azure, AWS, Linux and more. Learn DevOps Now.
@@ -37,6 +38,7 @@ menu:
   - title: Feed
     url: /feed.xml
 email: dimuit86@gmail.com
+# See: https://disqus.com/
 # disqus_username: disqus_username
 
 paginate: 15
@@ -45,6 +47,7 @@ paginate: 15
 # Contact Form Setting
 # See: https://formspree.io/
 formspree_form_id: mrgonyll
+formspreeid: mrgonyll
 
 
 # Social Media Settings
@@ -57,7 +60,6 @@ linkedin_username: dimuthu-daundasekara-2b002271
 medium_username: dimuit86
 youtube_username: UCovlVsoRVItner26ZJPBjmQ
 devto_username: dimuit86
-formspreeid: mrgonyll
 
 
 # Posts Settings
@@ -124,6 +126,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+
 # Exclude my node related stuff
 exclude: [
   'package.json',
@@ -138,4 +141,4 @@ exclude: [
 ]
 
 # Theme
-# version: v3.1.0
+#version: v3.1.1
