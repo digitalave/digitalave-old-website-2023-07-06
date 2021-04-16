@@ -3,28 +3,6 @@
 
 @import "jekflix";
 
-.no-js img.lazyload {
-    display: none;
-    }
-    
-    .blur-up {
-    filter: blur(10px);
-    transition: filter 400ms;
-    }
-    
-    .blur-up.lazyloaded {
-    filter: blur(0);
-    }
-    
-    .fade-in {
-    opacity: 0;
-    transition: opacity 400ms;
-    }
-    
-    .fade-in.lazyloaded {
-    opacity: 1;
-    }
-
 // @media (min-width: 26rem) {
 //   .post.two-columns {
 //     max-width: 90rem;
