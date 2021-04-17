@@ -367,4 +367,3 @@ Using "sqlcmd" CLI
 sqlcmd -S <External IP Address> -U sa -P "PaSsW@rD"
 ```
 
-REF: <a href="https://docs.microsoft.com/en-us/sql/linux/tutorial-sql-server-containers-kubernetes?view=sql-server-ver15#prerequisites" target="_blank">https://docs.microsoft.com/en-us/sql/linux/tutorial-sql-server-containers-kubernetes?view=sql-server-ver15#prerequisites</a>
