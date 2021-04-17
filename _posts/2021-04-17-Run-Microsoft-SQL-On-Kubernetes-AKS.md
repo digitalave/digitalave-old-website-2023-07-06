@@ -4,7 +4,7 @@ authors: [dimuthu_daundasekara]
 title: 'How To Run Microsoft SQL Server On Kubernetes - Azure Kubernetes Service'
 subtitle: Highly Available Microsoft SQL Server on AZure AKS
 description: "Setup a SQL Server instance on Kubernetes with persistent storage for high availability in Azure Kubernetes Service (AKS). If the SQL Server instance dies, Kubernetes re-creates it in a new pod automatically. "
-image: assets/img/post-imgs/sql-on-aks/MSSQL-On-AKS.jpg
+image: /assets/img/post-imgs/sql-on-aks/MSSQL-On-AKS.jpg
 tags: [Azure, SQL Server, SQL Server on Kubernetes, SQL on Azure Kubernetes Service, Azure Kubernetes Service, AKS, featured]
 category: DevOps, Azure, Kubernetes
 comments: true
