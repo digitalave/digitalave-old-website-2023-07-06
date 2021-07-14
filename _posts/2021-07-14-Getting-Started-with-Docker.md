@@ -3,7 +3,7 @@ layout: post
 authors: [dimuthu_daundasekara]
 title: 'Getting Started With Docker - Quick Start Guide '
 subtitle: Practicle Guide for Begginers
-image: assets/img/post-imgs/docker-getting-started/docker.jpg
+image: /assets/img/post-imgs/docker-getting-started/docker.jpg
 tags: [Docker, DevOps]
 category: DevOps, Docker
 comments: true
