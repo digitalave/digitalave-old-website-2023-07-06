@@ -40,15 +40,11 @@ comments: true
 
 ### Docker Engine - Birds Eye View
 
-IMG1
-
-<img src="assets/img/post-imgs/docker-getting-started/1.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
+<img src="/assets/img/post-imgs/docker-getting-started/1.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 ### Docker Architecture
 
-<img src="assets/img/post-imgs/docker-getting-started/2.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
-
-
+<img src="/assets/img/post-imgs/docker-getting-started/2.jpg" width="auto" width="100%" alt="Jenkins on Kubernetes">
 
 * Docker architecture consist of 3 main components
     * Docker Client
