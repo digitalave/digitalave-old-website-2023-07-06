@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/categories/devops/</link>
+    <description>Recent content in DevOps on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Production Grade Kubernetes Cluster on Azure AKS</title>
+      <link>https://digitalavenue.dev/blog/2021-07-25-deploy-aks-kubernetes-cluster-on-azure-cloud/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-07-25-deploy-aks-kubernetes-cluster-on-azure-cloud/</guid>
+      <description>Introduction This tutorial is intended to demonstrate how to setup your 1st Kubernetes cluster on Azure Kubernetes Services (AKS). This tutorial will cover up all the steps that you need to setup complete AKS cluster.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With Docker - Quick Start Guide </title>
+      <link>https://digitalavenue.dev/blog/2021-07-14-getting-started-with-docker/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-07-14-getting-started-with-docker/</guid>
+      <description>Getting Started With Docker - Quick Start Guide Docker Engine Platform as a Service (PaaS) Cloud platform service. Allows you to manage its application and data.</description>
+    </item>
+    
+    <item>
+      <title>How To Run Microsoft SQL Server On Kubernetes - Azure Kubernetes Service</title>
+      <link>https://digitalavenue.dev/blog/2021-04-17-run-microsoft-sql-on-kubernetes-aks/</link>
+      <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-17-run-microsoft-sql-on-kubernetes-aks/</guid>
+      <description>Prerequisites: Azure CLI
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli 1. Run the Azure CLI with the az command. 1.1 Run the login command. az login Login in the browser with the azure account.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Jenkins Server on Kubernetes - Master Slave Setup</title>
+      <link>https://digitalavenue.dev/blog/2021-04-16-how-to-setup-jenkins-on-kubernetes/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-16-how-to-setup-jenkins-on-kubernetes/</guid>
+      <description>Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don&amp;rsquo;t need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence.</description>
+    </item>
+    
+    <item>
+      <title>Most Wanted Kubernetes Objects Explained - Episode 02</title>
+      <link>https://digitalavenue.dev/blog/2021-04-13-kubernetes-objects-explained-2/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-13-kubernetes-objects-explained-2/</guid>
+      <description>Managing Stateful Applications So far, We were discussing about the stateless applications. But, How are We going to take of our Stateful applications that need to persist their data on a disk even after a reboot.</description>
+    </item>
+    
+    <item>
+      <title>Most Wanted Kubernetes Objects Explained - Episode 01</title>
+      <link>https://digitalavenue.dev/blog/2021-03-19-kubernetes-objects-explained-1/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-19-kubernetes-objects-explained-1/</guid>
+      <description>Kubernetes is now becoming a new kid in town. Now, Kubernetes is in action, because its easy to deploy scale and manage thousands of containerized applications more quicker.</description>
+    </item>
+    
+    <item>
+      <title>Build Docker Images With Docker Containers as Jenkins Build Slaves</title>
+      <link>https://digitalavenue.dev/blog/2021-03-13-build-docker-images-jenkins/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-13-build-docker-images-jenkins/</guid>
+      <description>Building Docker Images using Jenkins This tutorial will show you how to configure Jenkins to build Docker images based on a Dockerfile.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Jenkins On Ubuntu 20.04LTS</title>
+      <link>https://digitalavenue.dev/blog/2021-03-07-install-jenkins-ubuntu/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-07-install-jenkins-ubuntu/</guid>
+      <description>Setup Jenkins On Ubuntu 20.04LTS Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying.</description>
+    </item>
+    
+    <item>
+      <title>Run Jenkins In Docker Using Docker Compose With Persistent Volumes</title>
+      <link>https://digitalavenue.dev/blog/2021-03-07-run-jenkins-on-docker-compose/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-07-run-jenkins-on-docker-compose/</guid>
+      <description>How to Run Jenkins on Docker with Persistent Volumes Do you want to setup Jenkins on Docker? But You may just curious about the persistence of your Jenkins data.</description>
+    </item>
+    
+    <item>
+      <title>How To Integrate SonarQube With Jenkins For Code Analysis</title>
+      <link>https://digitalavenue.dev/blog/2020-05-11-sonarqube-integration-with-jenkins/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-11-sonarqube-integration-with-jenkins/</guid>
+      <description>How To Integrate SonarQube With Jenkins For Code Analysis I want to ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github and Gitlab.</description>
+    </item>
+    
+    <item>
+      <title>How To Integrate GitLab With Jenkins</title>
+      <link>https://digitalavenue.dev/blog/2020-05-09-gitlab-integration-with-jenkins/</link>
+      <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-09-gitlab-integration-with-jenkins/</guid>
+      <description>Before You Begin In this tutorial, I&amp;rsquo;m going to demonstrate to you how to integrate GitLab with Jenkins Server. I suppose You&amp;rsquo;ve already installed Jenkins on your own.</description>
+    </item>
+    
+    <item>
+      <title>How to Install and Configure SonarQube 8 on Ubuntu 18.04</title>
+      <link>https://digitalavenue.dev/blog/2020-05-08-install-sonarqube-on-ubuntu-debian/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-08-install-sonarqube-on-ubuntu-debian/</guid>
+      <description>Introduction: SonarQube is an open-source tool that can be used to analyze the quality of the source code. It can detect your code bugs, vulnerabilities, security black holes, and code smells.</description>
+    </item>
+    
+    <item>
+      <title>How to Install and Configure Jenkins on Ubuntu 18.04 LTS 16.04 Debian</title>
+      <link>https://digitalavenue.dev/blog/2020-04-06-how-to-install-and-configure-jenkins-on-ubuntu-18.04/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-04-06-how-to-install-and-configure-jenkins-on-ubuntu-18.04/</guid>
+      <description>Introduction: Jenkins is an open-source automation server that provides hundreds of plugin to perform continuous integration and continues delivery to build and deploy projects.</description>
+    </item>
+    
+    <item>
+      <title>Lession 02 - Docker Basics - Where Am I Start Learn Docker</title>
+      <link>https://digitalavenue.dev/blog/2019-10-01-docker_lesson_2_docker_starting_point/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-01-docker_lesson_2_docker_starting_point/</guid>
+      <description>In this tutorial I&amp;rsquo;m going to teach you the basics you should have known before dive into depth.
+Now, I&amp;rsquo;m going to cover up fundamentals you must know.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack 6.8 On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-07-03-install__configure_elk_stack_7_on_centos7/</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-07-03-install__configure_elk_stack_7_on_centos7/</guid>
+      <description>INTRODUCTION “ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-16-install--configure-elk-stack-on-centos7/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-16-install--configure-elk-stack-on-centos7/</guid>
+      <description>“ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators.</description>
+    </item>
+    
+  </channel>
+</rss>

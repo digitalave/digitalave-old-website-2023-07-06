@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/</link>
+    <description>Recent content on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Production Grade Kubernetes Cluster on Azure AKS</title>
+      <link>https://digitalavenue.dev/blog/2021-07-25-deploy-aks-kubernetes-cluster-on-azure-cloud/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-07-25-deploy-aks-kubernetes-cluster-on-azure-cloud/</guid>
+      <description>Introduction This tutorial is intended to demonstrate how to setup your 1st Kubernetes cluster on Azure Kubernetes Services (AKS). This tutorial will cover up all the steps that you need to setup complete AKS cluster.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With Docker - Quick Start Guide </title>
+      <link>https://digitalavenue.dev/blog/2021-07-14-getting-started-with-docker/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-07-14-getting-started-with-docker/</guid>
+      <description>Getting Started With Docker - Quick Start Guide Docker Engine Platform as a Service (PaaS) Cloud platform service. Allows you to manage its application and data.</description>
+    </item>
+    
+    <item>
+      <title>How To Run Microsoft SQL Server On Kubernetes - Azure Kubernetes Service</title>
+      <link>https://digitalavenue.dev/blog/2021-04-17-run-microsoft-sql-on-kubernetes-aks/</link>
+      <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-17-run-microsoft-sql-on-kubernetes-aks/</guid>
+      <description>Prerequisites: Azure CLI
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli 1. Run the Azure CLI with the az command. 1.1 Run the login command. az login Login in the browser with the azure account.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Jenkins Server on Kubernetes - Master Slave Setup</title>
+      <link>https://digitalavenue.dev/blog/2021-04-16-how-to-setup-jenkins-on-kubernetes/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-16-how-to-setup-jenkins-on-kubernetes/</guid>
+      <description>Jenkins is the most commonly used and popular open-source CI/CD tool used by many famous companies worldwide. We don&amp;rsquo;t need to have a second thought of it since the biggest companies like Facebook, Udemy, NetFlix, LinkedIn and many more companies using Jenkins with confidence.</description>
+    </item>
+    
+    <item>
+      <title>Most Wanted Kubernetes Objects Explained - Episode 02</title>
+      <link>https://digitalavenue.dev/blog/2021-04-13-kubernetes-objects-explained-2/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-04-13-kubernetes-objects-explained-2/</guid>
+      <description>Managing Stateful Applications So far, We were discussing about the stateless applications. But, How are We going to take of our Stateful applications that need to persist their data on a disk even after a reboot.</description>
+    </item>
+    
+    <item>
+      <title>Most Wanted Kubernetes Objects Explained - Episode 01</title>
+      <link>https://digitalavenue.dev/blog/2021-03-19-kubernetes-objects-explained-1/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-19-kubernetes-objects-explained-1/</guid>
+      <description>Kubernetes is now becoming a new kid in town. Now, Kubernetes is in action, because its easy to deploy scale and manage thousands of containerized applications more quicker.</description>
+    </item>
+    
+    <item>
+      <title>Build Docker Images With Docker Containers as Jenkins Build Slaves</title>
+      <link>https://digitalavenue.dev/blog/2021-03-13-build-docker-images-jenkins/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-13-build-docker-images-jenkins/</guid>
+      <description>Building Docker Images using Jenkins This tutorial will show you how to configure Jenkins to build Docker images based on a Dockerfile.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Jenkins On Ubuntu 20.04LTS</title>
+      <link>https://digitalavenue.dev/blog/2021-03-07-install-jenkins-ubuntu/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-07-install-jenkins-ubuntu/</guid>
+      <description>Setup Jenkins On Ubuntu 20.04LTS Jenkins is an open-source continues integration and continues deployment tool. Which can use to automate application building, testing and deploying.</description>
+    </item>
+    
+    <item>
+      <title>Run Jenkins In Docker Using Docker Compose With Persistent Volumes</title>
+      <link>https://digitalavenue.dev/blog/2021-03-07-run-jenkins-on-docker-compose/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2021-03-07-run-jenkins-on-docker-compose/</guid>
+      <description>How to Run Jenkins on Docker with Persistent Volumes Do you want to setup Jenkins on Docker? But You may just curious about the persistence of your Jenkins data.</description>
+    </item>
+    
+    <item>
+      <title>How To Integrate SonarQube With Jenkins For Code Analysis</title>
+      <link>https://digitalavenue.dev/blog/2020-05-11-sonarqube-integration-with-jenkins/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-11-sonarqube-integration-with-jenkins/</guid>
+      <description>How To Integrate SonarQube With Jenkins For Code Analysis I want to ensure the quality of the code, identify bugs, code vulnerabilities, code smells, and align with code standards after committing codes into repositories such as Github and Gitlab.</description>
+    </item>
+    
+    <item>
+      <title>How To Integrate GitLab With Jenkins</title>
+      <link>https://digitalavenue.dev/blog/2020-05-09-gitlab-integration-with-jenkins/</link>
+      <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-09-gitlab-integration-with-jenkins/</guid>
+      <description>Before You Begin In this tutorial, I&amp;rsquo;m going to demonstrate to you how to integrate GitLab with Jenkins Server. I suppose You&amp;rsquo;ve already installed Jenkins on your own.</description>
+    </item>
+    
+    <item>
+      <title>How to Install and Configure SonarQube 8 on Ubuntu 18.04</title>
+      <link>https://digitalavenue.dev/blog/2020-05-08-install-sonarqube-on-ubuntu-debian/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-05-08-install-sonarqube-on-ubuntu-debian/</guid>
+      <description>Introduction: SonarQube is an open-source tool that can be used to analyze the quality of the source code. It can detect your code bugs, vulnerabilities, security black holes, and code smells.</description>
+    </item>
+    
+    <item>
+      <title>How to Install and Configure Jenkins on Ubuntu 18.04 LTS 16.04 Debian</title>
+      <link>https://digitalavenue.dev/blog/2020-04-06-how-to-install-and-configure-jenkins-on-ubuntu-18.04/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-04-06-how-to-install-and-configure-jenkins-on-ubuntu-18.04/</guid>
+      <description>Introduction: Jenkins is an open-source automation server that provides hundreds of plugin to perform continuous integration and continues delivery to build and deploy projects.</description>
+    </item>
+    
+    <item>
+      <title>Install Wazuh on CentOS and RHEL An Intrusion Detection System</title>
+      <link>https://digitalavenue.dev/blog/2020-01-15-install-and-configre-wazuh-security-monitoring-and-detection-system/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-01-15-install-and-configre-wazuh-security-monitoring-and-detection-system/</guid>
+      <description>What is Wazuh? Wazuh is a free, open source and enterprise-ready security detection and monitoring solution.
+Wazuh is born as a fork of OSSEC (HIDS) host based intrusion detection system.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure Zabbix 4.4 on CentOS8 RHEL8</title>
+      <link>https://digitalavenue.dev/blog/2020-01-09-install_and_configure_zabbix_server-4.4_on_centos8-rhel8/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-01-09-install_and_configure_zabbix_server-4.4_on_centos8-rhel8/</guid>
+      <description>In this tutorial, I&amp;rsquo;m going to cover up how to install and configure Zabbix 4.4 Monitoring Server on CentOS8</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Intrusion Detection Using Snort on PfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-12-16-how_to_setup_intrusion_detection_using_snort_on_pfsense/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-12-16-how_to_setup_intrusion_detection_using_snort_on_pfsense/</guid>
+      <description>Snort is an intrusion detection and prevention system. Snort protects your network against hackers, security threats such as exploits, DDOS attacks and viruses.</description>
+    </item>
+    
+    <item>
+      <title>Internet Content Filtering and Site Blocking Using pfBlockerNG on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-12-02-site_domain_filtering_using-pfblocker_on_pfsense/</link>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-12-02-site_domain_filtering_using-pfblocker_on_pfsense/</guid>
+      <description>pfBlockerNG extends the capability of the pfSense firewall and beyond the traditional state full firewall. pfBlockerNG provides the ability to pfSense firewall to make allow/deny decisions based upon items such as Geo-location, IP address, Alexa rating and the domain name.</description>
+    </item>
+    
+    <item>
+      <title>How To Send Alerts From Nagios Core Using Gmail</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</guid>
+      <description>In my previous video, I instructed you on how to install Nagios, configure the basics, and have your network monitored. Today, I am going to show you how to configure Nagios for email alerts that can be associated with certain services to certain administrators.</description>
+    </item>
+    
+    <item>
+      <title>Monitor Linux Server With Nagios Core Using SNMP</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</guid>
+      <description>Nagios is one of the most popular industry slandered enterprise class server &amp;amp; network monitoring solution.
+Nagios core is free and open source tool which allows you to monitor your entire IT infrastructure to ensure host, services and applications functioning properly.</description>
+    </item>
+    
+    <item>
+      <title>Setup Postfix To Send Emails Using Gmail Relay</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-setup-postfix-to-send-emails-using-gmail-relay/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-setup-postfix-to-send-emails-using-gmail-relay/</guid>
+      <description>In this tutorial I&amp;rsquo;m going to tech you how to configure an email relay server for the with your Gmail account.</description>
+    </item>
+    
+    <item>
+      <title>How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin</title>
+      <link>https://digitalavenue.dev/blog/2019-10-10-add_linux_host_to_nagios_using_nrpe/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-10-add_linux_host_to_nagios_using_nrpe/</guid>
+      <description>In this video, I will show you how to add remote Linux client host and it&amp;rsquo;s services to Nagios Monitoring Server using NRPE agent.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Nagios Core 4.4 Server on CentOS7 RHEL7</title>
+      <link>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</guid>
+      <description>Introduction: Nagios is a industry slandered IT infrastructure monitoring solutions. Which is one of the most popular, open source , powerful server and network monitoring system.</description>
+    </item>
+    
+    <item>
+      <title>Lession 02 - Docker Basics - Where Am I Start Learn Docker</title>
+      <link>https://digitalavenue.dev/blog/2019-10-01-docker_lesson_2_docker_starting_point/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-01-docker_lesson_2_docker_starting_point/</guid>
+      <description>In this tutorial I&amp;rsquo;m going to teach you the basics you should have known before dive into depth.
+Now, I&amp;rsquo;m going to cover up fundamentals you must know.</description>
+    </item>
+    
+    <item>
+      <title>Lession 01 - Install Docker on CentOS7 /Redhat RHEL7</title>
+      <link>https://digitalavenue.dev/blog/2019-09-27-docker_lesson_1_get_started_with_docker/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-27-docker_lesson_1_get_started_with_docker/</guid>
+      <description>Install Docker on CentOS7 and Redhat RHEL7 Introduction This is the very first session of Docker lesson series. In this tutorial I&amp;rsquo;m going to demonstrate how to install Docker on CentOS7 with the little bit of explanation about Docker.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup an OpenVPN on pfSense with Dual-WAN Interfaces as Fail-over</title>
+      <link>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</guid>
+      <description>Introduction: OpenVPN is really useful to access your office when you are out of the office.
+In this tutorial, I&amp;rsquo;m going to show you how to set up your own VPN connection using with OpenVPN service on the pfSense firewall.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack 7.3 On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</guid>
+      <description>INTRODUCTION Hi Folks, In this tutorial I&amp;rsquo;m going to install &amp;amp; configure ELK Stack as a Log server inside my testing Lab.</description>
+    </item>
+    
+    <item>
+      <title>How To Kill Zombie Processes on Linux</title>
+      <link>https://digitalavenue.dev/blog/2019-07-07-how_to_kill_zombie_proceesses_on_linux/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-07-07-how_to_kill_zombie_proceesses_on_linux/</guid>
+      <description>How To Kill Zombie Processes on Linux What is a Zombie Process ? Normally, When we launch a program, It starts their task &amp;amp; once task is over, Its end that process.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack 6.8 On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-07-03-install__configure_elk_stack_7_on_centos7/</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-07-03-install__configure_elk_stack_7_on_centos7/</guid>
+      <description>INTRODUCTION “ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Zabbix Server 4.0 on CentOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-20-how-to-install-zabbix-server-4.0-on-centos-7/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-20-how-to-install-zabbix-server-4.0-on-centos-7/</guid>
+      <description>Introduction: Zabbix is an open source monitoring solution which allows you to real-time monitor millions of matrices collected from thousands of servers, virtual machines and network devices.</description>
+    </item>
+    
+    <item>
+      <title>INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-18-install_and_configure_librenms_server_on_centos_7/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-18-install_and_configure_librenms_server_on_centos_7/</guid>
+      <description>INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7 What is LibreNMS ? LibreNMS is an opensource monitoring tool for servers and network hardware.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-16-install--configure-elk-stack-on-centos7/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-16-install--configure-elk-stack-on-centos7/</guid>
+      <description>“ELK” is the acronym for the three open source projects call Elasticsearch, Logstash and Kibana. ELK stack made easier to analyze logs to system administrators.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure Captive Portal with FreeRADIUS on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-captive-portal-with-freeradius-on-pfsense/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-captive-portal-with-freeradius-on-pfsense/</guid>
+      <description>How to install &amp;amp; Configure Captive Portal with FreeRadius with Pfsense Firewall Table of contents What is Captive Portal? STEP 1:- Install FreeRADIUS3 Package STEP 2:- Create Server certificate STEP 3:- Configure FreeRadius Server STEP 4:- Configure Captive Portal What is Captive Portal?</description>
+    </item>
+    
+    <item>
+      <title>INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-graylog2-on-centos7/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-graylog2-on-centos7/</guid>
+      <description>INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7 Graylog is an open source log management tool. It can use for collect, index and analyze remote machine logs centrally.</description>
+    </item>
+    
+    <item>
+      <title>Install PfSense 2.4.4 on Virtual Box</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install_pfsense_2.4.4_on_virtual_box/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install_pfsense_2.4.4_on_virtual_box/</guid>
+      <description>Install PfSense 2.4.4 on Virtual Box pfSense is network firewall based on FreeBSD operating system with a custom kernel and includes free third-party packages for additional features.</description>
+    </item>
+    
+    <item>
+      <title>Setup Remote VPN Access Using PfSense and OpenVPN</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-setup-remote-vpn-access-using-pfsense-and-openvpn/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-setup-remote-vpn-access-using-pfsense-and-openvpn/</guid>
+      <description>Pfsense is a great firewall solution. Very reliable and comes with built in VLAN and VPN support. In this tutorial I’m going to demonstrate how to setup a user authenticated OpenVPN server in PfSense.</description>
+    </item>
+    
+    <item>
+      <title>Configure Local DHCP Server and DNS Resolver on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</guid>
+      <description>Hi Guys today I&amp;rsquo;m goning to demonstrate how to install and configure dhcp server and dns reslover on pfsense 2.</description>
+    </item>
+    
+    <item>
+      <title>About The Author</title>
+      <link>https://digitalavenue.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/about/</guid>
+      <description>Hey there ! My name is Dimuthu. 👋🤓 I&amp;rsquo;m a DevOps Engineer, Systems Engineer. I&amp;rsquo;m passionate about Kubernetes, Docker, AWS, Azure, Jenkins and more.</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s, Talk About You</title>
+      <link>https://digitalavenue.dev/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://digitalavenue.dev/privacy-policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/privacy-policy/</guid>
+      <description>Privacy Policy for Digital Avenue Effective Date: [2019-03-20]
+At Digital Avenue, we respect the privacy of our website visitors and are committed to protecting their personal information.</description>
+    </item>
+    
+    <item>
+      <title>Search Result</title>
+      <link>https://digitalavenue.dev/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

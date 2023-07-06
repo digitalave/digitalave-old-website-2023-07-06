@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoring on Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/categories/monitoring/</link>
+    <description>Recent content in Monitoring on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/categories/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install and Configure Zabbix 4.4 on CentOS8 RHEL8</title>
+      <link>https://digitalavenue.dev/blog/2020-01-09-install_and_configure_zabbix_server-4.4_on_centos8-rhel8/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-01-09-install_and_configure_zabbix_server-4.4_on_centos8-rhel8/</guid>
+      <description>In this tutorial, I&amp;rsquo;m going to cover up how to install and configure Zabbix 4.4 Monitoring Server on CentOS8</description>
+    </item>
+    
+    <item>
+      <title>How To Send Alerts From Nagios Core Using Gmail</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</guid>
+      <description>In my previous video, I instructed you on how to install Nagios, configure the basics, and have your network monitored. Today, I am going to show you how to configure Nagios for email alerts that can be associated with certain services to certain administrators.</description>
+    </item>
+    
+    <item>
+      <title>Monitor Linux Server With Nagios Core Using SNMP</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</guid>
+      <description>Nagios is one of the most popular industry slandered enterprise class server &amp;amp; network monitoring solution.
+Nagios core is free and open source tool which allows you to monitor your entire IT infrastructure to ensure host, services and applications functioning properly.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Nagios Core 4.4 Server on CentOS7 RHEL7</title>
+      <link>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</guid>
+      <description>Introduction: Nagios is a industry slandered IT infrastructure monitoring solutions. Which is one of the most popular, open source , powerful server and network monitoring system.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack 7.3 On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</guid>
+      <description>INTRODUCTION Hi Folks, In this tutorial I&amp;rsquo;m going to install &amp;amp; configure ELK Stack as a Log server inside my testing Lab.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Zabbix Server 4.0 on CentOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-20-how-to-install-zabbix-server-4.0-on-centos-7/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-20-how-to-install-zabbix-server-4.0-on-centos-7/</guid>
+      <description>Introduction: Zabbix is an open source monitoring solution which allows you to real-time monitor millions of matrices collected from thousands of servers, virtual machines and network devices.</description>
+    </item>
+    
+    <item>
+      <title>INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-18-install_and_configure_librenms_server_on_centos_7/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-18-install_and_configure_librenms_server_on_centos_7/</guid>
+      <description>INSTALL AND CONFIGURE LibreNMS SERVER ON CENTOS 7 What is LibreNMS ? LibreNMS is an opensource monitoring tool for servers and network hardware.</description>
+    </item>
+    
+    <item>
+      <title>INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-graylog2-on-centos7/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-graylog2-on-centos7/</guid>
+      <description>INSTALL AND CONFIGURE GrayLog2 SERVER ON CENTOS 7 Graylog is an open source log management tool. It can use for collect, index and analyze remote machine logs centrally.</description>
+    </item>
+    
+  </channel>
+</rss>

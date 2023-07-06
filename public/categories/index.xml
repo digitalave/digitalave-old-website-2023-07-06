@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/categories/</link>
+    <description>Recent content in Categories on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://digitalavenue.dev/categories/devops/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IT Security</title>
+      <link>https://digitalavenue.dev/categories/it-security/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/categories/it-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://digitalavenue.dev/categories/monitoring/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/categories/monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://digitalavenue.dev/categories/linux/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pfSense</title>
+      <link>https://digitalavenue.dev/categories/pfsense/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/categories/pfsense/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

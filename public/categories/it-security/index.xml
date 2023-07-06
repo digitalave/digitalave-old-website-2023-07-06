@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT Security on Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/categories/it-security/</link>
+    <description>Recent content in IT Security on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/categories/it-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Wazuh on CentOS and RHEL An Intrusion Detection System</title>
+      <link>https://digitalavenue.dev/blog/2020-01-15-install-and-configre-wazuh-security-monitoring-and-detection-system/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2020-01-15-install-and-configre-wazuh-security-monitoring-and-detection-system/</guid>
+      <description>What is Wazuh? Wazuh is a free, open source and enterprise-ready security detection and monitoring solution.
+Wazuh is born as a fork of OSSEC (HIDS) host based intrusion detection system.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup Intrusion Detection Using Snort on PfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-12-16-how_to_setup_intrusion_detection_using_snort_on_pfsense/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-12-16-how_to_setup_intrusion_detection_using_snort_on_pfsense/</guid>
+      <description>Snort is an intrusion detection and prevention system. Snort protects your network against hackers, security threats such as exploits, DDOS attacks and viruses.</description>
+    </item>
+    
+    <item>
+      <title>Internet Content Filtering and Site Blocking Using pfBlockerNG on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-12-02-site_domain_filtering_using-pfblocker_on_pfsense/</link>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-12-02-site_domain_filtering_using-pfblocker_on_pfsense/</guid>
+      <description>pfBlockerNG extends the capability of the pfSense firewall and beyond the traditional state full firewall. pfBlockerNG provides the ability to pfSense firewall to make allow/deny decisions based upon items such as Geo-location, IP address, Alexa rating and the domain name.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup an OpenVPN on pfSense with Dual-WAN Interfaces as Fail-over</title>
+      <link>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</guid>
+      <description>Introduction: OpenVPN is really useful to access your office when you are out of the office.
+In this tutorial, I&amp;rsquo;m going to show you how to set up your own VPN connection using with OpenVPN service on the pfSense firewall.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure Captive Portal with FreeRADIUS on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-captive-portal-with-freeradius-on-pfsense/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install-and-configure-captive-portal-with-freeradius-on-pfsense/</guid>
+      <description>How to install &amp;amp; Configure Captive Portal with FreeRadius with Pfsense Firewall Table of contents What is Captive Portal? STEP 1:- Install FreeRADIUS3 Package STEP 2:- Create Server certificate STEP 3:- Configure FreeRadius Server STEP 4:- Configure Captive Portal What is Captive Portal?</description>
+    </item>
+    
+    <item>
+      <title>Install PfSense 2.4.4 on Virtual Box</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-install_pfsense_2.4.4_on_virtual_box/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-install_pfsense_2.4.4_on_virtual_box/</guid>
+      <description>Install PfSense 2.4.4 on Virtual Box pfSense is network firewall based on FreeBSD operating system with a custom kernel and includes free third-party packages for additional features.</description>
+    </item>
+    
+    <item>
+      <title>Setup Remote VPN Access Using PfSense and OpenVPN</title>
+      <link>https://digitalavenue.dev/blog/2019-03-15-setup-remote-vpn-access-using-pfsense-and-openvpn/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-03-15-setup-remote-vpn-access-using-pfsense-and-openvpn/</guid>
+      <description>Pfsense is a great firewall solution. Very reliable and comes with built in VLAN and VPN support. In this tutorial I’m going to demonstrate how to setup a user authenticated OpenVPN server in PfSense.</description>
+    </item>
+    
+    <item>
+      <title>Configure Local DHCP Server and DNS Resolver on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</guid>
+      <description>Hi Guys today I&amp;rsquo;m goning to demonstrate how to install and configure dhcp server and dns reslover on pfsense 2.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Digital Avenue | Comprehensive DevOps Guide</title>
+    <link>https://digitalavenue.dev/categories/linux/</link>
+    <description>Recent content in Linux on Digital Avenue | Comprehensive DevOps Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://digitalavenue.dev/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Send Alerts From Nagios Core Using Gmail</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-how_to_send_alerts_from_nagios_using_gmail/</guid>
+      <description>In my previous video, I instructed you on how to install Nagios, configure the basics, and have your network monitored. Today, I am going to show you how to configure Nagios for email alerts that can be associated with certain services to certain administrators.</description>
+    </item>
+    
+    <item>
+      <title>Monitor Linux Server With Nagios Core Using SNMP</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-monitor-linux-server-with-nagios-core-using-snmp/</guid>
+      <description>Nagios is one of the most popular industry slandered enterprise class server &amp;amp; network monitoring solution.
+Nagios core is free and open source tool which allows you to monitor your entire IT infrastructure to ensure host, services and applications functioning properly.</description>
+    </item>
+    
+    <item>
+      <title>Setup Postfix To Send Emails Using Gmail Relay</title>
+      <link>https://digitalavenue.dev/blog/2019-10-25-setup-postfix-to-send-emails-using-gmail-relay/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-25-setup-postfix-to-send-emails-using-gmail-relay/</guid>
+      <description>In this tutorial I&amp;rsquo;m going to tech you how to configure an email relay server for the with your Gmail account.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Nagios Core 4.4 Server on CentOS7 RHEL7</title>
+      <link>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-10-08-install_nagios_core_on_centos7/</guid>
+      <description>Introduction: Nagios is a industry slandered IT infrastructure monitoring solutions. Which is one of the most popular, open source , powerful server and network monitoring system.</description>
+    </item>
+    
+    <item>
+      <title>How To Setup an OpenVPN on pfSense with Dual-WAN Interfaces as Fail-over</title>
+      <link>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-24-how-to-setup-openvpn_on-pfsense_with_daul_wan_interfaces_as_failover/</guid>
+      <description>Introduction: OpenVPN is really useful to access your office when you are out of the office.
+In this tutorial, I&amp;rsquo;m going to show you how to set up your own VPN connection using with OpenVPN service on the pfSense firewall.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure ELK Stack 7.3 On CentOS7</title>
+      <link>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-08-26-install__configure_elk_stack_7.3_on_centos7/</guid>
+      <description>INTRODUCTION Hi Folks, In this tutorial I&amp;rsquo;m going to install &amp;amp; configure ELK Stack as a Log server inside my testing Lab.</description>
+    </item>
+    
+    <item>
+      <title>How To Kill Zombie Processes on Linux</title>
+      <link>https://digitalavenue.dev/blog/2019-07-07-how_to_kill_zombie_proceesses_on_linux/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-07-07-how_to_kill_zombie_proceesses_on_linux/</guid>
+      <description>How To Kill Zombie Processes on Linux What is a Zombie Process ? Normally, When we launch a program, It starts their task &amp;amp; once task is over, Its end that process.</description>
+    </item>
+    
+    <item>
+      <title>Configure Local DHCP Server and DNS Resolver on pfSense</title>
+      <link>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://digitalavenue.dev/blog/2019-09-18-configure_dns_dhcp_with_pfsense/</guid>
+      <description>Hi Guys today I&amp;rsquo;m goning to demonstrate how to install and configure dhcp server and dns reslover on pfsense 2.</description>
+    </item>
+    
+  </channel>
+</rss>
